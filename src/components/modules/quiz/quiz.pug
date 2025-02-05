@@ -1,2 +1,105 @@
+include ../../ui/form/form-group/form-group
+include ../../ui/form/control/control
+include ../../ui/form/input/input
+include ../../ui/form/button/button
+
 mixin quiz(data, attributes)
   .quiz&attributes(attributes)
+    +heading._heading Пройдите опрос,
+      span чтобы узнать точную цену автомобиля
+
+    ._content
+      form.quiz-form._form.js-quiz-form
+        ._body.js-quiz-body
+          ._header
+            ._header-number <span class="js-quiz-current-step">1</span>/4
+            ._header-progress
+              ._header-item.is-active.js-quiz-progress
+              ._header-item.js-quiz-progress
+              ._header-item.js-quiz-progress
+              ._header-item.js-quiz-progress
+
+          ._content
+            ._steps
+              ._step.is-active.js-quiz-step
+                ._title Какой бюджет вы планируете потратить на авто?
+
+                ._grid
+                  ._column
+                    +control({ type: 'radio', theme: 'bordered', name: 'budget', checked: true }) 1 200 000 ₽ - 2 000 000 ₽
+
+                  ._column
+                    +control({ type: 'radio', theme: 'bordered', name: 'budget' }) 2 000 000 ₽ - 3 000 000 ₽
+
+                  ._column
+                    +control({ type: 'radio', theme: 'bordered', name: 'budget' }) 3 000 000 ₽ - 4 000 000 ₽
+
+                  ._column
+                    +control({ type: 'radio', theme: 'bordered', name: 'budget' }) Более 4 000 000 ₽
+
+              ._step.js-quiz-step
+                ._title Какие марки авто вы рассматриваете?
+
+                ._grid
+                  ._column
+                    +control({ name: 'model[]' }) KIA
+                  ._column
+                    +control({ name: 'model[]' }) BMW
+                  ._column
+                    +control({ name: 'model[]' }) Hyundai
+                  ._column
+                    +control({ name: 'model[]' }) Audi
+                  ._column
+                    +control({ name: 'model[]' }) Genesis
+                  ._column
+                    +control({ name: 'model[]' }) Mercedes
+                  ._column
+                    +control({ name: 'model[]' }) SsangYong
+                  ._column
+                    +control({ name: 'model[]' }) Другой
+
+              ._step.js-quiz-step
+                ._title Какой максимальный возраст авто вас интересует?
+
+                ._grid
+                  ._column
+                    +control({ type: 'radio', theme: 'bordered', name: 'age', checked: true }) до 3 лет
+
+                  ._column
+                    +control({ type: 'radio', theme: 'bordered', name: 'age' }) от 3 до 5 лет
+
+                  ._column
+                    +control({ type: 'radio', theme: 'bordered', name: 'age' }) от 5 до 7 лет
+
+                  ._column
+                    +control({ type: 'radio', theme: 'bordered', name: 'age' }) старше 7 лет
+
+              ._step.js-quiz-step
+                ._title Какой должен быть пробег автомобиля?
+
+                ._grid
+                  ._column
+                    +control({ type: 'radio', name: 'miles' }) от 0 до 50.000 км
+                  ._column
+                    +control({ type: 'radio', name: 'miles' }) более 150.000 км
+                  ._column
+                    +control({ type: 'radio', name: 'miles' }) от 50.000 до 100.000 км
+                  ._column
+                    +control({ type: 'radio', name: 'miles' }) Любой
+                  ._column
+                    +control({ type: 'radio', name: 'miles' }) от 100.000 до 150.000 км
+
+            ._buttons
+              +button({ type: 'button', theme: 'secondary' })._button.js-quiz-prev Назад
+              +button({ type: 'button' })._button.js-quiz-next Далее
+
+        ._submit.js-quiz-submit
+          ._title Оставьте свой номер телефона, чтобы мы могли привязать к нему персональную скидку и связаться с вами
+
+          ._inline
+            +form-group({ title: 'Номер телефона' })
+              +input({ type: 'tel', name: 'tel', placeholder: '+7 (999) 999-99-99' })
+
+            +button({ type: 'submit' })._button Отправить
+
+          +control({ name: 'agree_policy' }) Я согласен с политикой конфиденциальности и даю согласие на обработку персональных данных

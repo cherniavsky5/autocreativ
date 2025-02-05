@@ -1,9 +1,9 @@
 mixin control(data, attributes)
   -
     var options = { type: 'checkbox', };
-    var { type, name, checked, disabled } = data ? { ...options, ...data } : options;
+    var { type, theme, name, checked, disabled } = data ? { ...options, ...data } : options;
 
-  label.control
+  label.control(class=(theme && `control--${theme}`))
     input._input(type=type name=name checked=checked disabled=disabled)&attributes(attributes)
 
     span._label

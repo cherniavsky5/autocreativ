@@ -15,14 +15,12 @@ mixin card-car(data, attributes)
 
       +text({theme: 'muted'})._caption= caption
 
-    ._content
-      ._properties
-        each property in properties
-          ._property
-            svg._property-icon
-              use(href=`/icon-sprite.svg#${property.icon}`)
-            span._property-title= property.title
-
+    ._properties
+      each property in properties
+        ._property
+          svg._property-icon
+            use(href=`/icon-sprite.svg#${property.icon}`)
+          span._property-title= property.title
 
     ._footer
       ._price= price.current

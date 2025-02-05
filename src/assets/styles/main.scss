@@ -29,5 +29,10 @@
     display: flex;
     flex-direction: column;
     gap: rem(30px);
+    margin-bottom: rem(120px);
   }
+}
+
+.splide__arrows {
+  display: none;
 }

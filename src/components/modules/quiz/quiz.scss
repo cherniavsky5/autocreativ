@@ -1,3 +1,131 @@
-.hero {
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
 
+.quiz {
+  padding: rem(90px);
+  //height: 835px;
+  color: $white-color;
+  background: $gradient;
+  border-radius: $border-radius-xl;
+
+  &__heading {
+    margin-bottom: calc($gutter * 2);
+
+    span {
+      padding: rem(11px $gutter 16px);
+      display: inline-block;
+      font-size: 0.68em;
+      letter-spacing: -2%;
+      border: 2px solid;
+      border-radius: $border-radius;
+    }
+  }
+
+  &__content {
+    max-width: 725px;
+  }
+}
+
+.quiz-form {
+  padding: calc($gutter * 2);
+  color: $text-color;
+  background-color: $white-color;
+  border-radius: $border-radius-lg;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem(13px);
+
+    &-number {
+      flex-shrink: 0;
+      margin-right: rem(15px);
+      padding: rem(2px 9px);
+      color: $muted-color;
+      font-size: 14px;
+      border: 1px solid rgba($text-color, 0.12);
+      border-radius: $border-radius;
+
+      span {
+        color: $text-color;
+      }
+    }
+
+    &-progress {
+      display: flex;
+      flex: 1 1 auto;
+      min-width: 0;
+      gap: rem(15px);
+    }
+
+    &-item {
+      flex: 1;
+      height: rem(7px);
+      background-color: #E9EBED;
+      border-radius: $border-radius;
+
+      &.is-active {
+        background-color: #1D8EE1;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: calc($gutter * 1.5);
+    font-size: rem(26px);
+    font-weight: 500;
+  }
+
+  &__grid {
+    @include grid-container(calc($gutter / 2));
+  }
+
+  &__column {
+    @include grid-item(6)
+  }
+
+  &__buttons {
+    display: flex;
+    gap: $gutter;
+    margin-top: $gutter;
+  }
+
+  &__button {
+    flex: 1;
+    max-width: 50%;
+  }
+
+  &__submit {
+    .control {
+      color: rgba($text-color, 0.5);
+      font-size: 16px;
+    }
+  }
+
+  &__inline {
+    display: flex;
+    align-items: flex-end;
+    gap: $gutter;
+    margin-bottom: $gutter;
+
+    .form-group {
+      flex: 1 1 auto;
+    }
+
+    .button {
+      max-width: 290px;
+    }
+  }
+}
+
+.button.js-quiz-prev {
+  display: none;
+}
+
+.js-quiz-submit {
+  display: none;
+}
+
+.js-quiz-step:not(.is-active) {
+  display: none;
 }

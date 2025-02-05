@@ -2,10 +2,13 @@
 
 .features {
   &__grid {
-    @include grid-container();
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    //@include grid-container();
   }
 
   &__column {
-    @include grid-item(4);
+    //@include grid-item(4);
   }
 }

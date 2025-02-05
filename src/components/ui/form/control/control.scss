@@ -1,4 +1,4 @@
-@use '@assets/styles/vars';
+@use '@assets/styles/vars' as *;
 @use '@assets/styles/mixins' as *;
 
 .control {
@@ -6,8 +6,47 @@
 
   position: relative;
   display: inline-block;
+  font-size: $font-size-sm;
   overflow: hidden;
   vertical-align: top;
+
+  &--bordered {
+    display: block;
+    text-align: center;
+
+    &:hover {
+      .control {
+        &__label {
+          border-color: #1D8EE1;
+        }
+      }
+    }
+
+    .control {
+      &__label {
+        padding: rem(20px);
+        border: 1px solid rgba($text-color, 0.2);
+        border-radius: $border-radius-sm;
+        
+        &::before, &::after {
+          display: none;
+        }
+      }
+
+      &__title {
+        margin-left: 0;
+      }
+
+      &__input {
+        &:checked ~ .control {
+          &__label {
+            border-color: #1D8EE1;
+            box-shadow: inset 0 0 0 1px #1D8EE1;
+          }
+        }
+      }
+    }
+  }
 
   &__input {
     position: absolute;
@@ -27,7 +66,8 @@
       &:checked ~ .control {
         &__label {
           &::before {
-            background-color: currentColor;
+            border-color: #1D8EE1;
+            background-color: #1D8EE1;
           }
         }
       }
@@ -43,11 +83,11 @@
           &::after {
             content: '';
             position: absolute;
-            top: 3px;
+            top: 7px;
             left: 3px;
             width: calc(var(--size) - 6px);
             height: calc(var(--size) - 6px);
-            background-color: currentColor;
+            background-color: #1D8EE1;
             opacity: 0;
             visibility: hidden;
             border-radius: 50%;
@@ -57,6 +97,10 @@
 
       &:checked ~ .control {
         &__label {
+          &::before {
+            border-color: #1D8EE1;
+          }
+
           &::after {
             opacity: 1;
             visibility: visible;
@@ -82,19 +126,21 @@
     min-width: var(--size);
     min-height: var(--size);
     cursor: pointer;
+    transition: 0.25s ease-in-out;
 
     &::before {
       content: '';
       position: absolute;
-      top: 0;
+      top: 4px;
       left: 0;
       width: var(--size);
       height: var(--size);
-      border: 1px solid;
+      border: 1px solid rgba($text-color, 0.2);
     }
   }
 
   &__title {
     margin-left: 8px;
+    display: inline-block;
   }
 }

@@ -51,6 +51,11 @@
     }
   }
 
+  &--secondary {
+    background-color: #E8F5FF;
+    border-color: #E8F5FF;
+  }
+
   &--fluid {
     padding-left: rem(20px);
     padding-right: rem(20px);

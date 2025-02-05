@@ -1,7 +1,7 @@
 mixin button(data, attributes)
   -
     var options = { tag: 'button', theme: 'primary', };
-    var { tag, href, theme, fluid } = data ? { ...options, ...data } : options
+    var { tag, href, type, theme, fluid } = data ? { ...options, ...data } : options
 
-  #{href ? 'a' : tag}.button(href=href class=[theme && `button--${theme}`, fluid && 'button--fluid'])&attributes(attributes)
+  #{href ? 'a' : tag}.button(href=href type=type class=[theme && `button--${theme}`, fluid && 'button--fluid'])&attributes(attributes)
     block
