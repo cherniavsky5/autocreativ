@@ -1,0 +1,7 @@
+mixin example(data, attributes)
+  -
+    var options = { theme: 'primary', };
+    var { tag, href } = data ? { ...options, ...data } : options
+
+  .example(href=href)&attributes(attributes)
+    block

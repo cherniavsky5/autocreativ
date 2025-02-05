@@ -1,0 +1,45 @@
+include ../../ui/form/form-group/form-group
+include ../../ui/form/input/input
+include ../../ui/form/select/select
+include ../../ui/form/button/button
+
+mixin filter(data, attributes)
+  - var selects = ['Марка', 'Модель', 'Тип двигателя', 'Привод', 'Трансмиссия'];
+
+  form.filter(action='/catalog.html')&attributes(attributes)
+    ._grid
+      each item in selects
+        ._column
+          +form-group({ title: item })
+            +select({
+              list: [
+                { value: 0, title: 'Все' },
+                { value: 1, title: 'Option 1' },
+                { value: 2, title: 'Option 2' },
+                { value: 3, title: 'Option 3' },
+              ]
+            })
+
+      ._column
+        +form-group({ title: 'Год производства' })
+          +form-group({ prefix: 'от', postfix: 'г.' })
+            +input({ placeholder: '2000' })
+          +form-group({ prefix: 'до', postfix: 'г.' })
+            +input({ placeholder: '2000' })
+
+      ._column.-large
+        +form-group({ title: 'Пробег' })
+          +form-group({ prefix: 'от', postfix: 'км' })
+            +input({ placeholder: '1000' })
+          +form-group({ prefix: 'до', postfix: 'км' })
+            +input({ placeholder: '200 000' })
+
+      ._column.-large
+        +form-group({ title: 'Стоимость' })
+          +form-group({ prefix: 'от', postfix: 'Р' })
+            +input({ placeholder: '100 000' })
+          +form-group({ prefix: 'до', postfix: 'Р' })
+            +input({ placeholder: '10 000 000' })
+
+      ._column.-button
+        +button({ fluid: true }) Показать 34 авто

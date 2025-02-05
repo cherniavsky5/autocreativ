@@ -1,0 +1,16 @@
+mixin form-group(data, attributes)
+  -
+    var { title, prefix, postfix } = data || {};
+
+  .form-group
+    if title
+      label._title= title
+
+    ._body
+      if prefix
+        span._label= prefix
+
+      block
+
+      if postfix
+        span._label= postfix

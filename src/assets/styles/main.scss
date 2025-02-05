@@ -1,0 +1,33 @@
+@use 'vars' as *;
+@use 'mixins' as *;
+
+// Libraries
+@use 'normalize.css';
+@use 'choices.js/public/assets/styles/choices.css';
+@use '@splidejs/splide/dist/css/splide-core.min.css';
+
+// Base
+@use 'base';
+
+// Components
+@use '../../components/**/*.scss';
+
+.container {
+  margin: 0 auto;
+  padding: 0 $gutter;
+  max-width: 1920px;
+}
+
+.main {
+  &__section {
+    &:not(:last-child) {
+      margin-bottom: 120px;
+    }
+  }
+
+  &__sections {
+    display: flex;
+    flex-direction: column;
+    gap: rem(30px);
+  }
+}

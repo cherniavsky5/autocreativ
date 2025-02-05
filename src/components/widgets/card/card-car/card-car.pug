@@ -1,0 +1,29 @@
+include ../../../ui/typography/text/text
+
+mixin card-car(data, attributes)
+  -
+    var { href, title, caption, img, availability, properties, price } = data || {};
+
+  .card-car.card&attributes(attributes)
+    a.card-media._media(href=href title='')
+      img.card-img._img(src=img)
+
+    ._header
+      ._info
+        a.card-title._title(href=href title='')= title
+        ._availability= availability
+
+      +text({theme: 'muted'})._caption= caption
+
+    ._content
+      ._properties
+        each property in properties
+          ._property
+            svg._property-icon
+              use(href=`/icon-sprite.svg#${property.icon}`)
+            span._property-title= property.title
+
+
+    ._footer
+      ._price= price.current
+          span._old= price.old

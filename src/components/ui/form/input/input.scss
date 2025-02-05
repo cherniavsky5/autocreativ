@@ -1,0 +1,36 @@
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
+.input {
+  padding: 0 rem($input-padding-base);
+  width: 100%;
+  height: rem($input-height-base);
+  font-family: inherit;
+  font-size: rem($font-size-sm);
+  outline: 0;
+  border: 1px solid $border-color;
+  appearance: none;
+  border-radius: $border-radius-sm;
+
+  &__label {
+    position: absolute;
+    top: 7px;
+    pointer-events: none;
+
+    &--prefix {
+      left: 10px;
+
+      & ~ input {
+        padding-left: 40px;
+      }
+    }
+
+    &--postfix {
+      right: 10px;
+
+      & ~ input {
+        padding-right: 30px;
+      }
+    }
+  }
+}

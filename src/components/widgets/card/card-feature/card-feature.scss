@@ -1,0 +1,30 @@
+@use 'sass:color';
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
+.card-feature {
+  &.card {
+    padding: $gutter-lg;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: rem(50px);
+    width: rem(80px);
+    height: rem(80px);
+    color: $white-color;
+    background: $gradient;
+    border-radius: rem($border-radius-xxs);
+  }
+
+  &__svg {
+    width: rem(40px);
+    height: rem(40px);
+  }
+
+  &__heading {
+    margin-bottom: rem($gutter);
+  }
+}

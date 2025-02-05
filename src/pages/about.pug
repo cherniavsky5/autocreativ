@@ -1,0 +1,15 @@
+extends  ../layouts/root
+
+include ../components/ui/breadcrumbs/breadcrumbs
+include ../components/ui/typography/heading/heading
+
+block main
+  main.main
+    ._container.container
+      ._header
+        +breadcrumbs([
+          { href: '/', title: 'Главная' },
+          { title: 'О компании' }
+        ])._breadcrumbs
+
+      ._body

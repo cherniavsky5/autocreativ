@@ -1,0 +1,27 @@
+@use 'sass:color';
+@use '@assets/styles/vars';
+@use '@assets/styles/mixins' as *;
+
+.pagination {
+  display: flex;
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+  
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: currentColor;
+    text-align: center;
+    text-decoration: none;
+  }
+}

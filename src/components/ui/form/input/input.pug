@@ -1,0 +1,6 @@
+mixin input(data, attributes)
+  -
+    var options = { type: 'text', };
+    var { type, name, placeholder, mask } = data ? { ...options, ...data } : options;
+
+  input.input(type=type name=name placeholder=placeholder data-mask=mask)&attributes(attributes)

@@ -1,0 +1,7 @@
+mixin text(data, attributes)
+  -
+    var options = { tag: 'p', };
+    var { tag, theme, size } = data ? { ...options, ...data } : options
+
+  #{tag}.text(class=[(theme && `text--${theme}`), (size && `text--${size}`)])&attributes(attributes)
+    block

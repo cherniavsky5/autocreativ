@@ -1,0 +1,8 @@
+include ../../widgets/card/card-feature/card-feature
+
+mixin features(data)
+  .features
+    ._grid
+      each item in data
+        ._column
+          +card-feature(item)

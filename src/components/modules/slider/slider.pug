@@ -1,0 +1,13 @@
+include ../../widgets/card/card-car/card-car
+
+mixin slider(data, attributes)
+  - var options = { slides: [] };
+  - var { jsClass, card, slides } = data ? { ...options, ...data } : options;
+
+  .splide.slider(class=jsClass)&attributes(attributes)
+    ._track
+      ._list
+        each item in slides
+          ._slide
+            if (card === 'card-car')
+              +card-car(item)

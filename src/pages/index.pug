@@ -1,0 +1,192 @@
+extends  ../layouts/root
+
+include ../components/layout/section/section
+
+include ../components/modules/hero/hero
+include ../components/modules/filter/filter
+include ../components/modules/quiz/quiz
+include ../components/modules/slider/slider
+include ../components/modules/features/features
+
+include ../components/widgets/card/card
+
+block vars
+  - page = { title: 'Главная страница' };
+
+block main
+  main.main
+    ._container.container
+      // start hero
+      +hero._hero
+      // end hero
+
+      // start filter
+      +section({ heading: 'Каталог авто' })._section
+        +filter
+      // end filter
+
+      // start popular-cars
+      +section({ heading: 'Популярные авто' })._section
+        +slider({
+          jsClass: 'js-slider-default',
+          card: 'card-car',
+          slides: [
+            {
+              href: '/detail.html',
+              title: 'Renault Megan RS',
+              caption: 'Flagship',
+              img: '/src/assets/img/tmp/cars/1.webp',
+              label: {
+                theme: 'light',
+                title: 'Акция'
+              },
+              availability: 'в наличии',
+              properties: [
+                { icon: 'year-issue', title: '2023' },
+                { icon: 'mileage', title: '9 000 км' },
+                { icon: 'transmission', title: 'автомат' }
+              ],
+              price: {
+                current: '3 600 000 ₽',
+                old: '4 000 000 ₽'
+              }
+            },
+            {
+              href: '/detail.html',
+              title: 'KIA Sportage',
+              caption: 'Flagship',
+              img: '/src/assets/img/tmp/cars/2.webp',
+              label: {
+                theme: 'light',
+                title: 'Акция'
+              },
+              availability: 'под заказ',
+              properties: [
+                { icon: 'year-issue', title: '2023' },
+                { icon: 'mileage', title: '9 000 км' },
+                { icon: 'transmission', title: 'автомат' }
+              ],
+              price: {
+                current: '3 600 000 ₽',
+                old: '4 000 000 ₽'
+              }
+            },
+            {
+              href: '/detail.html',
+              title: 'Audi RSQ3',
+              caption: 'Flagship',
+              img: '/src/assets/img/tmp/cars/3.jpg',
+              label: {
+                theme: 'light',
+                title: 'Акция'
+              },
+              availability: 'в наличии',
+              properties: [
+                { icon: 'year-issue', title: '2023' },
+                { icon: 'mileage', title: '9 000 км' },
+                { icon: 'transmission', title: 'автомат' }
+              ],
+              price: {
+                current: '3 600 000 ₽',
+                old: '4 000 000 ₽'
+              }
+            },
+            {
+              href: '/detail.html',
+              title: 'Volkswagen Polo',
+              caption: 'Flagship',
+              img: '/src/assets/img/tmp/cars/5.jpg',
+              label: {
+                theme: 'light',
+                title: 'Акция'
+              },
+              availability: 'в наличии',
+              properties: [
+                { icon: 'year-issue', title: '2023' },
+                { icon: 'mileage', title: '9 000 км' },
+                { icon: 'transmission', title: 'автомат' }
+              ],
+              price: {
+                current: '3 600 000 ₽',
+                old: '4 000 000 ₽'
+              }
+            },
+          ]
+        })
+      // end popular-cars
+
+      // start features
+      +section({ heading: 'Почему <span class="text-primary">выбирают</span> Autocreativ' })._section
+        +features([
+          {
+            icon: 'i-search-car',
+            title: 'Подбор авто и проверка',
+            caption: 'Мы проверяем авто перед покупкой, согласовываем с Вами все нюансы. Бесплатно для наших клиентов проверяем историю авто по базам США'
+          }, {
+            icon: 'i-search-car',
+            title: 'Официальный договор',
+            caption: 'Заключается договор между клиентом и нашей компанией, в котором мы несём ответственность согласно законодательству'
+          }, {
+            icon: 'i-search-car',
+            title: 'Работаем «под ключ»',
+            caption: 'Всё просто! AutoCreativ помогает с момента обращения и до момента вручения автомобиля заказчику. Опыт заказа авто из США с 2022 года'
+          }, {
+            icon: 'i-search-car',
+            title: 'Страхование',
+            caption: 'По желанию клиента автомобиль может быть застрахован. В среднем, страховка стоит 1-2,5% от стоимости авто'
+          }, {
+            icon: 'i-search-car',
+            title: 'Выгодная доставка',
+            caption: 'Доставляем автомобили из США безопасно и по минимальным тарифам, благодаря прямым договорам с логистическими компаниями'
+          }, {
+            icon: 'i-search-car',
+            title: 'Офис в Санкт-Петербурге',
+            caption: 'Вы всегда можете обратиться за бесплатной консультацией к нашим сотрудников в офисе'
+          }
+        ])
+      // end features
+
+      // start quiz
+      +quiz()._quiz
+      // end quiz
+
+      ._sections
+        // start auction-cars
+        +section({
+          theme: 'secondary',
+          heading: 'Автомобили с закрытых аукционов <span class="text-primary">Европы</span>',
+          caption: 'AutoCreativ — ведущая компания, которая имеет привилегию владения бизнес-лицензиями на самых престижных аукционах в Европе. <br>Мы успешно сотрудничаем с Copart, Manheim и другими.',
+          button: {
+            title: 'Заказать авто из США',
+            attrs: {
+              'data-modal-trigger': 'modal-feedback'
+            }
+          }
+        })._section-secondary
+        // end auction-cars
+
+        // start auction-cars
+        +section({
+          theme: 'secondary',
+          heading: 'Автомобили с закрытых аукционов <span class="text-primary">США</span>',
+          caption: 'AutoCreativ — ведущая компания, которая имеет привилегию владения бизнес-лицензиями на самых престижных аукционах в США. <br>Мы успешно сотрудничаем с Copart, Manheim и другими.',
+          button: {
+            title: 'Заказать авто из США',
+            attrs: {
+              'data-modal-trigger': 'modal-feedback'
+            }
+          }
+        })._section-secondary
+        // end auction-cars
+
+      // start reviews
+      +section({ heading: 'Отзывы наших клиентов' })._section
+        +slider({ jsClass: 'js-slider-default' })
+          +card
+      // end reviews
+
+      // start our-blog
+      +section({ heading: 'Наш блог на YouTube' })._section
+        +slider({ jsClass: 'js-slider-default' })
+          +card
+      // end our-blog

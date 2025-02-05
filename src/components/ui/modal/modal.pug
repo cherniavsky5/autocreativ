@@ -1,0 +1,10 @@
+mixin modal(data, attributes)
+  -
+    var options = { name: '', };
+    var { name } = data ? { ...options, ...data } : options;
+
+  .modal(id=`modal-${name}`)&attributes(attributes)
+    .__overlay(data-modal-close)
+      ._content
+        block
+        //<button aria-label="Close modal" data-micromodal-close></button>

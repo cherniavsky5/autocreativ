@@ -1,0 +1,23 @@
+include ../../ui/typography/heading/heading
+include ../../ui/form/button/button
+
+mixin section(data, attributes)
+  -
+    var options = {};
+    var { tag, theme, heading, caption, button } = data ? { ...options, ...data } : options
+
+  section.section(class=(theme && `section--${theme}`))&attributes(attributes)
+    ._header
+      ._description
+        +heading._heading!= heading
+
+        if caption
+          ._caption!= caption
+
+      ._aside
+        if button
+          ._aside
+            +button&attributes(button.attrs)= button.title
+
+    ._body
+      block

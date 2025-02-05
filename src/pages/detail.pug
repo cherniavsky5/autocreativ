@@ -1,0 +1,16 @@
+extends  ../layouts/root
+
+include ../components/ui/breadcrumbs/breadcrumbs
+include ../components/ui/typography/heading/heading
+
+block main
+  main.main
+    ._container.container
+      ._header
+        +breadcrumbs([
+          { href: '/', title: 'Главная' },
+          { href: '/catalog.html', title: 'Каталог' },
+          { title: 'BMW 5 серия 2.0 AT' }
+        ])._breadcrumbs
+
+      ._body

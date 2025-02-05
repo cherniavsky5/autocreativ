@@ -1,0 +1,56 @@
+include ../components/layout/header/header
+include ../components/layout/footer/footer
+
+include ../components/ui/modal/modal
+
+block vars
+-
+  var page = { title: 'Default' }
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title= page.title
+    meta(name='description', content='')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(property='og:image', content='assets/css/image.jpg')
+
+    link(rel='shortcut icon', href='/src/assets/img/favicon/favicon.ico', type='image/x-icon')
+    link(rel='apple-touch-icon', href='/src/assets/img/favicon/apple-touch-icon.png')
+    link(
+      rel='apple-touch-icon',
+      sizes='72x72',
+      href='/src/assets/img/favicon/apple-touch-icon-72x72.png'
+    )
+    link(
+      rel='apple-touch-icon',
+      sizes='114x114',
+      href='/src/assets/img/favicon/apple-touch-icon-114x114.png'
+    )
+
+    meta(name='theme-color', content='#000')
+    meta(name='msapplication-navbutton-color', content='#000')
+    meta(name='apple-mobile-web-app-status-bar-style', content='#000')
+
+    link(rel='stylesheet', href='/src/assets/styles/main.scss')
+
+body.page
+  // start header
+  +header._header
+  // end header
+
+  // start main
+  block main
+  // end main
+
+  //start footer
+  +footer._footer
+  //end footer
+
+  // start modal-feedback
+  +modal({ name: 'feedback' })
+  // end modal-feedback
+
+  script(src='/main.js' type='module')

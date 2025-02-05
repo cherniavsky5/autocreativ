@@ -1,0 +1,17 @@
+extends  ../layouts/root
+
+include ../components/ui/breadcrumbs/breadcrumbs
+include ../components/ui/typography/heading/heading
+
+block main
+  main.main
+    ._container.container
+      ._header
+        +breadcrumbs([
+          { href: '/', title: 'Главная' },
+          { title: 'Как происходит покупка авто' }
+        ])._breadcrumbs
+
+        +heading({ level: 1 }) Как происходит покупка авто
+
+      ._body

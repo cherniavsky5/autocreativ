@@ -1,0 +1,41 @@
+@use "sass:math";
+@use "sass:meta";
+@use "sass:list";
+@use "@assets/styles/vars" as *;
+
+@function rem($values...) {
+  $result: ();
+
+  @each $value in $values {
+    @if meta.type-of($value) == "string" {
+      $value: list.split($value, " ");
+    }
+
+    @each $singleValue in $value {
+      @if meta.type-of($singleValue) == "number" and math.unit($singleValue) == "px" {
+        $singleValue: math.div($singleValue, $font-size-base) * 1rem;
+      }
+
+      $singleValue: math.div(math.round($singleValue * 1000), 1000);
+
+      $result: list.append($result, $singleValue, space);
+    }
+  }
+
+  @return $result;
+}
+
+@mixin grid-container($gap: $gutter) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -(math.div($gutter, 2));
+  margin-right: -(math.div($gutter, 2));
+  margin-bottom: -$gutter;
+}
+
+@mixin grid-item($columns: 1, $grid: 12) {
+  flex: 0 0 calc(100% / $grid * $columns);
+  margin-bottom: $gutter;
+  padding-left: math.div($gutter, 2);
+  padding-right: math.div($gutter, 2);
+}

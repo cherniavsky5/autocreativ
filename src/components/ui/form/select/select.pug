@@ -1,0 +1,13 @@
+mixin select(data, attributes)
+  -
+    data = data || { list: [], options: {} };
+    var { list, options } = data;
+    var { multiple, name, placeholder } = options || {};
+
+
+  select.select(name=name)&attributes(attributes)
+    if (placeholder)
+      option(placeholder)= placeholder
+
+    each item in list
+      option(value=item.value selected=item.selected)= item.title

@@ -1,0 +1,16 @@
+@use '@assets/styles/vars' as *;
+
+.heading {
+  $level: 1;
+
+  font-weight: $font-weight-heading;
+  line-height: 1;
+
+  @while($level <= 6) {
+    &--#{$level} {
+      font-size: var(--font-size-h#{$level});
+    }
+
+    $level: $level + 1;
+  }
+}

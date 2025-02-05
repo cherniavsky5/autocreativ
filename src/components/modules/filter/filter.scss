@@ -1,0 +1,24 @@
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
+.filter {
+  padding: 40px;
+  background-color: $white-color;
+  border-radius: 40px;
+
+  &__grid {
+    @include grid-container()
+  }
+
+  &__column {
+    @include grid-item(2, 10);
+
+    &--large {
+      @include grid-item(3, 10);
+    }
+
+    &--button {
+      align-self: flex-end;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+mixin pagination(data, attributes)
+  -
+    var options = { start: 3, total: 35 };
+    var { start, total } = data ? { ...options, ...data } : options;
+    var page = 1;
+
+  ul.pagination&attributes(attributes)
+    li._item
+      span._link prev
+
+    while page <= start
+      li._item
+        a._link(href='./')= page
+      - page++
+
+    li._item
+      a._link(href='./')= total
+
+    li._item
+      span._link next

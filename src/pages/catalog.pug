@@ -1,0 +1,22 @@
+extends  ../layouts/root
+
+include ../components/ui/breadcrumbs/breadcrumbs
+include ../components/ui/typography/heading/heading
+
+include ../components/modules/filter/filter
+
+block main
+  main.main
+    ._container.container
+      ._header
+        +breadcrumbs([
+          { href: '/', title: 'Главная' },
+          { title: 'Каталог' }
+        ])._breadcrumbs
+
+        +heading({ level: 1 }) Каталог авто
+
+      ._body
+        // start filter
+        +filter
+        // end filter

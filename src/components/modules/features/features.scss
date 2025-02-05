@@ -1,0 +1,11 @@
+@use '@assets/styles/mixins' as *;
+
+.features {
+  &__grid {
+    @include grid-container();
+  }
+
+  &__column {
+    @include grid-item(4);
+  }
+}

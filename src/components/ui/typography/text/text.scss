@@ -1,0 +1,13 @@
+@use '@assets/styles/vars' as *;
+
+.text {
+  margin: 0;
+
+  &--muted {
+    color: $muted-color;
+  }
+
+  &--sm {
+    font-size: $font-size-sm;
+  }
+}

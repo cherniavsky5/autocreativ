@@ -1,0 +1,15 @@
+include ../../../ui/typography/heading/heading
+include ../../../ui/typography/text/text
+
+mixin card-feature(data, attributes)
+  -
+    var { title, caption } = data || {};
+
+  .card-feature.card&attributes(attributes)
+    ._icon
+      svg._svg
+        use(href='/icon-sprite.svg#search-car')
+
+    +heading({ level: 4 })._heading= title
+
+    +text({ size: 'sm' })= caption

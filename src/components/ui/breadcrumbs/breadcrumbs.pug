@@ -1,0 +1,10 @@
+mixin breadcrumbs(data, attributes)
+  - data = data || [];
+
+  ul.breadcrumbs&attributes(attributes)
+    each item, index in data
+      li._item
+        if (data.length - 1 !== index)
+          a._link(href=item.href)= item.title
+        else
+          | #{item.title}
