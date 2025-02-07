@@ -1,4 +1,4 @@
-include ../../../ui/icon/icon
+include ../../../ui/b-icon/b-icon
 include ../../../ui/typography/heading/heading
 include ../../../ui/typography/text/text
 
@@ -8,8 +8,7 @@ mixin card-feature(data, attributes)
     var tag = href ? 'a' : 'div';
 
   .card-feature.card&attributes(attributes)
-    ._icon.icon-grad
-      +icon(icon)
+    +b-icon({ icon })._icon
 
     +heading({ level: 4 })._heading!= title
 

@@ -1,0 +1,51 @@
+@use 'sass:color';
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
+.socials {
+  display: flex;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+
+  &--primary {
+    &:not(:last-child) {
+      margin-right: $gutter;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: $gutter-lg;
+    }
+  }
+
+  &__link {
+    color: $gray-800;
+
+    &:hover {
+      color: $primary-color;
+
+      .b-icon {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+
+    .icon {
+      width: rem(20px);
+      height: rem(20px);
+    }
+
+    .b-icon {
+      width: rem(110px);
+      height: rem(110px);
+
+      .icon {
+        width: rem(30px);
+        height: rem(30px);
+      }
+    }
+  }
+}

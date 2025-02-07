@@ -1,0 +1,51 @@
+@use 'sass:color';
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
+.menu-primary {
+  display: flex;
+  margin: 0;
+  padding-left: 0;
+  font-size: $font-size-sm;
+  list-style: none;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: rem(4px);
+    }
+
+    &:first-child {
+      .icon {
+        color: $primary-color;
+      }
+
+      .menu-primary__link:hover .icon {
+        color: $white-color;
+      }
+    }
+  }
+  
+  &__link {
+    padding: rem(20px) rem(24px);
+    display: block;
+    color: $text-color;
+    background-color: $bg-color;
+    text-decoration: none;
+    white-space: nowrap;
+    border-radius: $border-radius;
+
+    &:hover {
+      color: $white-color;
+      background-color: $primary-color;
+    }
+
+    .icon {
+      position: relative;
+      top: -1px;
+      margin-right: rem(10px);
+      width: rem(24px);
+      height: rem(24px);
+      transition: 0.25s ease-in-out;
+    }
+  }
+}

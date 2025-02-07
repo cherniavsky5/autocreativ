@@ -1,0 +1,16 @@
+include ../b-icon/b-icon
+include ../icon/icon
+
+mixin socials(data, attributes)
+  -
+    var options = { list: [] };
+    var { theme, type, size, list } = data ? { ...options, ...data } : options
+
+  ul.socials(class=[(theme && `socials--${theme}`), size && `socials--${size}`])&attributes(attributes)
+    each item in list
+      li._item
+        a._link(href='#' title=item)
+          if theme
+            +b-icon({ icon: item, type, theme })
+          else
+            +icon(item)

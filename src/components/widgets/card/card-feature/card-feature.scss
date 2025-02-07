@@ -7,11 +7,11 @@
   flex-direction: column;
   position: relative;
   z-index: 1;
-  padding: rem($gutter-xxl);
+  padding: $gutter-xxl;
   min-height: 100%;
   background-color: $white-color;
   overflow: hidden;
-  border-radius: rem($border-radius);
+  border-radius: $border-radius;
 
   &__icon {
     margin-bottom: rem(50px);
@@ -23,7 +23,7 @@
   }
 
   &__heading {
-    margin-bottom: rem($gutter);
+    margin-bottom: $gutter;
   }
 
   &__img {
@@ -38,7 +38,7 @@
 
   &__blank {
     position: absolute;
-    top: rem($gutter-lg);
-    right: rem($gutter-lg);
+    top: $gutter-lg;
+    right: $gutter-lg;
   }
 }

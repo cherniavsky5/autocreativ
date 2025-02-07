@@ -1,3 +1,46 @@
+include ../../ui/socials/socials
+include ../../ui/contact/contact
+include ../../ui/typography/text/text
+
+include ../../widgets/menu/menu-primary/menu-primary
+
 mixin footer(_, attributes)
   footer.footer&attributes(attributes)
     ._container.container
+      ._body
+        ._top
+          a._logo(href='/' title='')
+            img(src='/src/assets/img/logo.svg' alt='')
+
+          +menu-primary([
+            { href: '/catalog.html', title: 'Каталог', icon: 'catalog' },
+            { href: '/', title: 'О компании' },
+            { href: '/', title: 'Этапы покупки' },
+            { href: '/', title: 'Отзывы' },
+            { href: '/', title: 'Корея', icon: 'korea' },
+            { href: '/', title: 'Китай', icon: 'china' },
+            { href: '/', title: 'США', icon: 'usa' },
+            { href: '/', title: 'Европа', icon: 'europe' },
+          ])._menu-primary
+
+          +contact({
+            icon: 'call',
+            href: 'tel:+79999999999',
+          })._contact
+            | +7 (999) 999-99-99
+
+        ._content
+          ._info
+            ._column
+              +text({ theme: 'secondary' }) ООО "Автокреатив"
+              +text({ theme: 'secondary' }) Дизайн сайта: <a href="#" title="Anfalova.art" target="_blank">Anfalova.art</a>
+
+            ._column
+              +text({ theme: 'secondary' }) ИНН 2543169910, ОГРН 1222500026440
+              +text({ theme: 'secondary' }) Политика обработки персональных данных
+
+          +socials({
+            type: 'rounded',
+            theme: 'primary',
+            list: ['youtube', 'telegram', 'whatsapp', 'vk']
+          })._socials

@@ -15,6 +15,7 @@
 @use '../../components/modules/**/*.scss';
 @use '../../components/layout/**/*.scss';
 
+
 .container {
   margin: 0 auto;
   padding: 0 $gutter;
@@ -44,7 +45,7 @@
   &__list {
     display: flex;
     flex-direction: column;
-    gap: rem($gutter);
+    gap: $gutter;
   }
 
   &__pagination {

@@ -1,0 +1,9 @@
+include ../icon/icon
+
+mixin b-icon(data, attributes)
+  -
+    var options = {};
+    var { theme, type, size, icon } = data ? { ...options, ...data } : options
+
+  i.b-icon(class=[theme && `b-icon--${theme}`, type && `b-icon--${type}`, size && `b-icon--${size}`])&attributes(attributes)
+    +icon(icon)

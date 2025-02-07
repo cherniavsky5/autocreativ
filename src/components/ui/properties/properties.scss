@@ -6,7 +6,7 @@
   justify-content: space-between;
   margin: 0;
   padding-left: 0;
-  font-size: rem($font-size-md);
+  font-size: $font-size-md;
   list-style: none;
 
   &__property {
@@ -16,7 +16,7 @@
 
   &__icon {
     flex-shrink: 0;
-    margin-right: rem(calc($gutter / 2));
+    margin-right: rem(10px);
     width: rem(25px);
     height: rem(25px);
     color: $gray-200;

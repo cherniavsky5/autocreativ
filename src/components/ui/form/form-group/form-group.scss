@@ -2,7 +2,7 @@
 @use '@assets/styles/mixins' as *;
 
 .form-group {
-  font-size: rem($font-size-md);
+  font-size: $font-size-md;
 
   &__title {
     margin-bottom: rem(8px);

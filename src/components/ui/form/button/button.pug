@@ -3,9 +3,9 @@ include ../../icon/icon
 mixin button(data, attributes)
   -
     var options = { tag: 'button', theme: 'primary', };
-    var { tag, href, type, theme, fluid, icon } = data ? { ...options, ...data } : options
+    var { tag, href, type, theme, size, fluid, icon } = data ? { ...options, ...data } : options
 
-  #{href ? 'a' : tag}.button(href=href type=type class=[theme && `button--${theme}`, fluid && 'button--fluid'])&attributes(attributes)
+  #{href ? 'a' : tag}.button(href=href type=type class=[theme && `button--${theme}`, size && `button--${size}`, fluid && 'button--fluid'])&attributes(attributes)
     block
 
     if icon

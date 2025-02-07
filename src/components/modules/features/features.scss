@@ -5,7 +5,7 @@
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: rem($gutter);
+    gap: $gutter;
   }
 
   &__column {

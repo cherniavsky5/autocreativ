@@ -12,7 +12,7 @@
   &__item {
     &--current {
       .price__label {
-        font-size: rem($font-size-md);
+        font-size: $font-size-md;
       }
     }
 
@@ -23,7 +23,7 @@
       font-weight: $font-weight-normal;
 
       .price__label {
-        font-size: rem($font-size-sm);
+        font-size: $font-size-sm;
         font-weight: $font-weight-normal;
       }
 

@@ -1,3 +1,42 @@
+include ../../ui/socials/socials
+include ../../ui/contact/contact
+include ../../ui/form/button/button
+
+include ../../widgets/menu/menu-primary/menu-primary
+include ../../widgets/menu/menu-secondary/menu-secondary
+
 mixin header(_, attributes)
   header.header&attributes(attributes)
     ._container.container
+      ._top
+        +menu-secondary([
+          { href: '/', title: 'Блог' },
+          { href: '/', title: 'Контакты' }
+        ])._menu-secondary
+
+        +socials({
+          list: ['youtube', 'telegram', 'whatsapp', 'vk']
+        })._socials
+
+      ._content
+        a._logo(href='/' title='')
+          img(src='/src/assets/img/logo.svg' alt='')
+
+        +menu-primary([
+          { href: '/catalog.html', title: 'Каталог', icon: 'catalog' },
+          { href: '/', title: 'О компании' },
+          { href: '/', title: 'Этапы покупки' },
+          { href: '/', title: 'Отзывы' },
+          { href: '/', title: 'Корея', icon: 'korea' },
+          { href: '/', title: 'Китай', icon: 'china' },
+          { href: '/', title: 'США', icon: 'usa' },
+          { href: '/', title: 'Европа', icon: 'europe' },
+        ])._menu-primary
+
+        +contact({
+          icon: 'call',
+          href: 'tel:+79999999999',
+        })._contact
+          | +7 (999) 999-99-99
+
+        +button({ size: 'md' })._button Бесплатный расчет

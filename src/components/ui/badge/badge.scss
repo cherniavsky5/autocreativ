@@ -2,11 +2,11 @@
 @use '@assets/styles/mixins' as *;
 
 .badge {
-  padding: rem(8px 11px);
+  padding: rem(8px) rem(11px);
   display: inline-block;
   color: $text-color;
   font-family: $font-family-base;
-  font-size: rem($font-size-xs);
+  font-size: $font-size-xs;
   font-weight: $font-weight-normal;
   line-height: 1;
   text-align: center;

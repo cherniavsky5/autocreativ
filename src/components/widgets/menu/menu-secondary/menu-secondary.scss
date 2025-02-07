@@ -1,0 +1,24 @@
+@use 'sass:color';
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
+.menu-secondary {
+  display: flex;
+  margin: 0;
+  padding-left: 0;
+  font-size: $font-size-sm;
+  list-style: none;
+
+  &__item {
+    margin-right: $gutter-xl;
+  }
+  
+  &__link {
+    color: $text-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}

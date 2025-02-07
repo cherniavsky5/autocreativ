@@ -21,10 +21,10 @@
   }
 
   &__heading {
-    margin-bottom: calc($gutter * 2);
+    margin-bottom: $gutter-xxl;
 
     span {
-      padding: rem(11px $gutter 16px);
+      padding: rem(11px) $gutter rem(16px);
       display: inline-block;
       font-size: 0.68em;
       letter-spacing: -2%;
@@ -74,7 +74,7 @@
 }
 
 .quiz-form {
-  padding: calc($gutter * 2);
+  padding: $gutter-xxl;
   color: $text-color;
   background-color: $white-color;
   border-radius: $border-radius-lg;
@@ -87,7 +87,7 @@
     &-number {
       flex-shrink: 0;
       margin-right: rem(15px);
-      padding: rem(2px 9px);
+      padding: rem(2px) rem(9px);
       color: $gray-600;
       font-size: 14px;
       border: 1px solid rgba($text-color, 0.12);
@@ -118,13 +118,13 @@
   }
 
   &__title {
-    margin-bottom: calc($gutter * 1.5);
+    margin-bottom: $gutter-xl;
     font-size: rem(26px);
     font-weight: 500;
   }
 
   &__grid {
-    @include grid-container(calc($gutter / 2));
+    @include grid-container(10px);
   }
 
   &__column {

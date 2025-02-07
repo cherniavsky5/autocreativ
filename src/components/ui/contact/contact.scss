@@ -1,0 +1,22 @@
+@use 'sass:color';
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
+.contact {
+  display: inline-flex;
+  align-items: center;
+  color: $text-color;
+  font-size: $font-size-md;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &__icon {
+    flex-shrink: 0;
+    margin-right: rem(12px);
+
+    .icon {
+      width: rem(20px);
+      height: rem(20px);
+    }
+  }
+}

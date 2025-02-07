@@ -1,0 +1,54 @@
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
+.b-icon {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(80px);
+  height: rem(80px);
+  color: $white-color;
+  background: $gradient;
+  overflow: hidden;
+  border-radius: $border-radius-xxs;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: $gradient-reverse;
+    opacity: 0;
+    border-radius: $border-radius-xxs;
+    transition: opacity 0.25s ease-in-out;
+  }
+
+  &--primary-outline {
+    color: $primary-color;
+    background: none;
+    border: 1px solid $primary-color;
+    
+    &::before {
+      display: none;
+    }
+  }
+
+  &--rounded {
+    border-radius: 50%;
+  }
+
+  &--sm {
+    width: rem(58px);
+    height: rem(58px);
+  }
+
+  .icon {
+    width: rem(40px);
+    height: rem(40px);
+  }
+}

@@ -11,16 +11,16 @@
     }
 
     &__media {
-      margin-top: rem($gutter);
+      margin-top: $gutter;
       margin-bottom: 0;
     }
 
     &__footer {
-      margin-top: rem($gutter);
+      margin-top: $gutter;
     }
 
     &__button {
-      margin-top: rem($gutter);
+      margin-top: $gutter;
     }
   }
 }

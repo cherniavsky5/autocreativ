@@ -1,12 +1,11 @@
 @use '@assets/styles/vars' as *;
-@use '@assets/styles/mixins' as *;
 
 .input {
-  padding: 0 rem($input-padding-base);
+  padding: 0 $input-padding-base;
   width: 100%;
-  height: rem($input-height-base);
+  height: $input-height-base;
   font-family: inherit;
-  font-size: rem($font-size-md);
+  font-size: $font-size-md;
   outline: 0;
   border: 1px solid $gray-300;
   appearance: none;

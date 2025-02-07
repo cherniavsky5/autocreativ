@@ -9,7 +9,8 @@
 }
 
 html {
-  font-size: clamp(14px, vw($font-size-base), $font-size-base);
+  //font-size: clamp(14px, vw($font-size-base), 20px);
+  font-size: clamp(14px, 1.0416rem, 20px);
 }
 
 body {
@@ -18,6 +19,10 @@ body {
   font-size: 1rem;
   line-height: $line-height-base;
   background-color: $bg-color;
+}
+
+a {
+  transition: 0.25s ease-in-out;
 }
 
 img, svg {
@@ -74,21 +79,5 @@ h6 {
   .icon {
     width: rem(25px);
     height: rem(25px);
-  }
-}
-
-.icon-grad {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: rem(80px);
-  height: rem(80px);
-  color: $white-color;
-  background: $gradient;
-  border-radius: rem($border-radius-xxs);
-
-  .icon {
-    width: rem(40px);
-    height: rem(40px);
   }
 }

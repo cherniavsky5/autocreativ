@@ -27,10 +27,10 @@
   &__header {
     position: absolute;
     z-index: 2;
-    left: rem($gutter);
-    right: rem($gutter);
-    bottom: rem($gutter);
-    padding: rem($gutter $gutter-lg);
+    left: $gutter;
+    right: $gutter;
+    bottom: $gutter;
+    padding: $gutter $gutter-lg;
     background: $white-color;
     border-radius: $border-radius-xs;
   }

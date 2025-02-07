@@ -2,32 +2,12 @@
 @use "sass:meta";
 @use "sass:list";
 
-@function vw($value, $base: 1920px) {
-  @return calc(#{math.div($value, $base) * 100vw} );
-}
+//@function vw($value, $base: 1920px) {
+//  @return calc(#{math.div($value, $base) * 100vw} );
+//}
 
-@function rem($values...) {
-  $result: ();
-
-  @each $value in $values {
-    @if meta.type-of($value) == "string" {
-      $value: list.split($value, " ");
-    }
-
-    @each $singleValue in $value {
-      @if meta.type-of($singleValue) == "number" and math.unit($singleValue) == "px" {
-        $singleValue: math.div($singleValue, 20px);
-
-        //$singleValue: math.div($singleValue, 1rem) * 1rem;
-      }
-
-      $singleValue: math.div(math.round($singleValue * 1000rem), 1000);
-
-      $result: list.append($result, $singleValue, space);
-    }
-  }
-
-  @return $result;
+@function rem($value) {
+  @return math.div($value, 20px) * 1rem;
 }
 
 @mixin grid-container($gap: 1rem) {

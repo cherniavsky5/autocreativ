@@ -1,0 +1,13 @@
+include ../b-icon/b-icon
+include ../icon/icon
+
+mixin contact(data, attributes)
+  -
+    var options = { href: '#', theme: 'primary-outline', type: 'rounded' };
+    var { href, icon, theme, type, size, list } = data ? { ...options, ...data } : options
+
+  a.contact(href=href class=[(theme && `socials--${theme}`), size && `socials--${size}`])&attributes(attributes)
+    +b-icon({ icon, size: 'sm', type, theme })._icon
+
+    ._title
+      block

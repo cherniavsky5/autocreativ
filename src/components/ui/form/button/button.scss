@@ -5,7 +5,7 @@
 .button {
   position: relative;
   z-index: 1;
-  padding: rem(34px 57px);
+  padding: rem(34px) rem(57px);
   display: inline-block;
   color: inherit;
   font-family: $font-family-base;
@@ -24,6 +24,11 @@
   vertical-align: middle;
   border-radius: $border-radius-lg;
   transition: background 0.25s ease-in-out, border-color 0.25s ease-in-out, color 0.2s;
+
+  &--md {
+    padding: rem(22px) rem(27px);
+    font-size: $font-size-sm;
+  }
 
   &--primary {
     color: $white-color;
@@ -90,14 +95,14 @@
   }
 
   &--fluid {
-    padding-left: rem(20px);
-    padding-right: rem(20px);
+    padding-left: $gutter;
+    padding-right: $gutter;
     display: block;
     width: 100%;
   }
 
   .icon {
-    margin-left: rem($gutter);
+    margin-left: $gutter;
     width: rem(20px);
     height: rem(20px);
   }

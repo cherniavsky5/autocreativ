@@ -1,3 +1,47 @@
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
 .header {
-  height: 100px;
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: rem(15px) 0;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    padding: rem(16px) 0;
+  }
+  
+  &__logo {
+    flex-shrink: 0;
+    margin-right: $gutter-xl;
+    display: block;
+    width: rem(250px);
+  }
+
+  &__menu-primary {
+    flex: 1 1 auto;
+    min-width: 0;
+
+    .menu-primary__link {
+      background-color: $secondary-color;
+
+      &:hover {
+        background-color: $primary-color;
+      }
+    }
+  }
+
+  &__contact {
+    flex-shrink: 0;
+    margin-left: $gutter-xl;
+  }
+
+  &__button {
+    flex-shrink: 0;
+    margin-left: $gutter;
+  }
 }

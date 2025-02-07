@@ -8,11 +8,15 @@
     color: $primary-color;
   }
 
+  &--secondary {
+    color: $gray-400;
+  }
+
   &--muted {
     color: $gray-700;
   }
 
   &--sm {
-    font-size: rem($font-size-md);
+    font-size: $font-size-md;
   }
 }

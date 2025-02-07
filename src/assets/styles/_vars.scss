@@ -1,4 +1,4 @@
-//@use 'mixins' as *;
+@use 'mixins' as *;
 
 // Цвета
 $text-color: #060606;
@@ -31,11 +31,11 @@ $gray-900: rgba($text-color, 0.9);
 // Шрифты
 $font-family-base: 'Golos Text', sans-serif;
 $font-family-heading: $font-family-base;
-$font-size-base: 20px;
-$font-size-xs: 14px;
-$font-size-sm: 16px;
-$font-size-md: 18px;
-$font-size-lg: 22px;
+$font-size-base: rem(20px);
+$font-size-xs: rem(14px);
+$font-size-sm: rem(16px);
+$font-size-md: rem(18px);
+$font-size-lg: rem(22px);
 $font-weight-light: 300;
 $font-weight-normal: 400;
 $font-weight-medium: 500;
@@ -43,16 +43,16 @@ $font-weight-semibold: 600;
 $font-weight-bold: 700;
 $font-weight-heading: $font-weight-medium;
 
-$font-size-h1: 85px;
-$font-size-h2: 80px;
-$font-size-h3: 50px;
-$font-size-h4: 32px;
-$font-size-h5: 24px;
-$font-size-h6: 20px;
+$font-size-h1: rem(85px);
+$font-size-h2: rem(80px);
+$font-size-h3: rem(50px);
+$font-size-h4: rem(32px);
+$font-size-h5: rem(24px);
+$font-size-h6: rem(20px);
 
 // Формы
-$input-height-base: 70px;
-$input-padding-base: 30px;
+$input-height-base: rem(70px);
+$input-padding-base: rem(30px);
 
 // Размеры контейнера
 $container-width-sm: 540px;
@@ -61,18 +61,18 @@ $container-width-lg: 960px;
 $container-width-xl: 1140px;
 
 // Отступы и поля
-$gutter: 20px;
-$gutter-lg: $gutter * 1.25;
-$gutter-xl: $gutter * 1.5;
-$gutter-xxl: $gutter * 2;
+$gutter: rem(20px);
+$gutter-lg: rem(25px);
+$gutter-xl: rem(30px);
+$gutter-xxl: rem(40px);
 
 // Радиус скругления
-$border-radius: 60px;
-$border-radius-xxs: 25px;
-$border-radius-xs: 40px;
-$border-radius-sm: 50px;
-$border-radius-lg: 70px;
-$border-radius-xl: 80px;
+$border-radius: rem(60px);
+$border-radius-xxs: rem(25px);
+$border-radius-xs: rem(40px);
+$border-radius-sm: rem(50px);
+$border-radius-lg: rem(70px);
+$border-radius-xl: rem(80px);
 
 // Тени
 $box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);

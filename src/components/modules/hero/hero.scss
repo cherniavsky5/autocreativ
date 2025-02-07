@@ -11,7 +11,7 @@
     z-index: 2;
     margin-bottom: 0;
     max-width: 50%;
-    padding: rem(20px 0 50px);
+    padding: rem(20px) 0 rem(50px);
     border-radius: 0 0 $border-radius 0;
   }
 
@@ -35,14 +35,21 @@
   }
 
   &__blocks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $gutter;
     position: absolute;
     bottom: 0;
     right: 0;
     z-index: 2;
     width: 35.85%;
-    padding: rem($gutter);
+    padding: $gutter 0 0 $gutter;
     background: $bg-color;
     border-radius: $border-radius 0 0 0;
+
+    .text {
+      font-size: rem(17px);
+    }
   }
 
   .splide__slide {
