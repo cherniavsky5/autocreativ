@@ -2,9 +2,9 @@
 @use '@assets/styles/mixins' as *;
 
 .filter {
-  padding: 40px;
+  padding: $gutter-xl;
   background-color: $white-color;
-  border-radius: 40px;
+  border-radius: $border-radius-xs;
 
   &__grid {
     @include grid-container()

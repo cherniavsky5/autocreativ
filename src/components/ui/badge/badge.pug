@@ -1,0 +1,7 @@
+mixin badge(data, attributes)
+  -
+    var options = { tag: 'span', };
+    var { tag, theme, size } = data ? { ...options, ...data } : options
+
+  #{tag}.badge(class=[(theme && `badge--${theme}`), (size && `badge--${size}`)])&attributes(attributes)
+    block

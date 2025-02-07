@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "vite dev",
+    "dev": "vite dev --host",
     "build": "vite build",
     "preview": "vite preview",
     "pug-prettier": "npm prettier --write \"**/*.pug\" --plugin=\"@prettier/plugin-pug\""
@@ -25,6 +25,7 @@
   "dependencies": {
     "@splidejs/splide": "^4.1.4",
     "choices.js": "^9.0.1",
+    "imask": "^7.6.1",
     "micromodal": "^0.4.10",
     "normalize.css": "^8.0.1"
   }

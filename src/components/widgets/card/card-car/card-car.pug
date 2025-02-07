@@ -1,27 +1,37 @@
 include ../../../ui/typography/text/text
+include ../../../ui/badge/badge
+include ../../../ui/properties/properties
+include ../../../ui/price/price
+include ../../../ui/icon/icon
+include ../../../ui/form/button/button
 
 mixin card-car(data, attributes)
   -
-    var { href, title, caption, img, availability, properties, price } = data || {};
+    var { type, href, title, caption, img, badge, availability, properties, price, blank, button } = data || {};
 
-  .card-car.card&attributes(attributes)
-    a.card-media._media(href=href title='')
-      img.card-img._img(src=img)
+  .card-car(class=(type && `card-car--${type}`))&attributes(attributes)
+    a._media(href=href title='')
+      if img
+        img._img(src=img alt='')
 
-    ._header
+      if badge
+        +badge({ theme: badge.theme })._badge= badge.title
+
+      if blank
+        .icon-blank._blank
+          +icon('arrow-top-right')
+
+    ._content
       ._info
-        a.card-title._title(href=href title='')= title
-        ._availability= availability
+        a._title(href=href title='')= title
+        +badge._availability= availability
 
       +text({theme: 'muted'})._caption= caption
 
-    ._properties
-      each property in properties
-        ._property
-          svg._property-icon
-            use(href=`/icon-sprite.svg#${property.icon}`)
-          span._property-title= property.title
+      +properties(properties)._properties
 
     ._footer
-      ._price= price.current
-          span._old= price.old
+      +price(price)._price
+
+      if button
+        +button(button)._button= button.title

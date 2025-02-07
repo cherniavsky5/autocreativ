@@ -1,36 +1,40 @@
 //@use 'mixins' as *;
 
 // Цвета
-$primary-color: #007bff;
+$text-color: #060606;
+$bg-color: #e8f5ff;
+
+$primary-color: #1D8EE1;
 $secondary-color: #E0EDF8;
 $success-color: #28a745;
-$danger-color: #dc3545;
+$danger-color: #FF0000;
 $warning-color: #ffc107;
 $white-color: #fff;
 $black-color: #000;
-$light-color: #1D8EE1;
 
-$text-color: #060606;
-$bg-color: #e8f5ff;
-$border-color: rgba($text-color, 0.3);
-$muted-color: rgba($text-color, 0.6);
+$light-color: #57B8FF;
+$dark-color: #043E9D;
 
 $gradient: linear-gradient(180deg, rgba(28,140,224,1) 0%, rgba(16,82,186,1) 100%);
 $gradient-reverse: linear-gradient(0deg, rgba(28,140,224,1) 0%, rgba(16,82,186,1) 100%);
 
-$colors: (
-    primary: $primary-color,
-    secondary: $secondary-color,
-    success: $success-color,
-    danger: $danger-color,
-    warning: $warning-color,
-);
+$gray-100: rgba($text-color, 0.1);
+$gray-200: rgba($text-color, 0.2);
+$gray-300: rgba($text-color, 0.3);
+$gray-400: rgba($text-color, 0.4);
+$gray-500: rgba($text-color, 0.5);
+$gray-600: rgba($text-color, 0.6);
+$gray-700: rgba($text-color, 0.7);
+$gray-800: rgba($text-color, 0.8);
+$gray-900: rgba($text-color, 0.9);
 
 // Шрифты
 $font-family-base: 'Golos Text', sans-serif;
 $font-family-heading: $font-family-base;
 $font-size-base: 20px;
-$font-size-sm: 18px;
+$font-size-xs: 14px;
+$font-size-sm: 16px;
+$font-size-md: 18px;
 $font-size-lg: 22px;
 $font-weight-light: 300;
 $font-weight-normal: 400;
@@ -38,6 +42,13 @@ $font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
 $font-weight-heading: $font-weight-medium;
+
+$font-size-h1: 85px;
+$font-size-h2: 80px;
+$font-size-h3: 50px;
+$font-size-h4: 32px;
+$font-size-h5: 24px;
+$font-size-h6: 20px;
 
 // Формы
 $input-height-base: 70px;
@@ -51,9 +62,9 @@ $container-width-xl: 1140px;
 
 // Отступы и поля
 $gutter: 20px;
-$gutter-md: $gutter * 1.25;
-$gutter-lg: 40px;
-$spacer-xl: 3rem;
+$gutter-lg: $gutter * 1.25;
+$gutter-xl: $gutter * 1.5;
+$gutter-xxl: $gutter * 2;
 
 // Радиус скругления
 $border-radius: 60px;
@@ -93,10 +104,20 @@ $letter-spacing: 0.02em;
     --danger-color: $danger-color;
     --warning-color: $warning-color;
 
-    --font-size-h1: 85px;
-    --font-size-h2: 80px;
-    --font-size-h3: 50px;
-    --font-size-h4: 32px;
-    --font-size-h5: 24px;
-    --font-size-h6: 20px;
+    --font-size-h1: $font-size-h1;
+    --font-size-h2: $font-size-h2;
+    --font-size-h3: $font-size-h3;
+    --font-size-h4: $font-size-h4;
+    --font-size-h5: $font-size-h5;
+    --font-size-h6: $font-size-h6;
 }
+
+$icon-check: 'data:image/svg+xml,%3Csvg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M13.9963 3.20378C13.9967 3.35831 13.9665 3.5114 13.9074 3.65417C13.8482 3.79694 13.7614 3.92657 13.6518 4.03555L6.23435 11.453C5.9007 11.7857 5.44875 11.9725 4.97758 11.9725C4.50641 11.9725 4.05446 11.7857 3.72081 11.453L0.347491 8.07969C0.237622 7.97059 0.150371 7.84088 0.0907407 7.69799C0.0311106 7.5551 0.000274769 7.40185 1.82795e-06 7.24702C-0.000271113 7.09219 0.0300242 6.93882 0.0891502 6.79572C0.148276 6.65263 0.23507 6.52261 0.344553 6.41313C0.454037 6.30365 0.584056 6.21685 0.727155 6.15773C0.870254 6.09861 1.02362 6.06831 1.17845 6.06859C1.33328 6.06886 1.48653 6.0997 1.62942 6.15934C1.77231 6.21897 1.90202 6.30622 2.01111 6.41609L4.97758 9.38259L11.9883 2.37192C12.1528 2.20739 12.3624 2.09534 12.5906 2.04995C12.8188 2.00456 13.0553 2.02785 13.2702 2.1169C13.4852 2.20594 13.6689 2.35673 13.7981 2.5502C13.9274 2.74366 13.9964 2.97111 13.9963 3.20378Z" fill="white"/%3E%3C/svg%3E%0A';
+
+$icon-arrow-right: 'data:image/svg+xml,%3Csvg width="35" height="36" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M18.3203 27.8438L28.1641 18L18.3203 8.15625M26.7969 18H6.83594" stroke="%23060606" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/svg%3E%0A';
+$icon-arrow-left: 'data:image/svg+xml,%3Csvg width="35" height="36" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M16.6797 27.8438L6.83594 18L16.6797 8.15625M8.20312 18H28.1641" stroke="%23060606" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/svg%3E%0A';
+
+$icon-arrow-right-white: 'data:image/svg+xml,%3Csvg width="35" height="36" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M18.3203 27.8438L28.1641 18L18.3203 8.15625M26.7969 18H6.83594" stroke="%23FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/svg%3E%0A';
+$icon-arrow-left-white: 'data:image/svg+xml,%3Csvg width="35" height="36" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M16.6797 27.8438L6.83594 18L16.6797 8.15625M8.20312 18H28.1641" stroke="%23FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/svg%3E%0A';
+
+$icon-angle-down: 'data:image/svg+xml,%3Csvg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M1.57495 1.1875L7.19995 6.8125L12.825 1.1875" stroke="%23060606" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/svg%3E%0A';

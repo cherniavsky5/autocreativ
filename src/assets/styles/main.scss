@@ -10,7 +10,10 @@
 @use 'base';
 
 // Components
-@use '../../components/**/*.scss';
+@use '../../components/ui/**/*.scss';
+@use '../../components/widgets/**/*.scss';
+@use '../../components/modules/**/*.scss';
+@use '../../components/layout/**/*.scss';
 
 .container {
   margin: 0 auto;
@@ -21,7 +24,7 @@
 .main {
   &__section {
     &:not(:last-child) {
-      margin-bottom: 120px;
+      margin-bottom: rem(120px);
     }
   }
 
@@ -30,6 +33,23 @@
     flex-direction: column;
     gap: rem(30px);
     margin-bottom: rem(120px);
+  }
+}
+
+.content {
+  &__filter {
+    margin-bottom: rem(60px);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: rem($gutter);
+  }
+
+  &__pagination {
+    margin-top: rem(50px);
+    justify-content: center;
   }
 }
 

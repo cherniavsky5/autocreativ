@@ -1,0 +1,49 @@
+{
+  "filter": {
+    "brands": [
+      { "value": "all", "title": "Все" },
+      { "value": "audi", "title": "Audi" },
+      { "value": "bmw", "title": "BMW" },
+      { "value": "mercedes", "title": "Mercedes-Benz" },
+      { "value": "volkswagen", "title": "Volkswagen" },
+      { "value": "toyota", "title": "Toyota" },
+      { "value": "honda", "title": "Honda" },
+      { "value": "ford", "title": "Ford" },
+      { "value": "chevrolet", "title": "Chevrolet" },
+      { "value": "nissan", "title": "Nissan" },
+      { "value": "hyundai", "title": "Hyundai" }
+    ],
+    "models": [
+      { "value": "all", "title": "Все" },
+      { "value": "audi-a3", "title": "Audi A3" },
+      { "value": "audi-a4", "title": "Audi A4" },
+      { "value": "bmw-3-series", "title": "BMW 3 Series" },
+      { "value": "bmw-5-series", "title": "BMW 5 Series" },
+      { "value": "mercedes-c-class", "title": "Mercedes-Benz C-Class" },
+      { "value": "mercedes-e-class", "title": "Mercedes-Benz E-Class" },
+      { "value": "volkswagen-golf", "title": "Volkswagen Golf" },
+      { "value": "volkswagen-passat", "title": "Volkswagen Passat" },
+      { "value": "toyota-corolla", "title": "Toyota Corolla" },
+      { "value": "toyota-camry", "title": "Toyota Camry" }
+    ],
+    "engineTypes": [
+      { "value": "all", "title": "Все" },
+      { "value": "petrol", "title": "Бензиновый" },
+      { "value": "diesel", "title": "Дизельный" },
+      { "value": "electric", "title": "Электрический" },
+      { "value": "hybrid", "title": "Гибридный" }
+    ],
+    "drives": [
+      { "value": "all", "title": "Все" },
+      { "value": "front-wheel-drive", "title": "Передний" },
+      { "value": "rear-wheel-drive", "title": "Задний" },
+      { "value": "all-wheel-drive", "title": "Полный" }
+    ],
+    "transmissions": [
+      { "value": "all", "title": "Все" },
+      { "value": "manual", "title": "Механическая" },
+      { "value": "automatic", "title": "Автоматическая" },
+      { "value": "cvt", "title": "Вариатор" }
+    ]
+  }
+}

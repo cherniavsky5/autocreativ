@@ -1,5 +1,7 @@
+include ../../widgets/card/card-review/card-review
+include ../../widgets/card/card-blog/card-blog
 include ../../widgets/card/card-car/card-car
-include ../../widgets/card/card-car-lg/card-car-lg
+include ../../widgets/card/card-car-order/card-car-order
 
 mixin slider(data, attributes)
   - var options = { slides: [] };
@@ -8,10 +10,20 @@ mixin slider(data, attributes)
   .splide.slider(class=jsClass)&attributes(attributes)
     ._track
       ._list
+        if (card === 'card-review')
+          ._slide
+            +card-review
+
         each item in slides
           ._slide
             if (card === 'card-car')
               +card-car(item)
 
-            if (card === 'card-car-lg')
-              +card-car-lg(item)
+            if (card === 'card-car-order')
+              +card-car-order(item)
+
+            if (card === 'card-review')
+              +card-review(item)
+
+            if (card === 'card-blog')
+              +card-blog(item)

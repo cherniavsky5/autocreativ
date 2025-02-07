@@ -9,34 +9,73 @@
 }
 
 .choices {
-  font-size: rem($font-size-sm);
+  font-size: rem($font-size-md);
+
+  &[data-type*=select-one] {
+    &::after {
+      right: rem(30px);
+      margin-top: rem(-10px);
+      width: rem(20px);
+      height: rem(20px);
+      border: 0;
+      background: url($icon-angle-down) center center no-repeat;
+    }
+  }
 
   &:hover {
     .choices {
       &__inner {
-        border-color: $text-color;
+        border-color: $gray-700;
       }
     }
   }
 
   &.is-open {
+    &[data-type*=select-one] {
+      &::after {
+        margin-top: rem(-10px);
+        border: 0;
+        transform: scaleY(-1);
+      }
+    }
+
     .choices {
       &__inner {
-        border-color: $white-color;
+        border-color: $text-color;
         background-color: $white-color;
-        border-radius: $border-radius-xs $border-radius-xs 0 0;
+        border-radius: $border-radius-xs;
         transition: none;
+      }
+
+      &__list {
+        &--dropdown {
+          margin-top: rem(10px);
+        }
+      }
+    }
+
+    &.is-flipped {
+      .choices {
+        &__list {
+          &--dropdown {
+            top: auto;
+            bottom: 100%;
+            margin-top: 0;
+            margin-bottom: rem(10px);
+            border-radius: $border-radius-xs;
+          }
+        }
       }
     }
   }
 
   &__inner {
-    padding: rem(20px) rem($input-padding-base);
+    padding: rem(20px 60px 20px $input-padding-base);
     height: rem($input-height-base);
     font-size: inherit;
     background: transparent;
-    border: 1px solid $border-color;
-    border-radius: $border-radius-sm;
+    border: 1px solid $gray-300;
+    border-radius: rem($border-radius-sm);
     transition: border-color 0.25s ease-in-out;
   }
 
@@ -51,12 +90,32 @@
 
     &--dropdown {
       z-index: $zindex-dropdown;
+      padding-right: rem(10px);
       border: 1px solid $secondary-color;
       background-color: $bg-color;
-      border-radius: rem(0 0 $border-radius-sm $border-radius-sm);
+      border-radius: rem($border-radius-xs);
 
       .choices {
+        &__list {
+          max-height: 430px;
+          overflow-x: hidden;
+
+          &::-webkit-scrollbar {
+            width: 8px;
+          }
+
+          &::-webkit-scrollbar-track {
+            background: transparent;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: $primary-color;
+            border-radius: $border-radius;
+          }
+        }
+
         &__item {
+          margin-right: rem(-10px);
           padding: rem(21px) rem($input-padding-base);
           font-size: inherit;
 

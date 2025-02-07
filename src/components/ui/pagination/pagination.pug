@@ -1,20 +1,24 @@
+include ../icon/icon
+
 mixin pagination(data, attributes)
   -
-    var options = { start: 3, total: 35 };
-    var { start, total } = data ? { ...options, ...data } : options;
+    var options = { current: 1, start: 3, total: 35 };
+    var { current, start, total } = data ? { ...options, ...data } : options;
     var page = 1;
 
   ul.pagination&attributes(attributes)
     li._item
-      span._link prev
+      a._link.-disabled(href='./' title='')
+        +icon('chevron-left')._icon
 
     while page <= start
       li._item
-        a._link(href='./')= page
+        a._link(href='./' title='' class=(current === page && 'pagination__link--current'))= page
       - page++
 
     li._item
-      a._link(href='./')= total
+      a._link(href='./' title='')= total
 
     li._item
-      span._link next
+      a._link(href='./' title='')
+        +icon('chevron-right')._icon

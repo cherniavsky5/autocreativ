@@ -1,0 +1,7 @@
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
+.icon {
+  width: rem(20px);
+  height: rem(20px);
+}

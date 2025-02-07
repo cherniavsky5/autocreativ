@@ -1,16 +1,31 @@
 @use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
 
 .heading {
-  $level: 1;
-
   font-weight: $font-weight-heading;
   line-height: 1;
 
-  @while($level <= 6) {
-    &--#{$level} {
-      font-size: var(--font-size-h#{$level});
-    }
+  &--1 {
+    font-size: clamp(38px, vw($font-size-h1), $font-size-h1);
+  }
 
-    $level: $level + 1;
+  &--2 {
+    font-size: clamp(30px, vw($font-size-h2), $font-size-h2);
+  }
+
+  &--3 {
+    font-size: clamp(22px, vw($font-size-h3), $font-size-h3);
+  }
+
+  &--4 {
+    font-size: clamp(20px, vw($font-size-h4), $font-size-h4);
+  }
+
+  &--5 {
+    font-size: clamp(16px, vw($font-size-h5), $font-size-h5);
+  }
+
+  &--6 {
+    font-size: clamp(14px, vw($font-size-h6), $font-size-h6);
   }
 }

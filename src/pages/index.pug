@@ -8,8 +8,6 @@ include ../components/modules/quiz/quiz
 include ../components/modules/slider/slider
 include ../components/modules/features/features
 
-include ../components/widgets/card/card
-
 block vars
   - page = { title: 'Главная страница' };
 
@@ -26,92 +24,11 @@ block main
       // end filter
 
       // start popular-cars
-      +section({ heading: 'Популярные авто' })._section
+      +section({ heading: 'Популярные авто', arrows: true })._section
         +slider({
           jsClass: 'js-slider-default',
           card: 'card-car',
-          slides: [
-            {
-              href: '/detail.html',
-              title: 'Renault Megan RS',
-              caption: 'Flagship',
-              img: '/src/assets/img/tmp/cars/1.webp',
-              label: {
-                theme: 'light',
-                title: 'Акция'
-              },
-              availability: 'в наличии',
-              properties: [
-                { icon: 'year-issue', title: '2023' },
-                { icon: 'mileage', title: '9 000 км' },
-                { icon: 'transmission', title: 'автомат' }
-              ],
-              price: {
-                current: '3 600 000 ₽',
-                old: '4 000 000 ₽'
-              }
-            },
-            {
-              href: '/detail.html',
-              title: 'KIA Sportage',
-              caption: 'Flagship',
-              img: '/src/assets/img/tmp/cars/2.webp',
-              label: {
-                theme: 'light',
-                title: 'Акция'
-              },
-              availability: 'под заказ',
-              properties: [
-                { icon: 'year-issue', title: '2023' },
-                { icon: 'mileage', title: '9 000 км' },
-                { icon: 'transmission', title: 'автомат' }
-              ],
-              price: {
-                current: '3 600 000 ₽',
-                old: '4 000 000 ₽'
-              }
-            },
-            {
-              href: '/detail.html',
-              title: 'Audi RSQ3',
-              caption: 'Flagship',
-              img: '/src/assets/img/tmp/cars/3.jpg',
-              label: {
-                theme: 'light',
-                title: 'Акция'
-              },
-              availability: 'в наличии',
-              properties: [
-                { icon: 'year-issue', title: '2023' },
-                { icon: 'mileage', title: '9 000 км' },
-                { icon: 'transmission', title: 'автомат' }
-              ],
-              price: {
-                current: '3 600 000 ₽',
-                old: '4 000 000 ₽'
-              }
-            },
-            {
-              href: '/detail.html',
-              title: 'Volkswagen Polo',
-              caption: 'Flagship',
-              img: '/src/assets/img/tmp/cars/5.jpg',
-              label: {
-                theme: 'light',
-                title: 'Акция'
-              },
-              availability: 'в наличии',
-              properties: [
-                { icon: 'year-issue', title: '2023' },
-                { icon: 'mileage', title: '9 000 км' },
-                { icon: 'transmission', title: 'автомат' }
-              ],
-              price: {
-                current: '3 600 000 ₽',
-                old: '4 000 000 ₽'
-              }
-            },
-          ]
+          slides: carsSlider
         })
       // end popular-cars
 
@@ -119,27 +36,29 @@ block main
       +section({ heading: 'Почему <span class="text-primary">выбирают</span> Autocreativ' })._section
         +features([
           {
-            icon: 'i-search-car',
+            icon: 'search-car',
             title: 'Подбор авто и проверка',
             caption: 'Мы проверяем авто перед покупкой, согласовываем с Вами все нюансы. Бесплатно для наших клиентов проверяем историю авто по базам США'
           }, {
-            icon: 'i-search-car',
+            icon: 'paper',
             title: 'Официальный договор',
             caption: 'Заключается договор между клиентом и нашей компанией, в котором мы несём ответственность согласно законодательству'
           }, {
-            icon: 'i-search-car',
+            href: '#',
+            icon: 'medal',
             title: 'Работаем «под ключ»',
-            caption: 'Всё просто! AutoCreativ помогает с момента обращения и до момента вручения автомобиля заказчику. Опыт заказа авто из США с 2022 года'
+            caption: 'Всё просто! AutoCreativ помогает с момента обращения и до момента вручения автомобиля заказчику. Опыт заказа авто из США с 2022 года',
+            img: '/src/assets/img/tmp/work.jpg'
           }, {
-            icon: 'i-search-car',
+            icon: 'protection',
             title: 'Страхование',
             caption: 'По желанию клиента автомобиль может быть застрахован. В среднем, страховка стоит 1-2,5% от стоимости авто'
           }, {
-            icon: 'i-search-car',
+            icon: 'fast-delivery',
             title: 'Выгодная доставка',
             caption: 'Доставляем автомобили из США безопасно и по минимальным тарифам, благодаря прямым договорам с логистическими компаниями'
           }, {
-            icon: 'i-search-car',
+            icon: 'address',
             title: 'Офис в Санкт-Петербурге',
             caption: 'Вы всегда можете обратиться за бесплатной консультацией к нашим сотрудников в офисе'
           }
@@ -165,89 +84,8 @@ block main
         })._section-secondary
           +slider({
               jsClass: 'js-slider-secondary',
-              card: 'card-car-lg',
-              slides: [
-                  {
-                      href: '/detail.html',
-                      title: 'Renault Megan RS',
-                      caption: 'Flagship',
-                      img: '/src/assets/img/tmp/cars/1.webp',
-                      label: {
-                          theme: 'light',
-                          title: 'Акция'
-                      },
-                      availability: 'в наличии',
-                      properties: [
-                          {icon: 'year-issue', title: '2023'},
-                          {icon: 'mileage', title: '9 000 км'},
-                          {icon: 'transmission', title: 'автомат'}
-                      ],
-                      price: {
-                          current: '3 600 000 ₽',
-                          old: '4 000 000 ₽'
-                      }
-                  },
-                  {
-                      href: '/detail.html',
-                      title: 'KIA Sportage',
-                      caption: 'Flagship',
-                      img: '/src/assets/img/tmp/cars/2.webp',
-                      label: {
-                          theme: 'light',
-                          title: 'Акция'
-                      },
-                      availability: 'под заказ',
-                      properties: [
-                          {icon: 'year-issue', title: '2023'},
-                          {icon: 'mileage', title: '9 000 км'},
-                          {icon: 'transmission', title: 'автомат'}
-                      ],
-                      price: {
-                          current: '3 600 000 ₽',
-                          old: '4 000 000 ₽'
-                      }
-                  },
-                  {
-                      href: '/detail.html',
-                      title: 'Audi RSQ3',
-                      caption: 'Flagship',
-                      img: '/src/assets/img/tmp/cars/3.jpg',
-                      label: {
-                          theme: 'light',
-                          title: 'Акция'
-                      },
-                      availability: 'в наличии',
-                      properties: [
-                          {icon: 'year-issue', title: '2023'},
-                          {icon: 'mileage', title: '9 000 км'},
-                          {icon: 'transmission', title: 'автомат'}
-                      ],
-                      price: {
-                          current: '3 600 000 ₽',
-                          old: '4 000 000 ₽'
-                      }
-                  },
-                  {
-                      href: '/detail.html',
-                      title: 'Volkswagen Polo',
-                      caption: 'Flagship',
-                      img: '/src/assets/img/tmp/cars/5.jpg',
-                      label: {
-                          theme: 'light',
-                          title: 'Акция'
-                      },
-                      availability: 'в наличии',
-                      properties: [
-                          {icon: 'year-issue', title: '2023'},
-                          {icon: 'mileage', title: '9 000 км'},
-                          {icon: 'transmission', title: 'автомат'}
-                      ],
-                      price: {
-                          current: '3 600 000 ₽',
-                          old: '4 000 000 ₽'
-                      }
-                  },
-              ]
+              card: 'card-car-order',
+              slides: carsOrder
           })
         // end auction-cars
 
@@ -265,100 +103,37 @@ block main
         })._section-secondary
           +slider({
               jsClass: 'js-slider-secondary',
-              card: 'card-car-lg',
-              slides: [
-                  {
-                      href: '/detail.html',
-                      title: 'Renault Megan RS',
-                      caption: 'Flagship',
-                      img: '/src/assets/img/tmp/cars/1.webp',
-                      label: {
-                          theme: 'light',
-                          title: 'Акция'
-                      },
-                      availability: 'в наличии',
-                      properties: [
-                          {icon: 'year-issue', title: '2023'},
-                          {icon: 'mileage', title: '9 000 км'},
-                          {icon: 'transmission', title: 'автомат'}
-                      ],
-                      price: {
-                          current: '3 600 000 ₽',
-                          old: '4 000 000 ₽'
-                      }
-                  },
-                  {
-                      href: '/detail.html',
-                      title: 'KIA Sportage',
-                      caption: 'Flagship',
-                      img: '/src/assets/img/tmp/cars/2.webp',
-                      label: {
-                          theme: 'light',
-                          title: 'Акция'
-                      },
-                      availability: 'под заказ',
-                      properties: [
-                          {icon: 'year-issue', title: '2023'},
-                          {icon: 'mileage', title: '9 000 км'},
-                          {icon: 'transmission', title: 'автомат'}
-                      ],
-                      price: {
-                          current: '3 600 000 ₽',
-                          old: '4 000 000 ₽'
-                      }
-                  },
-                  {
-                      href: '/detail.html',
-                      title: 'Audi RSQ3',
-                      caption: 'Flagship',
-                      img: '/src/assets/img/tmp/cars/3.jpg',
-                      label: {
-                          theme: 'light',
-                          title: 'Акция'
-                      },
-                      availability: 'в наличии',
-                      properties: [
-                          {icon: 'year-issue', title: '2023'},
-                          {icon: 'mileage', title: '9 000 км'},
-                          {icon: 'transmission', title: 'автомат'}
-                      ],
-                      price: {
-                          current: '3 600 000 ₽',
-                          old: '4 000 000 ₽'
-                      }
-                  },
-                  {
-                      href: '/detail.html',
-                      title: 'Volkswagen Polo',
-                      caption: 'Flagship',
-                      img: '/src/assets/img/tmp/cars/5.jpg',
-                      label: {
-                          theme: 'light',
-                          title: 'Акция'
-                      },
-                      availability: 'в наличии',
-                      properties: [
-                          {icon: 'year-issue', title: '2023'},
-                          {icon: 'mileage', title: '9 000 км'},
-                          {icon: 'transmission', title: 'автомат'}
-                      ],
-                      price: {
-                          current: '3 600 000 ₽',
-                          old: '4 000 000 ₽'
-                      }
-                  },
-              ]
+              card: 'card-car-order',
+              slides: carsOrder
           })
         // end auction-cars
 
       // start reviews
-      +section({ heading: 'Отзывы наших клиентов' })._section
-        +slider({ jsClass: 'js-slider-default' })
-          +card
+      +section({ heading: 'Отзывы наших клиентов', arrows: true })._section
+        +slider({
+          jsClass: 'js-slider-default',
+          card: 'card-review',
+          slides: reviews
+        })
       // end reviews
 
       // start our-blog
-      +section({ heading: 'Наш блог на YouTube' })._section
-        +slider({ jsClass: 'js-slider-default' })
-          +card
+      +section({
+        heading: 'Наш блог на YouTube',
+        button: {
+          href: "/",
+          theme: 'danger',
+          title: 'Подписаться',
+          icon: 'youtube',
+          attrs: {
+            'target': '_blank'
+          }
+        },
+        arrows: true
+      })._section
+        +slider({
+          jsClass: 'js-slider-default',
+          card: 'card-blog',
+          slides: blog
+        })
       // end our-blog

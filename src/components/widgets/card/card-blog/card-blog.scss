@@ -1,0 +1,54 @@
+@use 'sass:color';
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
+.card-blog {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  color: currentColor;
+  border-radius: $border-radius;
+
+  &__photo {
+    position: relative;
+    padding-bottom: 164%;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: $border-radius-xs;
+  }
+
+  &__header {
+    position: absolute;
+    z-index: 2;
+    left: rem($gutter);
+    right: rem($gutter);
+    bottom: rem($gutter);
+    padding: rem($gutter $gutter-lg);
+    background: $white-color;
+    border-radius: $border-radius-xs;
+  }
+
+  &__heading {
+    margin-bottom: rem(10px);
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+
+    .icon {
+      width: rem(96px);
+      height: rem(96px);
+    }
+  }
+}

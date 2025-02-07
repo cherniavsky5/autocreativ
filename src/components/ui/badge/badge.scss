@@ -1,0 +1,34 @@
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
+.badge {
+  padding: rem(8px 11px);
+  display: inline-block;
+  color: $text-color;
+  font-family: $font-family-base;
+  font-size: rem($font-size-xs);
+  font-weight: $font-weight-normal;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  background-color: transparent;
+  border: 1px solid $gray-200;
+  white-space: nowrap;
+  appearance: none;
+  overflow: hidden;
+  vertical-align: middle;
+  border-radius: $border-radius;
+
+  &--primary-light {
+    color: $white-color;
+    border-color: $light-color;
+    background-color: $light-color;
+  }
+
+  &--primary-dark {
+    color: $white-color;
+    border-color: $dark-color;
+    background-color: $dark-color;
+  }
+}

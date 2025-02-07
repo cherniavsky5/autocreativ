@@ -1,7 +1,10 @@
 @use "sass:math";
 @use "sass:meta";
 @use "sass:list";
-@use "@assets/styles/vars" as *;
+
+@function vw($value, $base: 1920px) {
+  @return calc(#{math.div($value, $base) * 100vw} );
+}
 
 @function rem($values...) {
   $result: ();
@@ -13,10 +16,12 @@
 
     @each $singleValue in $value {
       @if meta.type-of($singleValue) == "number" and math.unit($singleValue) == "px" {
-        $singleValue: math.div($singleValue, $font-size-base) * 1rem;
+        $singleValue: math.div($singleValue, 20px);
+
+        //$singleValue: math.div($singleValue, 1rem) * 1rem;
       }
 
-      $singleValue: math.div(math.round($singleValue * 1000), 1000);
+      $singleValue: math.div(math.round($singleValue * 1000rem), 1000);
 
       $result: list.append($result, $singleValue, space);
     }
@@ -25,17 +30,17 @@
   @return $result;
 }
 
-@mixin grid-container($gap: $gutter) {
+@mixin grid-container($gap: 1rem) {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -(math.div($gutter, 2));
-  margin-right: -(math.div($gutter, 2));
-  margin-bottom: -$gutter;
+  margin-left: -(math.div($gap, 2));
+  margin-right: -(math.div($gap, 2));
+  margin-bottom: -$gap;
 }
 
 @mixin grid-item($columns: 1, $grid: 12) {
   flex: 0 0 calc(100% / $grid * $columns);
-  margin-bottom: $gutter;
-  padding-left: math.div($gutter, 2);
-  padding-right: math.div($gutter, 2);
+  margin-bottom: 1rem;
+  padding-left: math.div(1rem, 2);
+  padding-right: math.div(1rem, 2);
 }

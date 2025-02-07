@@ -1,0 +1,23 @@
+include ../../../ui/badge/badge
+include ../../../ui/icon/icon
+include ../../../ui/typography/heading/heading
+include ../../../ui/typography/text/text
+
+mixin card-blog(data, attributes)
+  -
+    var { href, title, date, rating, img } = data || {};
+
+  a.card-blog(href=href title)&attributes(attributes)
+    if !data
+      img._img(src='/src/assets/img/tmp/reviews.jpg' alt='')
+
+    else
+      ._photo
+        img._img(src=img alt='')
+
+      ._icon
+        +icon('youtube-play')
+
+      ._header
+        +heading({ level: 6 })._heading= title
+        +text({ theme: 'muted', size: 'sm' })= date

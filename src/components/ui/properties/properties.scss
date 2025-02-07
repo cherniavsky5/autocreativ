@@ -1,0 +1,35 @@
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
+.properties {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding-left: 0;
+  font-size: rem($font-size-md);
+  list-style: none;
+
+  &__property {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    margin-right: rem(calc($gutter / 2));
+    width: rem(25px);
+    height: rem(25px);
+    color: $gray-200;
+  }
+
+  &__content {
+    flex: 1 0 auto;
+    min-width: 0;
+  }
+
+  &__label {
+    margin-bottom: rem(5px);
+    display: block;
+    color: $gray-400;
+  }
+}

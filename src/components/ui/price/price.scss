@@ -1,0 +1,49 @@
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
+.price {
+  display: flex;
+  align-items: center;
+  color: $primary-color;
+  font-size: rem(32px);
+  font-weight: $font-weight-medium;
+  white-space: nowrap;
+
+  &__item {
+    &--current {
+      .price__label {
+        font-size: rem($font-size-md);
+      }
+    }
+
+    &--old {
+      margin-left: $gutter;
+      color: $gray-600;
+      font-size: 0.68em;
+      font-weight: $font-weight-normal;
+
+      .price__label {
+        font-size: rem($font-size-sm);
+        font-weight: $font-weight-normal;
+      }
+
+      .price__value {
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 50%;
+          margin-bottom: rem(-3px);
+          border-bottom: 1px solid;
+        }
+      }
+    }
+  }
+
+  &__label {
+    display: block;
+  }
+}

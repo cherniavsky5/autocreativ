@@ -4,5 +4,5 @@ mixin features(data)
   .features
     ._grid
       each item in data
-        ._column
+        ._column(class=(item.img && 'features__column--photo'))
           +card-feature(item)

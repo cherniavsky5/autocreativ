@@ -1,0 +1,26 @@
+@use 'sass:color';
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
+.card-car--order {
+  .card-car {
+    &__properties {
+      justify-content: flex-start;
+      gap: $gutter-lg;
+      margin-top: rem(10px);
+    }
+
+    &__media {
+      margin-top: rem($gutter);
+      margin-bottom: 0;
+    }
+
+    &__footer {
+      margin-top: rem($gutter);
+    }
+
+    &__button {
+      margin-top: rem($gutter);
+    }
+  }
+}

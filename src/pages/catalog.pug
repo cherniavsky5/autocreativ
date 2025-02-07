@@ -1,9 +1,12 @@
 extends  ../layouts/root
 
 include ../components/ui/breadcrumbs/breadcrumbs
+include ../components/ui/pagination/pagination
 include ../components/ui/typography/heading/heading
 
 include ../components/modules/filter/filter
+
+include ../components/widgets/card/card-car/card-car
 
 block main
   main.main
@@ -17,6 +20,13 @@ block main
         +heading({ level: 1 }) Каталог авто
 
       ._body
-        // start filter
-        +filter
-        // end filter
+        .content._content
+          // start filter
+          +filter._filter
+          // end filter
+
+          ._list
+            each item in cars
+              +card-car({ ...item, type: 'row' })
+
+          +pagination()._pagination

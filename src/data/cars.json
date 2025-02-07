@@ -1,0 +1,372 @@
+{
+  "cars": [
+    {
+      "href": "/detail.html",
+      "title": "Renault Megan RS",
+      "caption": "Flagship",
+      "img": "/src/assets/img/tmp/cars/1.webp",
+      "badge": {
+        "theme": "primary-light",
+        "title": "Акция"
+      },
+      "availability": "в наличии",
+      "properties": [
+        {
+          "label": "Год выпуска",
+          "value": "2023"
+        },
+        {
+          "label": "Пробег",
+          "value": "9 000 км"
+        },
+        {
+          "label": "Коробка",
+          "value": "автомат"
+        },
+        {
+          "label": "Привод",
+          "value": "полный"
+        },
+        {
+          "label": "Двигатель",
+          "value": "2400 сс / 230 л.с. / бензин"
+        }
+      ],
+      "price": {
+        "current": {
+          "value": "3 600 000 ₽"
+        },
+        "old": {
+          "value": "4 000 000 ₽"
+        }
+      },
+      "blank": false,
+      "button": {
+        "href": "/detail.html",
+        "title": "Посмотреть"
+      }
+    },
+    {
+      "href": "/detail.html",
+      "title": "KIA Sportage",
+      "caption": "Flagship",
+      "img": "/src/assets/img/tmp/cars/2.webp",
+      "badge": {
+        "theme": "primary-dark",
+        "title": "Новинка"
+      },
+      "availability": "под заказ",
+      "properties": [
+        {
+          "label": "Год выпуска",
+          "value": "2023"
+        },
+        {
+          "label": "Пробег",
+          "value": "9 000 км"
+        },
+        {
+          "label": "Коробка",
+          "value": "автомат"
+        },
+        {
+          "label": "Привод",
+          "value": "полный"
+        },
+        {
+          "label": "Двигатель",
+          "value": "2400 сс / 230 л.с. / бензин"
+        }
+      ],
+      "price": {
+        "current": {
+          "value": "3 600 000 ₽"
+        },
+        "old": {
+          "value": "4 000 000 ₽"
+        }
+      },
+      "blank": false,
+      "button": {
+        "href": "/detail.html",
+        "title": "Посмотреть"
+      }
+    },
+    {
+      "href": "/detail.html",
+      "title": "Audi RSQ3",
+      "caption": "Flagship",
+      "img": "/src/assets/img/tmp/cars/3.jpg",
+      "badge": {
+        "theme": "primary-light",
+        "title": "Акция"
+      },
+      "availability": "в наличии",
+      "properties": [
+        {
+          "label": "Год выпуска",
+          "value": "2023"
+        },
+        {
+          "label": "Пробег",
+          "value": "9 000 км"
+        },
+        {
+          "label": "Коробка",
+          "value": "автомат"
+        },
+        {
+          "label": "Привод",
+          "value": "полный"
+        },
+        {
+          "label": "Двигатель",
+          "value": "2400 сс / 230 л.с. / бензин"
+        }
+      ],
+      "price": {
+        "current": {
+          "value": "3 600 000 ₽"
+        },
+        "old": {
+          "value": "4 000 000 ₽"
+        }
+      },
+      "blank": false,
+      "button": {
+        "href": "/detail.html",
+        "title": "Посмотреть"
+      }
+    },
+    {
+      "href": "/detail.html",
+      "title": "Volkswagen Polo",
+      "caption": "Flagship",
+      "img": "/src/assets/img/tmp/cars/5.jpg",
+      "badge": {
+        "theme": "primary-light",
+        "title": "Акция"
+      },
+      "availability": "в наличии",
+      "properties": [
+        {
+          "label": "Год выпуска",
+          "value": "2023"
+        },
+        {
+          "label": "Пробег",
+          "value": "9 000 км"
+        },
+        {
+          "label": "Коробка",
+          "value": "автомат"
+        },
+        {
+          "label": "Привод",
+          "value": "полный"
+        },
+        {
+          "label": "Двигатель",
+          "value": "2400 сс / 230 л.с. / бензин"
+        }
+      ],
+      "price": {
+        "current": {
+          "value": "3 600 000 ₽"
+        },
+        "old": {
+          "value": "4 000 000 ₽"
+        }
+      },
+      "blank": false,
+      "button": {
+        "href": "/detail.html",
+        "title": "Посмотреть"
+      }
+    },
+    {
+      "href": "/detail.html",
+      "title": "Renault Megan RS",
+      "caption": "Flagship",
+      "img": "/src/assets/img/tmp/cars/1.webp",
+      "badge": {
+        "theme": "primary-light",
+        "title": "Акция"
+      },
+      "availability": "в наличии",
+      "properties": [
+        {
+          "label": "Год выпуска",
+          "value": "2023"
+        },
+        {
+          "label": "Пробег",
+          "value": "9 000 км"
+        },
+        {
+          "label": "Коробка",
+          "value": "автомат"
+        },
+        {
+          "label": "Привод",
+          "value": "полный"
+        },
+        {
+          "label": "Двигатель",
+          "value": "2400 сс / 230 л.с. / бензин"
+        }
+      ],
+      "price": {
+        "current": {
+          "value": "3 600 000 ₽"
+        },
+        "old": {
+          "value": "4 000 000 ₽"
+        }
+      },
+      "blank": false,
+      "button": {
+        "href": "/detail.html",
+        "title": "Посмотреть"
+      }
+    },
+    {
+      "href": "/detail.html",
+      "title": "KIA Sportage",
+      "caption": "Flagship",
+      "img": "/src/assets/img/tmp/cars/2.webp",
+      "badge": {
+        "theme": "primary-dark",
+        "title": "Новинка"
+      },
+      "availability": "под заказ",
+      "properties": [
+        {
+          "label": "Год выпуска",
+          "value": "2023"
+        },
+        {
+          "label": "Пробег",
+          "value": "9 000 км"
+        },
+        {
+          "label": "Коробка",
+          "value": "автомат"
+        },
+        {
+          "label": "Привод",
+          "value": "полный"
+        },
+        {
+          "label": "Двигатель",
+          "value": "2400 сс / 230 л.с. / бензин"
+        }
+      ],
+      "price": {
+        "current": {
+          "value": "3 600 000 ₽"
+        },
+        "old": {
+          "value": "4 000 000 ₽"
+        }
+      },
+      "blank": false,
+      "button": {
+        "href": "/detail.html",
+        "title": "Посмотреть"
+      }
+    },
+    {
+      "href": "/detail.html",
+      "title": "Audi RSQ3",
+      "caption": "Flagship",
+      "img": "/src/assets/img/tmp/cars/3.jpg",
+      "badge": {
+        "theme": "primary-light",
+        "title": "Акция"
+      },
+      "availability": "в наличии",
+      "properties": [
+        {
+          "label": "Год выпуска",
+          "value": "2023"
+        },
+        {
+          "label": "Пробег",
+          "value": "9 000 км"
+        },
+        {
+          "label": "Коробка",
+          "value": "автомат"
+        },
+        {
+          "label": "Привод",
+          "value": "полный"
+        },
+        {
+          "label": "Двигатель",
+          "value": "2400 сс / 230 л.с. / бензин"
+        }
+      ],
+      "price": {
+        "current": {
+          "value": "3 600 000 ₽"
+        },
+        "old": {
+          "value": "4 000 000 ₽"
+        }
+      },
+      "blank": false,
+      "button": {
+        "href": "/detail.html",
+        "title": "Посмотреть"
+      }
+    },
+    {
+      "href": "/detail.html",
+      "title": "Volkswagen Polo",
+      "caption": "Flagship",
+      "img": "/src/assets/img/tmp/cars/5.jpg",
+      "badge": {
+        "theme": "primary-light",
+        "title": "Акция"
+      },
+      "availability": "в наличии",
+      "properties": [
+        {
+          "label": "Год выпуска",
+          "value": "2023"
+        },
+        {
+          "label": "Пробег",
+          "value": "9 000 км"
+        },
+        {
+          "label": "Коробка",
+          "value": "автомат"
+        },
+        {
+          "label": "Привод",
+          "value": "полный"
+        },
+        {
+          "label": "Двигатель",
+          "value": "2400 сс / 230 л.с. / бензин"
+        }
+      ],
+      "price": {
+        "current": {
+          "value": "3 600 000 ₽"
+        },
+        "old": {
+          "value": "4 000 000 ₽"
+        }
+      },
+      "blank": false,
+      "button": {
+        "href": "/detail.html",
+        "title": "Посмотреть"
+      }
+    }
+  ]
+}

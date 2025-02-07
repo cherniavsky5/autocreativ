@@ -1,0 +1,24 @@
+include ../../../ui/badge/badge
+include ../../../ui/icon/icon
+include ../../../ui/typography/heading/heading
+include ../../../ui/typography/text/text
+
+mixin card-review(data, attributes)
+  -
+    var { title, text, rating, img } = data || {};
+
+  .card-review&attributes(attributes)
+    if !data
+      img._img(src='/src/assets/img/tmp/reviews.jpg' alt='')
+
+    else
+      ._photo
+        img._img(src=img alt='')
+
+      ._header
+        +heading({ level: 6 })._heading= title
+        +badge._badge
+          | #{rating}
+          +icon('star')
+
+      +text({ theme: 'muted', size: 'sm' })= text

@@ -29,4 +29,57 @@
     margin: rem(30px 0 0);
     max-width: 750px;
   }
+
+  &__aside {
+    display: flex;
+    align-items: center;
+    gap: rem($gutter-xl);
+  }
+
+  &__arrows {
+    display: flex;
+    gap: rem($gutter);
+
+    .splide__arrow {
+      width: vw(90px);
+      height: vw(90px);
+      background-color: transparent;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: vw(35px);
+      border: 1px solid $gray-200;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: 0.25s ease-in-out;
+
+      svg {
+        display: none;
+      }
+
+      &[disabled] {
+        cursor: default;
+        opacity: 0.5;
+      }
+
+      &--prev {
+        background-image: url($icon-arrow-left);
+
+        &:hover:not(:disabled) {
+          border-color: $primary-color;
+          background-color: $primary-color;
+          background-image: url($icon-arrow-left-white);
+        }
+      }
+
+      &--next {
+        background-image: url($icon-arrow-right);
+
+        &:hover:not(:disabled) {
+          border-color: $primary-color;
+          background-color: $primary-color;
+          background-image: url($icon-arrow-right-white);
+        }
+      }
+    }
+  }
 }

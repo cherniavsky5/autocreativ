@@ -4,7 +4,7 @@ include ../../ui/form/button/button
 mixin section(data, attributes)
   -
     var options = {};
-    var { tag, theme, heading, caption, button } = data ? { ...options, ...data } : options
+    var { tag, theme, heading, caption, button, arrows } = data ? { ...options, ...data } : options
 
   section.section(class=(theme && `section--${theme}`))&attributes(attributes)
     ._header
@@ -17,7 +17,11 @@ mixin section(data, attributes)
       ._aside
         if button
           ._aside
-            +button&attributes(button.attrs)= button.title
+            +button(button)&attributes(button.attrs)= button.title
+
+        if arrows
+          ._arrows
+
 
     ._body
       block

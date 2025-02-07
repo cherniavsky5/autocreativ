@@ -6,9 +6,9 @@
   width: 100%;
   height: rem($input-height-base);
   font-family: inherit;
-  font-size: rem($font-size-sm);
+  font-size: rem($font-size-md);
   outline: 0;
-  border: 1px solid $border-color;
+  border: 1px solid $gray-300;
   appearance: none;
   border-radius: $border-radius-sm;
 

@@ -1,15 +1,22 @@
+include ../../../ui/icon/icon
 include ../../../ui/typography/heading/heading
 include ../../../ui/typography/text/text
 
 mixin card-feature(data, attributes)
   -
-    var { title, caption } = data || {};
+    var { href, title, caption, icon, img } = data || {};
+    var tag = href ? 'a' : 'div';
 
   .card-feature.card&attributes(attributes)
-    ._icon
-      svg._svg
-        use(href='/icon-sprite.svg#search-car')
+    ._icon.icon-grad
+      +icon(icon)
 
-    +heading({ level: 4 })._heading= title
+    +heading({ level: 4 })._heading!= title
 
     +text({ size: 'sm' })= caption
+
+    if img
+      img._img(src=img alt='')
+
+      .icon-blank._blank
+        +icon('arrow-top-right')

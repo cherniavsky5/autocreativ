@@ -6,13 +6,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (slidersDefault.length) {
     slidersDefault.forEach((slider) => {
-      new Splide(slider, { perPage: 4, gap: 20, pagination: false }).mount();
+      const splide = new Splide(slider, {
+        perPage: 4,
+        gap: 20,
+        arrows: true,
+        pagination: false,
+      }).mount();
+
+      transferArrows(slider, splide);
     });
   }
 
   if (slidersSecondary.length) {
     slidersSecondary.forEach((slider) => {
-      new Splide(slider, { perPage: 3, gap: 20, pagination: false }).mount();
+      const splide = new Splide(slider, {
+        perPage: 3,
+        gap: 20,
+        arrows: false,
+        pagination: false,
+      }).mount();
+
+      transferArrows(slider, splide);
     });
+  }
+
+  function transferArrows(slider, splide) {
+    const section = slider.closest('.section');
+
+    if (section) {
+      const navigation = splide.Components.Arrows;
+      const arrows = section.querySelector('.section__arrows');
+
+      if (arrows) {
+        arrows.appendChild(navigation.arrows.prev);
+        arrows.appendChild(navigation.arrows.next);
+      }
+    }
   }
 });

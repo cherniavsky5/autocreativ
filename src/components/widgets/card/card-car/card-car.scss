@@ -3,74 +3,151 @@
 @use '@assets/styles/mixins' as *;
 
 .card-car {
+  display: flex;
+  flex-direction: column;
+  padding: rem($gutter-lg);
+  min-height: 100%;
+  background-color: $white-color;
+  border: 2px solid $white-color;
+  border-radius: rem($border-radius);
   transition: border-color 0.25s ease-in-out;
 
   &:hover {
-    border-color: $light-color;
+    border-color: $primary-color;
   }
 
-  &__header {
-    margin-bottom: calc($gutter * 1.5);
+  &--row {
+    flex-direction: row;
+    align-items: center;
+    padding: rem($gutter-xl);
+
+    .card-car {
+      &__media {
+        flex: 0 0 22.5%;
+        max-width: 22.5%;
+        margin-right: rem(50px);
+        margin-bottom: 0;
+        padding-bottom: 13%;
+      }
+
+      &__content {
+        flex: 1 0 auto;
+        min-width: 0;
+      }
+
+      &__title {
+        flex-grow: 0;
+      }
+
+      &__properties {
+        justify-content: flex-start;
+
+        .properties__property:not(:last-child) {
+          margin-right: 8.38%;
+        }
+      }
+
+      &__footer {
+        flex: 0 0 rem(350px);
+        max-width: rem(350px);
+        margin-top: 0;
+        margin-left: 10%;
+      }
+
+      &__button {
+        margin-top: rem($gutter);
+        min-width: rem(320px);
+      }
+    }
+  }
+
+  &__media {
+    position: relative;
+    margin-bottom: rem($gutter-lg);
+    padding-bottom: 61%;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: rem($border-radius-xs);
+  }
+
+  &__badge {
+    position: absolute;
+    top: $gutter;
+    left: $gutter;
+    z-index: 2;
+  }
+
+  &__blank {
+    position: absolute;
+    top: rem($gutter);
+    right: rem($gutter);
+  }
+
+  &__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: rem(92px);
+    height: rem(92px);
+    color: $white-color;
+    background: none;
+    border: 1px solid rgba($white-color, 0.25);
+    border-radius: 50%;
+    backdrop-filter: blur(9px);
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: 0.25s ease-in-out;
+
+    .icon {
+      width: rem(24px);
+      height: rem(24px);
+    }
+
+    &:hover {
+      color: $primary-color;
+      background-color: $white-color;
+    }
   }
 
   &__info {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
   }
 
   &__title {
     flex: 1 0 auto;
     min-width: 0;
+    display: block;
+    color: inherit;
+    font-size: rem(30px);
+    text-decoration: none;
     text-overflow: ellipsis;
     white-space: nowrap;
-
-    &.card-title {
-      margin-bottom: 0;
-    }
   }
 
   &__availability {
     flex-shrink: 0;
-    margin-left: $gutter;
-    padding: rem(6px 11px);
-    font-size: rem(14px);
-    border: 1px solid $border-color;
-    border-radius: rem($border-radius);
+    margin-left: rem($gutter);
+    margin-top: rem(6px);
   }
 
   &__properties {
-    display: flex;
-    justify-content: space-between;
-    font-size: $font-size-sm;
-  }
-
-  &__property {
-    display: flex;
-    align-items: center;
-    flex: 1;
-
-    &-icon {
-      flex-shrink: 0;
-      margin-right: rem(calc($gutter / 2));
-      width: rem(25px);
-      height: rem(25px);
-    }
+    margin-top: rem($gutter-xl);
   }
 
   &__footer {
-    margin-top: calc($gutter * 1.5);
-  }
-
-  &__price {
-    color: $light-color;
-    font-size: rem(32px);
-    font-weight: $font-weight-medium;
-  }
-
-  &__old {
-    margin-left: $gutter;
-    color: $muted-color;
-    font-size: 0.68em;
-    font-weight: $font-weight-normal;
+    margin-top: rem($gutter-xl);
   }
 }

@@ -1,13 +1,18 @@
 @use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
 
 .text {
   margin: 0;
 
+  &--primary {
+    color: $primary-color;
+  }
+
   &--muted {
-    color: $muted-color;
+    color: $gray-700;
   }
 
   &--sm {
-    font-size: $font-size-sm;
+    font-size: rem($font-size-md);
   }
 }

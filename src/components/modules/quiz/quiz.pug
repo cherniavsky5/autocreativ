@@ -1,3 +1,4 @@
+include ../../ui/icon/icon
 include ../../ui/form/form-group/form-group
 include ../../ui/form/control/control
 include ../../ui/form/input/input
@@ -7,6 +8,11 @@ mixin quiz(data, attributes)
   .quiz&attributes(attributes)
     +heading._heading Пройдите опрос,
       span чтобы узнать точную цену автомобиля
+
+    ._sale
+      ._sale-icon.icon-grad
+        +icon('gift')
+      ._sale-text После опроса вы получите скидку на подбор <span class="text text--primary">5 000 ₽</span>
 
     ._content
       form.quiz-form._form.js-quiz-form
@@ -91,14 +97,16 @@ mixin quiz(data, attributes)
 
             ._buttons
               +button({ type: 'button', theme: 'secondary' })._button.js-quiz-prev Назад
-              +button({ type: 'button' })._button.js-quiz-next Далее
+              +button({ type: 'button' })._button.js-quiz-next
+                | Далее
+                +icon('arrow-right')
 
         ._submit.js-quiz-submit
           ._title Оставьте свой номер телефона, чтобы мы могли привязать к нему персональную скидку и связаться с вами
 
           ._inline
             +form-group({ title: 'Номер телефона' })
-              +input({ type: 'tel', name: 'tel', placeholder: '+7 (999) 999-99-99' })
+              +input({ type: 'tel', name: 'tel', placeholder: '+7 (999) 999-99-99', mask: '+7 (000) 000-00-00' })
 
             +button({ type: 'submit' })._button Отправить
 

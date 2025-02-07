@@ -1,0 +1,18 @@
+mixin price(data, attributes)
+  -
+    var { current, old } = data || {};
+
+  .price&attributes(attributes)
+    if current
+      ._item.-current
+        if current.label
+          small._label= current.label
+
+        span._value= current.value
+
+    if current
+      ._item.-old
+        if old.label
+          small._label= old.label
+
+        span._value= old.value

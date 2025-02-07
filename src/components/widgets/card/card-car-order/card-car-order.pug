@@ -1,0 +1,34 @@
+include ../../../ui/typography/text/text
+include ../../../ui/badge/badge
+include ../../../ui/properties/properties
+include ../../../ui/price/price
+include ../../../ui/icon/icon
+include ../../../ui/form/button/button
+
+mixin card-car-order(data, attributes)
+  -
+    var { type, href, title, caption, img, badge, availability, properties, price, video, button } = data || {};
+
+  .card-car.-order(class=(type && `card-car--${type}`))&attributes(attributes)
+    ._info
+      a._title(href=href title='')= title
+      +badge._availability= availability
+
+    +properties(properties)._properties
+
+    a._media(href=href title='')
+      if img
+        img._img(src=img alt='')
+
+      if badge
+        +badge({ theme: badge.theme })._badge= badge.title
+
+      if video
+        ._video
+          +icon('play')
+
+    ._footer
+      +price(price)._price
+
+      if button
+        +button(button)._button= button.title

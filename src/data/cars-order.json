@@ -1,0 +1,127 @@
+{
+  "carsOrder": [
+    {
+      "href": "/detail.html",
+      "title": "Renault Megan RS",
+      "caption": "Flagship",
+      "img": "/src/assets/img/tmp/cars/1.webp",
+      "badge": {
+        "theme": "primary-light",
+        "title": "Акция"
+      },
+      "availability": "в наличии",
+      "properties": [
+        {
+          "icon": "year-issue",
+          "value": "2023"
+        },
+        {
+          "icon": "mileage",
+          "value": "9 000 км"
+        },
+        {
+          "icon": "transmission",
+          "value": "автомат"
+        }
+      ],
+      "price": {
+        "current": {
+          "label": "Цена в США",
+          "value": "3 600 000 ₽"
+        },
+        "old": {
+          "label": "Цена в России",
+          "value": "4 000 000 ₽"
+        }
+      },
+      "video": true,
+      "button": {
+        "title": "Заказать такой же",
+        "theme": "secondary",
+        "fluid": true
+      }
+    },
+    {
+      "href": "/detail.html",
+      "title": "KIA Sportage",
+      "caption": "Flagship",
+      "img": "/src/assets/img/tmp/cars/2.webp",
+      "badge": {
+        "theme": "primary-dark",
+        "title": "Новинка"
+      },
+      "availability": "под заказ",
+      "properties": [
+        {
+          "icon": "year-issue",
+          "value": "2023"
+        },
+        {
+          "icon": "mileage",
+          "value": "9 000 км"
+        },
+        {
+          "icon": "transmission",
+          "value": "автомат"
+        }
+      ],
+      "price": {
+        "current": {
+          "label": "Цена в США",
+          "value": "3 600 000 ₽"
+        },
+        "old": {
+          "label": "Цена в России",
+          "value": "4 000 000 ₽"
+        }
+      },
+      "video": true,
+      "button": {
+        "title": "Заказать такой же",
+        "theme": "secondary",
+        "fluid": true
+      }
+    },
+    {
+      "href": "/detail.html",
+      "title": "Audi RSQ3",
+      "caption": "Flagship",
+      "img": "/src/assets/img/tmp/cars/3.jpg",
+      "badge": {
+        "theme": "primary-light",
+        "title": "Акция"
+      },
+      "availability": "в наличии",
+      "properties": [
+        {
+          "icon": "year-issue",
+          "value": "2023"
+        },
+        {
+          "icon": "mileage",
+          "value": "9 000 км"
+        },
+        {
+          "icon": "transmission",
+          "value": "автомат"
+        }
+      ],
+      "price": {
+        "current": {
+          "label": "Цена в США",
+          "value": "3 600 000 ₽"
+        },
+        "old": {
+          "label": "Цена в России",
+          "value": "4 000 000 ₽"
+        }
+      },
+      "video": true,
+      "button": {
+        "title": "Заказать такой же",
+        "theme": "secondary",
+        "fluid": true
+      }
+    }
+  ]
+}

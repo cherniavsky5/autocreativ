@@ -2,11 +2,11 @@
 @use '@assets/styles/mixins' as *;
 
 .control {
-  --size: 16px;
+  --size: 18px;
 
   position: relative;
   display: inline-block;
-  font-size: $font-size-sm;
+  font-size: $font-size-md;
   overflow: hidden;
   vertical-align: top;
 
@@ -66,8 +66,8 @@
       &:checked ~ .control {
         &__label {
           &::before {
-            border-color: #1D8EE1;
-            background-color: #1D8EE1;
+            border-color: $primary-color;
+            background: $primary-color url($icon-check) center no-repeat;
           }
         }
       }
@@ -83,7 +83,7 @@
           &::after {
             content: '';
             position: absolute;
-            top: 7px;
+            top: 5px;
             left: 3px;
             width: calc(var(--size) - 6px);
             height: calc(var(--size) - 6px);
@@ -131,11 +131,12 @@
     &::before {
       content: '';
       position: absolute;
-      top: 4px;
+      top: 2px;
       left: 0;
       width: var(--size);
       height: var(--size);
       border: 1px solid rgba($text-color, 0.2);
+      border-radius: rem(5px);
     }
   }
 

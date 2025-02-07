@@ -3,20 +3,18 @@
 @use '@assets/styles/mixins' as *;
 
 .card-feature {
-  &.card {
-    padding: $gutter-lg;
-  }
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  padding: rem($gutter-xxl);
+  min-height: 100%;
+  background-color: $white-color;
+  overflow: hidden;
+  border-radius: rem($border-radius);
 
   &__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-bottom: rem(50px);
-    width: rem(80px);
-    height: rem(80px);
-    color: $white-color;
-    background: $gradient;
-    border-radius: rem($border-radius-xxs);
   }
 
   &__svg {
@@ -26,5 +24,21 @@
 
   &__heading {
     margin-bottom: rem($gutter);
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__blank {
+    position: absolute;
+    top: rem($gutter-lg);
+    right: rem($gutter-lg);
   }
 }

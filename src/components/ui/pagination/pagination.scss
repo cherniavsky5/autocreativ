@@ -1,5 +1,5 @@
 @use 'sass:color';
-@use '@assets/styles/vars';
+@use '@assets/styles/vars' as *;
 @use '@assets/styles/mixins' as *;
 
 .pagination {
@@ -10,18 +10,50 @@
 
   &__item {
     &:not(:last-child) {
-      margin-right: 10px;
+      margin-right: 2px;
     }
   }
   
   &__link {
+    position: relative;
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
+    width: rem(68px);
+    height: rem(68px);
     color: currentColor;
     text-align: center;
     text-decoration: none;
+    border-radius: rem(20px);
+    transition: 0.25s ease-in-out;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background: $gradient;
+      opacity: 0;
+      border-radius: rem(20px);
+      transition: 0.25s ease-in-out;
+    }
+
+    &:hover:not(.pagination__link--disabled), &--current {
+      color: $white-color;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &--disabled {
+      color: rgba($text-color, 0.5);
+      cursor: default;
+      pointer-events: none;
+    }
   }
 }
