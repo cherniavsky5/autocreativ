@@ -1,3 +1,4 @@
+import '@components/layout/header/header.js';
 import '@components/ui/modal/modal.js';
 import '@components/ui/form/select/select.js';
 import '@components/ui/form/input/input.js';

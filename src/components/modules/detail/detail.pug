@@ -1,0 +1,43 @@
+include ../../ui/typography/heading/heading
+include ../../ui/properties/properties
+include ../../ui/price/price
+include ../../ui/form/button/button
+
+mixin detail(data, attributes)
+  - var { title, caption, img } = data ? data : {}
+
+  .detail&attributes(attributes)
+    ._media
+
+
+    ._content
+      +heading({ tag: 'h1', level: 3 })._heading BMW 5 серия 2.0 AT
+
+      +properties({
+        theme: 'dashed',
+        orientation: 'vertical',
+        list: [
+          {label: 'Год выпуска', value: '2024 г.'},
+          {label: 'Пробег', value: '4 800 км'},
+          {label: 'Кузов', value: 'Седан'},
+          {label: 'Оценка', value: '3.5'},
+          {label: 'Объем двигателя', value: '2 л'},
+          {label: 'Привод', value: 'Задний'},
+          {label: 'Трансмиссия', value: 'Автомат'},
+          {label: 'Комплектация', value: 'Base, M Sport Pro, M Sport'},
+          {label: 'Аукцион', value: 'TAA Minami Kyushu'},
+          {label: 'Дата аукциона', value: '16.12.2021 00:00'},
+          {label: 'Статус', value: 'Доступен'}
+        ]
+      })._properties
+
+      +price({
+        current: {
+          value: '8 199 000 ₽'
+        },
+        old: {
+          value: '8 400 000 ₽'
+        }
+      })._price
+
+      +button({ fluid: true })._button Хочу купить

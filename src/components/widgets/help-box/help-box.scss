@@ -1,0 +1,21 @@
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
+.help-box {
+  padding: $gutter-xxl;
+  width: 100%;
+  color: $white-color;
+  background: $gradient;
+  border-radius: $border-radius-sm;
+
+  &__heading {
+    margin-bottom: $gutter-xl;
+    max-width: 95%;
+    line-height: 1.33;
+  }
+
+  &__button {
+    min-width: rem(262px);
+    font-size: $font-size-md;
+  }
+}

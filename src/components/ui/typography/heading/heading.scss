@@ -8,11 +8,13 @@
   &--1 {
     //font-size: clamp(38px, vw($font-size-h1), 85px);
     font-size: clamp(38px, 4.427vw, 85px);
+    letter-spacing: rem(-1.6px);
   }
 
   &--2 {
     //font-size: clamp(30px, vw($font-size-h2), 80px);
     font-size: clamp(30px, 4.166vw, 80px);
+    letter-spacing: rem(-1.6px);
   }
 
   &--3 {
@@ -23,15 +25,21 @@
   &--4 {
     //font-size: clamp(20px, vw($font-size-h4), 32px);
     font-size: clamp(20px, 1.666vw, 32px);
+    letter-spacing: rem(-0.6px);
   }
 
   &--5 {
     //font-size: clamp(16px, vw($font-size-h5), 24px);
     font-size: clamp(16px, 1.25vw, 24px);
+    letter-spacing: rem(-0.5px);
   }
 
   &--6 {
     //font-size: clamp(14px, vw($font-size-h6), 20px);
     font-size: clamp(14px, 1.041vw, 20px);
+  }
+
+  .accent {
+    transform: rotate(-3deg);
   }
 }

@@ -5,7 +5,7 @@
 .button {
   position: relative;
   z-index: 1;
-  padding: rem(34px) rem(57px);
+  padding: rem(33px) rem(40px);
   display: inline-block;
   color: inherit;
   font-family: $font-family-base;
@@ -26,7 +26,7 @@
   transition: background 0.25s ease-in-out, border-color 0.25s ease-in-out, color 0.2s;
 
   &--md {
-    padding: rem(22px) rem(27px);
+    padding: rem(22px) rem(30px);
     font-size: $font-size-sm;
   }
 
@@ -81,6 +81,17 @@
       &::before {
         opacity: 1;
       }
+    }
+  }
+
+  &--white {
+    color: $primary-color;
+    background-color: $white-color;
+    border-color: $white-color;
+
+    &:hover {
+      color: $white-color;
+      background-color: $primary-color;
     }
   }
 

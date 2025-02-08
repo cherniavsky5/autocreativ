@@ -15,6 +15,15 @@
 @use '../../components/modules/**/*.scss';
 @use '../../components/layout/**/*.scss';
 
+@keyframes headerSlideDown {
+  from {
+    transform: translateY(-50%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
 
 .container {
   margin: 0 auto;
@@ -22,7 +31,50 @@
   max-width: 1920px;
 }
 
+.page {
+  &--header-fixed {
+    padding-top: $header-height;
+
+    .header {
+      position: fixed;
+      top: rem(15px);
+      animation: headerSlideDown 0.2s ease-in-out;
+
+      &__top {
+        display: none;
+      }
+
+      &__content {
+        padding-left: rem(15px);
+        padding-right: rem(15px);
+        border: 1px solid $gray-500;
+        background-color: $bg-color;
+        border-radius: $border-radius;
+      }
+    }
+  }
+
+  &__footer {
+    display: none;
+  }
+}
+
 .main {
+  padding-top: rem(64px);
+
+  &__hero {
+    //margin-top: rem(-56px);
+    margin-bottom: rem(120px);
+  }
+
+  &__filter {
+    margin-bottom: rem(90px);
+  }
+
+  &__quiz {
+    margin-bottom: rem(30px);
+  }
+
   &__section {
     &:not(:last-child) {
       margin-bottom: rem(120px);
@@ -42,6 +94,51 @@
     margin-bottom: rem(60px);
   }
 
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $gutter-xxl;
+  }
+
+  &__menu-primary {
+    .menu-primary {
+      &__item {
+        &:not(:last-child) {
+          margin-right: rem(10px);
+        }
+      }
+
+      &__link {
+        position: relative;
+        z-index: 1;
+        background-color: $white-color;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          width: 100%;
+          height: 100%;
+          background: $gradient;
+          opacity: 0;
+          border-radius: $border-radius-xxs;
+          transition: opacity 0.25s ease-in-out;
+        }
+
+        &:hover, &--active {
+          color: $white-color;
+
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
@@ -49,11 +146,11 @@
   }
 
   &__pagination {
-    margin-top: rem(50px);
+    margin: rem(50px) 0 0;
     justify-content: center;
   }
-}
 
-.splide__arrows {
-  display: none;
+  &__consult, &__section {
+    margin-top: rem(120px);
+  }
 }

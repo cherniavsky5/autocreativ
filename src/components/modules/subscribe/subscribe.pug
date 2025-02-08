@@ -1,0 +1,20 @@
+include ../../ui/typography/heading/heading
+include ../../ui/typography/text/text
+
+include ../../ui/socials/socials
+
+mixin subscribe(data, attributes)
+  section.subscribe&attributes(attributes)
+    ._main
+      +heading()._heading Больше <span class="accent">интересного</span> в наших социальных сетях
+
+      +text()._text Подписывайтесь на наши социальные сети и узнавайте о новинках и акциях первыми!
+
+      +socials({
+        type: 'rounded',
+        theme: 'primary',
+        list: ['youtube', 'telegram', 'whatsapp', 'vk']
+      })._socials
+
+    ._aside
+      img._img(src='/src/assets/img/bg-subscribe.png' alt='')

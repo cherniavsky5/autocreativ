@@ -4,7 +4,7 @@
 .quiz {
   position: relative;
   z-index: 1;
-  padding: rem(90px);
+  padding: rem(94px) rem(90px) rem(90px);
   color: $white-color;
   background: $gradient;
   border-radius: $border-radius-xl;
@@ -18,16 +18,21 @@
     height: 100%;
     z-index: -1;
     background: url('../img/bg-quiz.png') right bottom no-repeat;
+    background-size: 100% auto;
   }
 
   &__heading {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
     margin-bottom: $gutter-xxl;
 
     span {
+      margin-top: rem(13px);
       padding: rem(11px) $gutter rem(16px);
       display: inline-block;
       font-size: 0.68em;
-      letter-spacing: -2%;
+      letter-spacing: rem(-3.5px);
       border: 2px solid;
       border-radius: $border-radius;
     }
@@ -43,8 +48,8 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    right: 15%;
-    top: 25%;
+    right: 14%;
+    top: 24%;
     z-index: -2;
     padding-bottom: rem(70px);
     width: rem(320px);
@@ -87,7 +92,7 @@
     &-number {
       flex-shrink: 0;
       margin-right: rem(15px);
-      padding: rem(2px) rem(9px);
+      padding: rem(4px) rem(9px);
       color: $gray-600;
       font-size: 14px;
       border: 1px solid rgba($text-color, 0.12);
@@ -118,17 +123,20 @@
   }
 
   &__title {
-    margin-bottom: $gutter-xl;
+    margin-bottom: rem(27px);
     font-size: rem(26px);
     font-weight: 500;
+    letter-spacing: rem(-0.5px);
   }
 
   &__grid {
     @include grid-container(10px);
+    margin-bottom: rem(-10px);
   }
 
   &__column {
-    @include grid-item(6)
+    @include grid-item(6);
+    margin-bottom: rem(10px);
   }
 
   &__buttons {
@@ -139,7 +147,7 @@
 
   &__button {
     flex: 1;
-    max-width: 50%;
+    max-width: calc(50% - 10px);
   }
 
   &__submit {

@@ -21,6 +21,10 @@
     flex-shrink: 0;
   }
 
+  &__logo {
+    width: rem(250px);
+  }
+
   &__menu-primary {
     flex: 0 0 auto;
     min-width: 0;

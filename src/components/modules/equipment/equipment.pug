@@ -1,0 +1,54 @@
+include ../../ui/modal/modal-insurance-history/modal-insurance-history
+include ../../widgets/card/card-feature/card-feature
+
+mixin equipment(data, attributes)
+  - var { title, caption, img } = data ? data : {}
+
+  .equipment&attributes(attributes)
+    ._main
+      ul
+        li Боковые зеркала с электроприводом складывания
+        li Пульт дистанционного управления на руль
+        li Дверной замок с электроприводом
+        li Усилитель руля
+        li Электрические стеклоподъемники
+        li Подушка безопасности (сиденье водителя)
+        li Подушка безопасности (пассажирское сиденье)
+        li Подушка безопасности (боковая)
+        li Подушка безопасности (шторка)
+        li Антиблокировочная система тормозов (ABS)
+        li Противоскольжение (TCS)
+        li Контроль устойчивости кузова (ESC)
+        li Датчик давления в шинах (TPMS)
+        li Система предупреждения о выходе из полосы движения (LDWS)
+        li Датчик парковки (задний)
+        li Задняя камера
+        li Круиз-контроль (общий)
+        li Авто кондиционер
+        li Умный ключ
+        li Беспроводной дверной замок
+        li Автоматический свет
+        li Навигация
+        li AV-монитор на переднем сиденье
+        li Bluetooth
+        li USB-терминал
+        li Кожаные сиденья
+
+    ._aside
+      +card-feature({
+        href: '#',
+        title: 'Диагностика автомобиля',
+        icon: {
+          icon: 'car-monitor'
+        }
+      })
+
+      +card-feature({
+        href: '#',
+        title: 'Страховая история автомобиля',
+        icon: {
+          icon: 'protection'
+        }
+      })&attributes({ 'data-modal-trigger': 'modal-insurance-history' })
+
+      +modal-insurance-history()

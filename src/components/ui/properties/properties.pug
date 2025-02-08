@@ -2,11 +2,11 @@ include ../icon/icon
 
 mixin properties(data, attributes)
   -
-    var options = { tag: 'span', };
-    var { theme } = data ? { ...options, ...data } : options
+    var options = { orientation: 'horizontal', list: [] };
+    var { theme, orientation, list } = data ? { ...options, ...data } : options
 
-  ul.properties&attributes(attributes)
-    each item in data
+  ul.properties(class=[theme && `properties--${theme}`, `properties--${orientation}`])&attributes(attributes)
+    each item in list
       ._property
         if item.icon
           +icon(item.icon)._icon

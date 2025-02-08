@@ -1,0 +1,20 @@
+include ../../ui/typography/heading/heading
+include ../../ui/typography/text/text
+
+include ../../ui/form/button/button
+
+mixin consult(data, attributes)
+  - var { title, caption, img } = data ? data : {}
+
+  .consult&attributes(attributes)
+    ._card
+      +heading({
+        tag: 'div',
+        level: 3
+      })._heading
+        | #{title}
+        +text({ tag: 'span', theme: 'gradient' })= caption
+
+      +button()&attributes({ 'data-modal-trigger': 'modal-feedback' })._button Получить консультацию
+
+    img._img(src=img alt='')

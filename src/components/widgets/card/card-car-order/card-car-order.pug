@@ -14,7 +14,7 @@ mixin card-car-order(data, attributes)
       a._title(href=href title='')= title
       +badge._availability= availability
 
-    +properties(properties)._properties
+    +properties({ list: properties })._properties
 
     a._media(href=href title='')
       if img

@@ -1,10 +1,13 @@
+include ../b-icon/b-icon
+
 mixin modal(data, attributes)
   -
     var options = { name: '', };
     var { name } = data ? { ...options, ...data } : options;
 
   .modal(id=`modal-${name}`)&attributes(attributes)
-    .__overlay(data-modal-close)
+    ._overlay(data-modal-close)
       ._content
+        +b-icon({ icon: 'close', theme: 'white-outline', type: 'rounded' })&attributes({ 'data-modal-close': '' })._close
+
         block
-        //<button aria-label="Close modal" data-micromodal-close></button>

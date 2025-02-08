@@ -7,6 +7,7 @@ include ../components/modules/filter/filter
 include ../components/modules/quiz/quiz
 include ../components/modules/slider/slider
 include ../components/modules/features/features
+include ../components/modules/subscribe/subscribe
 
 block vars
   - page = { title: 'Главная страница' };
@@ -19,7 +20,7 @@ block main
       // end hero
 
       // start filter
-      +section({ heading: 'Каталог авто' })._section
+      +section({ heading: 'Каталог авто' })._filter
         +filter
       // end filter
 
@@ -36,29 +37,41 @@ block main
       +section({ heading: 'Почему <span class="text-primary">выбирают</span> Autocreativ' })._section
         +features([
           {
-            icon: 'search-car',
+            icon: {
+              icon: 'search-car'
+            },
             title: 'Подбор авто и проверка',
             caption: 'Мы проверяем авто перед покупкой, согласовываем с Вами все нюансы. Бесплатно для наших клиентов проверяем историю авто по базам США'
           }, {
-            icon: 'paper',
+            icon: {
+              icon: 'paper'
+            },
             title: 'Официальный договор',
             caption: 'Заключается договор между клиентом и нашей компанией, в котором мы несём ответственность согласно законодательству'
           }, {
             href: '#',
-            icon: 'medal',
+            icon: {
+              icon: 'medal'
+            },
             title: 'Работаем «под ключ»',
             caption: 'Всё просто! AutoCreativ помогает с момента обращения и до момента вручения автомобиля заказчику. Опыт заказа авто из США с 2022 года',
             img: '/src/assets/img/tmp/work.jpg'
           }, {
-            icon: 'protection',
+            icon: {
+              icon: 'protection'
+            },
             title: 'Страхование',
             caption: 'По желанию клиента автомобиль может быть застрахован. В среднем, страховка стоит 1-2,5% от стоимости авто'
           }, {
-            icon: 'fast-delivery',
+            icon: {
+              icon: 'fast-delivery'
+            },
             title: 'Выгодная доставка',
             caption: 'Доставляем автомобили из США безопасно и по минимальным тарифам, благодаря прямым договорам с логистическими компаниями'
           }, {
-            icon: 'address',
+            icon: {
+              icon: 'address'
+            },
             title: 'Офис в Санкт-Петербурге',
             caption: 'Вы всегда можете обратиться за бесплатной консультацией к нашим сотрудников в офисе'
           }
@@ -76,7 +89,7 @@ block main
           heading: 'Автомобили с закрытых аукционов <span class="text-primary">Европы</span>',
           caption: 'AutoCreativ — ведущая компания, которая имеет привилегию владения бизнес-лицензиями на самых престижных аукционах в Европе. <br>Мы успешно сотрудничаем с Copart, Manheim и другими.',
           button: {
-            title: 'Заказать авто из США',
+            title: 'Заказать авто из Европы',
             attrs: {
               'data-modal-trigger': 'modal-feedback'
             }
@@ -116,6 +129,10 @@ block main
           slides: reviews
         })
       // end reviews
+
+      // start subscribe
+      +subscribe()._section
+      // end subscribe
 
       // start our-blog
       +section({

@@ -16,7 +16,14 @@
     color: $gray-700;
   }
 
-  &--sm {
+  &--gradient {
+    color: $primary-color;
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &--md {
     font-size: $font-size-md;
   }
 }

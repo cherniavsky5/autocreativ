@@ -1,24 +1,56 @@
 include ../../ui/typography/heading/heading
+
+include ../../widgets/help-box/help-box
 include ../../widgets/card/card-feature/card-feature
 
 mixin hero(data, attributes)
   .hero&attributes(attributes)
     +heading({ level: 1 })._heading Параллельный импорт авто из Азии, Америки и Европы
 
-    .splide.slider(class='js-hero-slider')&attributes(attributes)
+    .splide.slider(class='js-hero-slider')
       ._track
         ._list
           ._slide
             .hero__media
               img.hero__img(src='/src/assets/img/tmp/hero.jpg' alt='')
 
+            +help-box({
+              title: 'Подберем и привезем авто за 14 дней!',
+              button: {
+                title: 'Подобрать авто',
+                theme: 'white'
+              }
+            }).hero__help-box
+
+          ._slide
+            .hero__media
+              img.hero__img(src='/src/assets/img/tmp/hero.jpg' alt='')
+
+            +help-box({
+              title: 'Подберем и привезем авто за 14 дней!',
+              button: {
+                title: 'Подобрать авто',
+                theme: 'white'
+              }
+            }).hero__help-box
+
     ._blocks
       +card-feature({
+        href: '#',
         title: '50 авто <br>в наличии',
-        caption: 'посмотрите авто в наличии'
+        caption: 'посмотрите авто в наличии',
+        icon: {
+          icon: 'car-key',
+          theme: 'primary-outline'
+        }
       })
 
       +card-feature({
-        title: '50 авто <br>в наличии',
-        caption: 'посмотрите авто в наличии'
+        href: '#',
+        title: '25 авто <br>в пути',
+        caption: 'забронируйте авто со скидкой',
+        icon: {
+          icon: 'car',
+          theme: 'primary-outline'
+        }
       })

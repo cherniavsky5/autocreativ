@@ -6,8 +6,82 @@
   justify-content: space-between;
   margin: 0;
   padding-left: 0;
-  font-size: $font-size-md;
   list-style: none;
+
+  &--vertical {
+    flex-direction: column;
+
+    .properties {
+      &__property {
+        display: flex;
+      }
+
+      &__content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+
+      &__label {
+        flex: 0 1 auto;
+        margin-bottom: 0;
+      }
+
+      &__value {
+        flex: 0 0 auto;
+        margin-left: $gutter;
+      }
+    }
+  }
+
+  &--dashed {
+    .properties {
+      &__property {
+        &:not(:last-child) {
+          margin-bottom: rem(15px);
+        }
+      }
+
+      &__content {
+        position: relative;
+        z-index: 1;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: rem(6px);
+          left: 0;
+          right: 0;
+          z-index: -1;
+          border-top: 1px dashed #D0DCE7;
+        }
+      }
+
+      &__label,
+      &__value {
+        background-color: $white-color;
+      }
+
+      &__label {
+        padding-right: rem(12px);
+      }
+
+      &__value {
+        padding-left: rem(12px);
+      }
+    }
+  }
+
+  &--bordered {
+    .properties {
+      &__property {
+        padding: rem(13px) 0;
+        border-bottom: 1px solid #D0DCE7;
+      }
+    }
+  }
 
   &__property {
     display: flex;
@@ -16,7 +90,7 @@
 
   &__icon {
     flex-shrink: 0;
-    margin-right: rem(10px);
+    margin-right: rem(13px);
     width: rem(25px);
     height: rem(25px);
     color: $gray-200;

@@ -1,0 +1,40 @@
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
+.equipment {
+  display: flex;
+
+  &__main {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: rem(50px) rem(30px) rem(40px) rem(20px);
+    background-color: $white-color;
+    border-radius: $border-radius-lg;
+
+    ul {
+      margin: 0;
+      column-count: 2;
+
+      li {
+        margin-bottom: rem(8px);
+
+        &::marker {
+          font-size: 0.75em;
+        }
+      }
+    }
+  }
+
+  &__aside {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 rem(455px);
+    max-width: rem(455px);
+    gap: $gutter;
+    margin-left: $gutter;
+
+    .card-feature {
+      min-height: 0;
+    }
+  }
+}

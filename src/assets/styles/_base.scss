@@ -9,8 +9,10 @@
 }
 
 html {
-  //font-size: clamp(14px, vw($font-size-base), 20px);
-  font-size: clamp(14px, 1.0416rem, 20px);
+  font-size: 14px;
+  //font-size: clamp(14px, 1.04vw, 20px);
+
+  //background: url('/public/homepage.jpg') center top no-repeat;
 }
 
 body {
@@ -19,6 +21,12 @@ body {
   font-size: 1rem;
   line-height: $line-height-base;
   background-color: $bg-color;
+
+  //opacity: 0.5;
+
+  //&::-webkit-scrollbar {
+  //  width: 0;
+  //}
 }
 
 a {
@@ -80,4 +88,20 @@ h6 {
     width: rem(25px);
     height: rem(25px);
   }
+}
+
+.accent {
+  padding: 0 rem(30px) rem(20px);
+  display: inline-block;
+  color: $primary-color;
+  line-height: 0.9;
+  border: 2px solid;
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-radius: $border-radius;
+}
+
+.nowrap {
+  white-space: nowrap;
 }

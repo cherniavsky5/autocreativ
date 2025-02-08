@@ -64,7 +64,7 @@
   &__media {
     position: relative;
     margin-bottom: $gutter-lg;
-    padding-bottom: 61%;
+    padding-bottom: 60.5%;
   }
 
   &__img {
@@ -137,14 +137,18 @@
     white-space: nowrap;
   }
 
+  &__caption {
+    margin-top: rem(4px);
+  }
+
   &__availability {
     flex-shrink: 0;
     margin-left: $gutter;
-    margin-top: rem(6px);
+    margin-top: rem(2px);
   }
 
   &__properties {
-    margin-top: $gutter-xl;
+    margin-top: $gutter-lg;
   }
 
   &__footer {

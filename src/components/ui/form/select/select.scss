@@ -2,10 +2,29 @@
 @use '@assets/styles/mixins' as *;
 
 .select {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
-  visibility: hidden;
+  position: relative;
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: $input-padding-base;
+    transform: translateY(-50%);
+
+    & ~ .choices {
+      .choices {
+        &__inner {
+          padding-left: $input-padding-base;
+        }
+      }
+    }
+  }
+
+  &__select {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 .choices {
@@ -42,7 +61,7 @@
     .choices {
       &__inner {
         border-color: $text-color;
-        background-color: $white-color;
+        //background-color: $white-color;
         border-radius: $border-radius-xs;
         transition: none;
       }
@@ -70,7 +89,7 @@
   }
 
   &__inner {
-    padding: rem(17px) rem(60px) rem(20px) $input-padding-base;
+    padding: rem(23px) rem(60px) rem(20px) $input-padding-base;
     height: $input-height-base;
     font-size: inherit;
     background: transparent;
@@ -133,6 +152,10 @@
           }
         }
       }
+    }
+
+    &--single {
+      padding: 0;
     }
   }
 }

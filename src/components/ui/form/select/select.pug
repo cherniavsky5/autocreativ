@@ -1,13 +1,18 @@
+include ../../icon/icon
+
 mixin select(data, attributes)
   -
     data = data || { list: [], options: {} };
     var { list, options } = data;
-    var { multiple, name, placeholder } = options || {};
+    var { icon, multiple, name, placeholder } = options || {};
 
+  .select
+    if icon
+      +icon(icon)
 
-  select.select(name=name)&attributes(attributes)
-    if (placeholder)
-      option(placeholder)= placeholder
+    select._select.js-select(name=name)&attributes(attributes)
+      if (placeholder)
+        option(placeholder)= placeholder
 
-    each item in list
-      option(value=item.value selected=item.selected)= item.title
+      each item in list
+        option(value=item.value selected=item.selected)= item.title

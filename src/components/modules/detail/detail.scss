@@ -1,0 +1,31 @@
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
+.detail {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $gutter;
+
+  &__media {
+
+  }
+
+  &__content {
+    padding: rem(60px);
+    background-color: $white-color;
+    border-radius: $border-radius-lg;
+  }
+
+  &__heading {
+    margin-bottom: rem(35px);
+  }
+
+  &__properties,
+  &__price {
+    margin-bottom: rem(35px);
+  }
+
+  &__properties {
+    font-size: $font-size-md;
+  }
+}

@@ -4,9 +4,13 @@ include ../components/ui/breadcrumbs/breadcrumbs
 include ../components/ui/pagination/pagination
 include ../components/ui/typography/heading/heading
 
+include ../components/ui/form/select/select
+
 include ../components/modules/filter/filter
+include ../components/modules/consult/consult
 
 include ../components/widgets/card/card-car/card-car
+include ../components/widgets/menu/menu-primary/menu-primary
 
 block main
   main.main
@@ -25,8 +29,47 @@ block main
           +filter._filter
           // end filter
 
+          // start sorting
+          ._header
+            +menu-primary([
+              {href: '/', title: 'Все авто', active: true},
+              {href: '/', title: 'Корея', icon: 'korea'},
+              {href: '/', title: 'Китай', icon: 'china'},
+              {href: '/', title: 'США', icon: 'usa'},
+              {href: '/', title: 'Европа', icon: 'europe'},
+            ])._menu-primary
+
+            +select({
+              list: [
+                { value: 0, title: 'По убыванию цены' },
+                { value: 1, title: 'По возрастанию цены' },
+                { value: 2, title: 'По новинкам' },
+                { value: 3, title: 'Сначала выгодные' },
+                { value: 4, title: 'По рейтингу' },
+                { value: 5, title: 'По популярности' },
+              ],
+              options: {
+                icon: 'sorting'
+              }
+            })
+          // end sorting
+
+          // start content-list
           ._list
             each item in cars
+              // start card-car
               +card-car({ ...item, type: 'row' })
+              // end card-car
+          // end content-list
 
+          // start pagination
           +pagination()._pagination
+          // end pagination
+
+          // start consult
+          +consult({
+            title: 'Не нашли подходящее авто?',
+            caption: 'Мы вам поможем!',
+            img: '/src/assets/img/tmp/consult-1.jpg'
+          })._consult
+          // end consult

@@ -2,19 +2,23 @@
 @use '@assets/styles/mixins' as *;
 
 .filter {
-  padding: $gutter-xl;
+  //padding: rem(60px);
+  padding: rem(20px);
   background-color: $white-color;
+  //border-radius: $border-radius-xl;
   border-radius: $border-radius-xs;
 
   &__grid {
-    @include grid-container()
+    //@include grid-container();
+    margin-bottom: -$gutter-xl;
   }
 
   &__column {
-    @include grid-item(2, 10);
+    //@include grid-item(2, 10);
+    margin-bottom: $gutter-xl;
 
     &--large {
-      @include grid-item(3, 10);
+      //@include grid-item(3, 10);
     }
 
     &--button {

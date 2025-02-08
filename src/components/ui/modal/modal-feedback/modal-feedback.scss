@@ -1,0 +1,23 @@
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
+.modal-feedback {
+  &__header {
+    margin: 0 auto $gutter-xxl;
+    max-width: rem(940px);
+    text-align: center;
+  }
+
+  &__caption {
+    &.text {
+      margin-top: rem(15px);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: auto auto rem(230px);
+    gap: $gutter;
+    margin-bottom: $gutter;
+  }
+}

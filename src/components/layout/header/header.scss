@@ -2,17 +2,29 @@
 @use '@assets/styles/mixins' as *;
 
 .header {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: $zindex-fixed;
+  width: 100%;
+  height: $header-height;
+  transition: transform 0.3s ease-in-out;
+
   &__top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: rem(15px) 0;
+    padding: rem(9px) rem(10px) rem(4px) rem(10px);
   }
 
   &__content {
     display: flex;
     align-items: center;
-    padding: rem(16px) 0;
+    padding: rem(15px) 0;
+  }
+
+  &__menu-secondary {
+    padding-top: rem(6px);
   }
   
   &__logo {
@@ -25,6 +37,8 @@
   &__menu-primary {
     flex: 1 1 auto;
     min-width: 0;
+    margin-top: rem(3px);
+    display: none;
 
     .menu-primary__link {
       background-color: $secondary-color;
@@ -38,10 +52,17 @@
   &__contact {
     flex-shrink: 0;
     margin-left: $gutter-xl;
+
+    .contact {
+      &__title {
+        display: none;
+      }
+    }
   }
 
   &__button {
     flex-shrink: 0;
     margin-left: $gutter;
+    display: none;
   }
 }

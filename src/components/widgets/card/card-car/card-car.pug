@@ -28,7 +28,7 @@ mixin card-car(data, attributes)
 
       +text({theme: 'muted'})._caption= caption
 
-      +properties(properties)._properties
+      +properties({ list: properties })._properties
 
     ._footer
       +price(price)._price

@@ -10,13 +10,28 @@
   text-decoration: none;
   white-space: nowrap;
 
+  &:hover {
+    color: $primary-color;
+
+    .contact {
+      &__icon {
+        color: $white-color;
+        background-color: $primary-color;
+      }
+    }
+  }
+
   &__icon {
     flex-shrink: 0;
-    margin-right: rem(12px);
+    transition: 0.25s ease-in-out;
 
     .icon {
-      width: rem(20px);
-      height: rem(20px);
+      width: rem(18px);
+      height: rem(18px);
     }
+  }
+
+  &__title {
+    margin-left: rem(12px);
   }
 }

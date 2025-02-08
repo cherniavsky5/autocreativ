@@ -1,7 +1,14 @@
 extends  ../layouts/root
 
+include ../components/layout/section/section
+
 include ../components/ui/breadcrumbs/breadcrumbs
 include ../components/ui/typography/heading/heading
+
+include ../components/modules/consult/consult
+include ../components/modules/slider/slider
+include ../components/modules/detail/detail
+include ../components/modules/equipment/equipment
 
 block main
   main.main
@@ -14,3 +21,29 @@ block main
         ])._breadcrumbs
 
       ._body
+        .content._content
+          // start detail
+          +detail
+          // end detail
+
+          // start equipment
+          +section({ heading: 'Комплектация' })._section
+            +equipment
+          // end equipment
+
+          // start consult
+          +consult({
+            title: 'Остались вопросы?',
+            caption: 'Мы вам поможем!',
+            img: '/src/assets/img/tmp/consult-2.jpg'
+          })._consult
+          // end consult
+
+          // start related-cars
+          +section({ heading: 'Похожие авто', arrows: true })._section
+            +slider({
+              jsClass: 'js-slider-default',
+              card: 'card-car',
+              slides: carsSlider
+            })
+          // end related-cars

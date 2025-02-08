@@ -1,0 +1,30 @@
+include ../modal
+
+include ../../typography/heading/heading
+include ../../typography/text/text
+
+include ../../form/form-group/form-group
+include ../../form/input/input
+include ../../form/control/control
+include ../../form/button/button
+
+mixin modal-feedback(data, attributes)
+  +modal({ name: 'feedback' })
+    .modal-feedback&attributes(attributes)
+      ._header
+        +heading({tag: 'div', level: 3}) Запишитесь на <span class="text--primary">бесплатную</span> консультацию
+
+        +text._caption Заполните форму и мы свяжемся с Вами в ближайшее время
+
+      form._form(action='/' method='post')
+        ._grid
+          +form-group({title: 'Ваше имя'})
+            +input({placeholder: 'Ваше имя'})
+
+          +form-group({title: 'Номер телефона'})
+            +input({placeholder: '+7 (999) 999-99-99', mask: '+7 (000) 000-00-00'})
+
+          +button()._button Отправить
+
+        +control({ name: 'agree_policy' })
+          +text({ tag: 'span', theme: 'muted' }) Я согласен с политикой конфиденциальности и даю согласие на обработку персональных данных

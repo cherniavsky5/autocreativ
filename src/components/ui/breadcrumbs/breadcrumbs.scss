@@ -1,5 +1,5 @@
 @use 'sass:color';
-@use '@assets/styles/vars';
+@use '@assets/styles/vars' as *;
 @use '@assets/styles/mixins' as *;
 
 .breadcrumbs {
@@ -11,12 +11,17 @@
   &__item {
     &:not(:last-child)::after {
       content: '/';
-      margin: 0 5px;
+      margin: 0 $gutter;
+      color: $gray-500;
     }
   }
   
   &__link {
-    color: currentColor;
+    color: $gray-500;
     text-decoration: none;
+
+    &:hover {
+      color: $primary-color;
+    }
   }
 }

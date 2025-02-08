@@ -7,7 +7,7 @@
     &__properties {
       justify-content: flex-start;
       gap: $gutter-lg;
-      margin-top: rem(10px);
+      margin-top: rem(12px);
     }
 
     &__media {
@@ -16,7 +16,7 @@
     }
 
     &__footer {
-      margin-top: $gutter;
+      margin-top: rem(18px);
     }
 
     &__button {

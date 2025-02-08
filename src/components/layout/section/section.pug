@@ -14,13 +14,14 @@ mixin section(data, attributes)
         if caption
           ._caption!= caption
 
-      ._aside
-        if button
-          ._aside
-            +button(button)&attributes(button.attrs)= button.title
+      if button || arrows
+        ._aside
+          if button
+            ._aside
+              +button(button)&attributes(button.attrs)= button.title
 
-        if arrows
-          ._arrows
+          if arrows
+            ._arrows
 
 
     ._body

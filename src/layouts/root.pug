@@ -2,6 +2,7 @@ include ../components/layout/header/header
 include ../components/layout/footer/footer
 
 include ../components/ui/modal/modal
+include ../components/ui/modal/modal-feedback/modal-feedback
 
 block vars
 -
@@ -50,7 +51,7 @@ body.page
   //end footer
 
   // start modal-feedback
-  +modal({ name: 'feedback' })
+  +modal-feedback
   // end modal-feedback
 
   script(src='/main.js' type='module')

@@ -1,7 +1,7 @@
 import Choices from 'choices.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const selects = document.querySelectorAll('.select');
+  const selects = document.querySelectorAll('.js-select');
 
   if (selects.length) {
     selects.forEach((select) => {

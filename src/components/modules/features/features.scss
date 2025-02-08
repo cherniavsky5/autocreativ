@@ -4,18 +4,41 @@
 .features {
   &__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    //grid-template-columns: repeat(3, 1fr);
     gap: $gutter;
   }
 
   &__column {
     &:nth-child(3).features__column--photo {
-      margin-top: rem(-200px);
+      //margin-top: rem(-217px);
 
       .card-feature {
         justify-content: flex-end;
         color: $white-color;
+
+        //&__blank {
+        //  width: rem(90px);
+        //  height: rem(90px);
+        //
+        //  .icon {
+        //    width: rem(34px);
+        //    height: rem(34px);
+        //  }
+        //}
       }
+    }
+  }
+
+  .card-feature {
+    //padding: $gutter-xxl;
+    padding: rem(20px);
+
+    &__icon {
+      margin-bottom: rem(50px);
+    }
+
+    &__heading {
+      margin-bottom: rem(22px);
     }
   }
 }

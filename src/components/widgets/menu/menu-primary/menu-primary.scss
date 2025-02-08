@@ -26,12 +26,16 @@
   }
   
   &__link {
-    padding: rem(20px) rem(24px);
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem(10px) rem(24px);
+    height: rem(62px);
     color: $text-color;
     background-color: $bg-color;
     text-decoration: none;
     white-space: nowrap;
+    overflow: hidden;
     border-radius: $border-radius;
 
     &:hover {
@@ -40,11 +44,9 @@
     }
 
     .icon {
-      position: relative;
-      top: -1px;
       margin-right: rem(10px);
-      width: rem(24px);
-      height: rem(24px);
+      width: rem(22px);
+      height: rem(22px);
       transition: 0.25s ease-in-out;
     }
   }

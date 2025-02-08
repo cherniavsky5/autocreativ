@@ -39,4 +39,4 @@ mixin header(_, attributes)
         })._contact
           | +7 (999) 999-99-99
 
-        +button({ size: 'md' })._button Бесплатный расчет
+        +button({ size: 'md' })&attributes({ 'data-modal-trigger': 'modal-feedback' })._button Бесплатный расчет

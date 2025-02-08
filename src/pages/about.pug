@@ -3,6 +3,8 @@ extends  ../layouts/root
 include ../components/ui/breadcrumbs/breadcrumbs
 include ../components/ui/typography/heading/heading
 
+include ../components/modules/consult/consult
+
 block main
   main.main
     ._container.container
@@ -13,3 +15,11 @@ block main
         ])._breadcrumbs
 
       ._body
+        .content._content
+          // start consult
+          +consult({
+            title: 'Не нашли подходящее авто?',
+            caption: 'Мы вам поможем!',
+            img: '/src/assets/img/tmp/consult-4.jpg'
+          })._consult
+          // end consult

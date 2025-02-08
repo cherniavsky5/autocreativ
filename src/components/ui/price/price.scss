@@ -17,7 +17,9 @@
     }
 
     &--old {
-      margin-left: $gutter;
+      position: relative;
+      top: -1px;
+      margin-left: $gutter-lg;
       color: $gray-600;
       font-size: 0.68em;
       font-weight: $font-weight-normal;
@@ -45,5 +47,10 @@
 
   &__label {
     display: block;
+  }
+
+  &__value {
+    display: block;
+    line-height: 1;
   }
 }

@@ -6,7 +6,7 @@ mixin menu-primary(data, attributes)
   ul.menu-primary&attributes(attributes)
     each item, index in data
       li._item
-        a._link(href=item.href)
+        a._link(href=item.href class=(item.active && 'menu-primary__link--active'))
           if item.icon
             +icon(item.icon)
 

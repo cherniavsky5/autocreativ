@@ -1,0 +1,53 @@
+include ../modal
+
+include ../../typography/heading/heading
+include ../../properties/properties
+
+mixin modal-insurance-history(data, attributes)
+  +modal({ name: 'insurance-history' })
+    .modal-insurance-history&attributes(attributes)
+      +heading({tag: 'div', level: 3})._heading Страховая история авто
+
+      ._group
+        +heading({tag: 'div', level: 4})._title Общая информация
+
+        +properties({
+          theme: 'bordered',
+          orientation: 'vertical',
+          list: [
+            {label: 'Смена номера', value: 'Не было'},
+            {label: 'Смена владельца', value: 'Не было'},
+            {label: 'Потеря', value: 'Не было'},
+            {label: 'Затопление', value: 'Не было'},
+            {label: 'Кража', value: 'Не было'},
+            {label: 'ДТП без других участников дорожного движения', value: 'Не было'},
+            {label: 'ДТП с другими участниками дорожного движения', value: 'Не было'},
+            {label: 'Принадлежала компании', value: 'Нет'},
+            {label: 'Использовался в такси', value: 'Нет'},
+            {label: 'Принадлежала правительству', value: 'Нет'},
+          ]
+        })
+
+      ._group
+        +heading({tag: 'div', level: 4})._title История смены номера автомобиля/владельца
+
+        ._list
+          ._item
+            ._date.nowrap 24.11.2023
+            ._column Первый номер транспортного средства
+            ._column.nowrap 179노XXXX
+            ._column Личный автомобиль/ Пассажирское
+
+
+      ._group
+        +heading({tag: 'div', level: 4})._title Информация о повреждениях, ремонтах выплатах в связи с ДТП
+
+        +properties({
+          theme: 'bordered',
+          orientation: 'vertical',
+          list: [
+            {label: 'Страховая выплата по вине другого участника дорожного движения', value: 'ДТП и выплат не было'},
+            {label: 'Страховая выплата собственнику без участия других авто (въехал в люк, в столб и т.д)', value: 'ДТП и выплат не было'},
+            {label: 'Страховая выплата другим участникам ДТП по вине собственника', value: 'ДТП и выплат не было'},
+          ]
+        })

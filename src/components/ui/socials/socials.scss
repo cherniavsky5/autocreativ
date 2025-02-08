@@ -28,14 +28,9 @@
 
       .b-icon {
         &::before {
-          opacity: 1;
+          opacity: 0;
         }
       }
-    }
-
-    .icon {
-      width: rem(20px);
-      height: rem(20px);
     }
 
     .b-icon {

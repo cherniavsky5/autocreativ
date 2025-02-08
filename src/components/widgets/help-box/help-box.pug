@@ -1,0 +1,10 @@
+include ../../ui/icon/icon
+include ../../ui/typography/heading/heading
+include ../../ui/form/button/button
+
+mixin help-box(data, attributes)
+  - var { title, button } = data || {};
+
+  .help-box&attributes(attributes)
+    +heading({ tag: 'div', level: 5 })._heading= title
+    +button(button)&attributes({ 'data-modal-trigger': 'modal-feedback' })._button= button.title

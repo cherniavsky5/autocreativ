@@ -2,6 +2,7 @@
 @use '@assets/styles/mixins' as *;
 
 .icon {
+  flex-shrink: 0;
   width: rem(20px);
   height: rem(20px);
 }
