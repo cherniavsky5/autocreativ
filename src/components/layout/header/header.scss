@@ -2,25 +2,33 @@
 @use '@assets/styles/mixins' as *;
 
 .header {
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: $zindex-fixed;
   width: 100%;
-  height: $header-height;
+  height: rem(90px);
   transition: transform 0.3s ease-in-out;
 
   &__top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: rem(9px) rem(10px) rem(4px) rem(10px);
+    padding: rem(9px) 0 rem(4px) 0;
+
+    @include breakpoint(lg) {
+      padding: rem(9px, lg) rem(10px, lg) rem(4px, lg) rem(10px, lg);
+    }
   }
 
   &__content {
     display: flex;
     align-items: center;
-    padding: rem(15px) 0;
+    padding: rem(10px) 0;
+
+    @include breakpoint(lg) {
+      padding: rem(15px, lg) 0;
+    }
   }
 
   &__menu-secondary {
@@ -29,40 +37,120 @@
   
   &__logo {
     flex-shrink: 0;
-    margin-right: $gutter-xl;
+    margin-right: rem(20px);
     display: block;
-    width: rem(250px);
+    width: rem(158px);
+
+    @include breakpoint(lg) {
+      width: rem(250px, lg);
+    }
+
+    @include breakpoint(xl) {
+      margin-right: $gutter-xl;
+    }
+  }
+
+  &__menu-button {
+    padding: rem(12px) rem(17px) rem(10px);
+    font-size: var(--font-size-md);
+    line-height: 1;
+    background-color: $secondary-color;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+
+    @include breakpoint(xl) {
+      display: none;
+    }
+
+    .icon {
+      position: relative;
+      top: -1px;
+      margin-right: rem(4px);
+      color: $primary-color;
+    }
   }
 
   &__menu-primary {
-    flex: 1 1 auto;
-    min-width: 0;
-    margin-top: rem(3px);
-    display: none;
-
-    .menu-primary__link {
+    @include breakpoint(xl, max) {
+      position: absolute;
+      top: rem(95px);
+      left: rem(10px);
+      right: rem(10px);
+      flex-direction: column;
+      max-height: calc(100vh - 95px);
+      padding: rem(15px);
+      display: none;
+      font-size: rem(20px);
+      font-weight: 500;
       background-color: $secondary-color;
+      overflow-x: hidden;
+      overflow-y: auto;
+      border-radius: var(--border-radius);
+    }
 
-      &:hover {
-        background-color: $primary-color;
+    @include breakpoint(xl) {
+      flex: 1 1 auto;
+      min-width: 0;
+      margin-top: rem(3px, xl);
+    }
+
+    .menu-primary {
+      &__link {
+        background-color: $secondary-color;
+
+        @include hover {
+          background-color: $primary-color;
+        }
+      }
+
+      @include breakpoint(xl, max) {
+        &__item {
+          &:not(:last-child) {
+            margin-bottom: rem(4px);
+            margin-right: 0;
+          }
+        }
+
+        &__link {
+          height: rem(56px);
+          border: 1px solid $gray-100;
+        }
       }
     }
   }
 
   &__contact {
     flex-shrink: 0;
-    margin-left: $gutter-xl;
+    margin-left: auto;
+
+    @include breakpoint(xl) {
+      margin-left: $gutter-xl;
+    }
 
     .contact {
       &__title {
         display: none;
+
+        @include breakpoint(xl) {
+          display: block;
+        }
       }
     }
   }
 
   &__button {
     flex-shrink: 0;
-    margin-left: $gutter;
-    display: none;
+
+    @include breakpoint(md) {
+      margin-left: rem(15px, md);
+    }
+
+    @include breakpoint(md, max) {
+      display: none;
+    }
+
+    @include breakpoint(xl) {
+      margin-left: $gutter;
+    }
   }
 }

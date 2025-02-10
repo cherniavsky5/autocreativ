@@ -6,11 +6,11 @@
   display: inline-flex;
   align-items: center;
   color: $text-color;
-  font-size: $font-size-md;
+  font-size: var(--font-size-md);
   text-decoration: none;
   white-space: nowrap;
 
-  &:hover {
+  @include hover {
     color: $primary-color;
 
     .contact {
@@ -26,8 +26,13 @@
     transition: 0.25s ease-in-out;
 
     .icon {
-      width: rem(18px);
-      height: rem(18px);
+      width: rem(12px);
+      height: rem(12px);
+
+      @include breakpoint(xl) {
+        width: rem(18px, xl);
+        height: rem(18px, xl);
+      }
     }
   }
 

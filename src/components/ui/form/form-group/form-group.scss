@@ -2,7 +2,7 @@
 @use '@assets/styles/mixins' as *;
 
 .form-group {
-  font-size: $font-size-md;
+  font-size: var(--font-size-md);
 
   &__title {
     margin-bottom: rem(6px);
@@ -13,7 +13,7 @@
   &__body {
     display: flex;
 
-    &:hover {
+    @include hover {
       & > .form-group {
         border-color: $text-color;
       }
@@ -24,7 +24,7 @@
     }
 
     & > .form-group {
-      padding: 0 $input-padding-base;
+      padding: 0 var(--input-padding-base);
       border: 1px solid $gray-300;
       border-radius: $border-radius-sm;
       transition: border-color 0.25s ease-in-out;

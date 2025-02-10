@@ -35,12 +35,20 @@
 
   &__content {
     margin: auto;
-    background-color: #fff;
-    padding: rem(45px) $gutter-xxl;
+    padding: rem(30px) rem(20px);
     max-width: rem(1170px);
     width: 100%;
-    border-radius: $border-radius;
+    background-color: $white-color;
+    border-radius: var(--border-radius);
     will-change: transform;
+
+    @include breakpoint(md) {
+      padding: rem(40px, md) rem(30px, md);
+    }
+
+    @include breakpoint(xl) {
+      padding: rem(45px, xl) $gutter-xxl;
+    }
   }
 
   &__overlay {
@@ -51,11 +59,19 @@
     bottom: 0;
     z-index: $zindex-modal;
     display: flex;
-    padding: rem(100px) 0 $gutter-xxl;
+    padding: rem(80px) rem(10px) rem(10px);
     background: rgba(0,0,0,0.6);
     will-change: transform;
     overflow-y: auto;
     overflow-x: hidden;
+
+    @include breakpoint(xl) {
+      padding: rem(100px, xl) 0 $gutter-xxl;
+    }
+
+    @include breakpoint(md) {
+      padding: rem(100px, md) rem(20px, md) rem(20px, md);
+    }
   }
 
   &__close {
@@ -63,9 +79,10 @@
     left: 100%;
     bottom: 100%;
     cursor: pointer;
+    transform: translate(-100%, rem(-15px));
     transition: 0.25s ease-in-out;
 
-    &:hover {
+    @include hover {
       color: $primary-color;
       background-color: $white-color;
     }

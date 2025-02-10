@@ -9,21 +9,33 @@
   list-style: none;
 
   &--primary {
-    &:not(:last-child) {
-      margin-right: $gutter;
+    .socials {
+      &__item {
+        &:not(:last-child) {
+          margin-right: rem(10px);
+
+          @include breakpoint(xl) {
+            margin-right: $gutter;
+          }
+        }
+      }
     }
   }
 
   &__item {
     &:not(:last-child) {
-      margin-right: $gutter-lg;
+      margin-right: rem(15px);
+
+      @include breakpoint(xl) {
+        margin-right: $gutter-lg;
+      }
     }
   }
 
   &__link {
     color: $gray-800;
 
-    &:hover {
+    @include hover {
       color: $primary-color;
 
       .b-icon {
@@ -34,12 +46,32 @@
     }
 
     .b-icon {
-      width: rem(110px);
-      height: rem(110px);
+      width: rem(60px);
+      height: rem(60px);
+
+      @include breakpoint(md) {
+        width: rem(85px, md);
+        height: rem(85px, md);
+      }
+
+      @include breakpoint(xl) {
+        width: rem(110px, xl);
+        height: rem(110px, xl);
+      }
 
       .icon {
-        width: rem(30px);
-        height: rem(30px);
+        width: rem(20px);
+        height: rem(20px);
+
+        @include breakpoint(md) {
+          width: rem(25px, md);
+          height: rem(25px, md);
+        }
+
+        @include breakpoint(xl) {
+          width: rem(30px, xl);
+          height: rem(30px, xl);
+        }
       }
     }
   }

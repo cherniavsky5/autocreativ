@@ -6,9 +6,12 @@
   display: flex;
   margin-left: 0;
   padding-left: 0;
+  font-size: var(--font-size-md);
   list-style: none;
 
   &__item {
+    display: flex;
+
     &:not(:last-child) {
       margin-right: 2px;
     }
@@ -20,13 +23,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: rem(68px);
-    height: rem(68px);
+    width: rem(42px);
+    height: rem(42px);
     color: currentColor;
     text-align: center;
     text-decoration: none;
-    border-radius: rem(20px);
+    border-radius: rem(12px);
     transition: 0.25s ease-in-out;
+
+    @include breakpoint(xl) {
+      width: rem(68px, xl);
+      height: rem(68px, xl);
+      border-radius: rem(20px, xl);
+    }
 
     &::before {
       content: '';
@@ -38,11 +47,25 @@
       height: 100%;
       background: $gradient;
       opacity: 0;
-      border-radius: rem(20px);
+      border-radius: rem(12px);
       transition: 0.25s ease-in-out;
+
+      @include breakpoint(xl) {
+        border-radius: rem(20px, xl);
+      }
     }
 
-    &:hover:not(.pagination__link--disabled), &--current {
+    @include hover {
+      &:not(.pagination__link--disabled) {
+        color: $white-color;
+
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+
+    &--current {
       color: $white-color;
 
       &::before {
@@ -55,5 +78,11 @@
       cursor: default;
       pointer-events: none;
     }
+  }
+
+  &__dots {
+    margin: auto;
+    text-align: center;
+    width: rem(42px);
   }
 }

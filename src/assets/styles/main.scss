@@ -5,6 +5,7 @@
 @use 'normalize.css';
 @use 'choices.js/public/assets/styles/choices.css';
 @use '@splidejs/splide/dist/css/splide-core.min.css';
+@use '@fancyapps/ui/dist/fancybox/fancybox.css';
 
 // Base
 @use 'base';
@@ -27,18 +28,30 @@
 
 .container {
   margin: 0 auto;
-  padding: 0 $gutter;
+  padding: 0 10px;
   max-width: 1920px;
+  width: 100%;
+
+  @include breakpoint(md) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @include breakpoint(xl) {
+    padding: 0 $gutter;
+  }
 }
 
 .page {
   &--header-fixed {
-    padding-top: $header-height;
-
     .header {
       position: fixed;
-      top: rem(15px);
+      top: rem(10px);
       animation: headerSlideDown 0.2s ease-in-out;
+
+      @include breakpoint(xl) {
+        top: rem(15px, xl);
+      }
 
       &__top {
         display: none;
@@ -51,59 +64,114 @@
         background-color: $bg-color;
         border-radius: $border-radius;
       }
+
+      &__menu-primary {
+        top: rem(68px);
+      }
     }
   }
 
-  &__footer {
-    display: none;
+  &--menu-primary-opened {
+    overflow: hidden;
+
+    .header__menu-primary {
+      display: block;
+    }
   }
 }
 
 .main {
-  padding-top: rem(64px);
+  //padding-top: rem(64px);
+  padding-top: rem(115px);
+
+  &__hero,
+  &__section,
+  &__sections,
+  &__filter {
+    &:not(:last-child) {
+      margin-bottom: rem(60px);
+
+      @include breakpoint(md) {
+        margin-bottom: rem(80px, md);
+      }
+
+      @include breakpoint(xl) {
+        margin-bottom: rem(120px, xl);
+      }
+    }
+  }
 
   &__hero {
     //margin-top: rem(-56px);
-    margin-bottom: rem(120px);
+    margin-top: rem(-5px);
   }
 
   &__filter {
-    margin-bottom: rem(90px);
+    @include breakpoint(xl) {
+      margin-bottom: rem(90px, xl);
+    }
   }
 
   &__quiz {
     margin-bottom: rem(30px);
-  }
 
-  &__section {
-    &:not(:last-child) {
-      margin-bottom: rem(120px);
+    @include breakpoint(md) {
+      margin-bottom: rem(20px, md);
     }
   }
 
   &__sections {
     display: flex;
     flex-direction: column;
-    gap: rem(30px);
-    margin-bottom: rem(120px);
+    gap: rem(20px);
+
+    @include breakpoint(xl) {
+      gap: rem(30px, xl);
+    }
+  }
+
+  &__header {
+    margin-bottom: rem(30px);
+  }
+
+  &__breadcrumbs {
+    margin: 0 0 rem(20px);
+  }
+
+  &__heading {
+    margin-bottom: rem(30px);
+    font-size: clamp(30px, 4.427vw, 85px);
   }
 }
 
 .content {
   &__filter {
-    margin-bottom: rem(60px);
+    margin-bottom: rem(30px);
+
+    @include breakpoint(xl) {
+      margin-bottom: rem(60px, xl);
+    }
   }
 
   &__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: $gutter-xxl;
+    margin-bottom: rem(25px);
+
+    @include breakpoint(xl) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: $gutter-xxl;
+    }
   }
 
   &__menu-primary {
+    flex-wrap: wrap;
+    margin-bottom: rem(10px);
+
     .menu-primary {
       &__item {
+        margin-bottom: rem(10px);
+
         &:not(:last-child) {
           margin-right: rem(10px);
         }
@@ -146,11 +214,13 @@
   }
 
   &__pagination {
-    margin: rem(50px) 0 0;
+    //margin: rem(50px) 0 0;
+    margin: rem(30px) 0 0;
     justify-content: center;
   }
 
   &__consult, &__section {
-    margin-top: rem(120px);
+    margin-top: rem(80px);
+    //margin-top: rem(120px);
   }
 }

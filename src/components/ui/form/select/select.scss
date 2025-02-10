@@ -7,13 +7,13 @@
   .icon {
     position: absolute;
     top: 50%;
-    left: $input-padding-base;
+    left: var(--input-padding-base);
     transform: translateY(-50%);
 
     & ~ .choices {
       .choices {
         &__inner {
-          padding-left: $input-padding-base;
+          padding-left: calc(var(--input-padding-base) * 2);
         }
       }
     }
@@ -28,20 +28,27 @@
 }
 
 .choices {
-  font-size: $font-size-md;
+  font-size: var(--font-size-md);
 
   &[data-type*=select-one] {
     &::after {
-      right: rem(30px);
-      margin-top: rem(-10px);
-      width: rem(20px);
-      height: rem(20px);
+      right: var(--input-padding-base);
+      margin-top: 0;
+      width: rem(16px);
+      height: rem(16px);
       border: 0;
       background: url($icon-angle-down) center center no-repeat;
+      background-size: rem(9px) auto;
+      transform: translateY(-50%);
+
+      @include breakpoint(xl) {
+        width: rem(20px, xl);
+        height: rem(20px, xl);
+      }
     }
   }
 
-  &:hover {
+  @include hover {
     .choices {
       &__inner {
         border-color: $gray-700;
@@ -61,8 +68,7 @@
     .choices {
       &__inner {
         border-color: $text-color;
-        //background-color: $white-color;
-        border-radius: $border-radius-xs;
+        border-radius: var(--border-radius-xs);
         transition: none;
       }
 
@@ -81,7 +87,7 @@
             bottom: 100%;
             margin-top: 0;
             margin-bottom: rem(10px);
-            border-radius: $border-radius-xs;
+            border-radius: var(--border-radius-xs);
           }
         }
       }
@@ -89,8 +95,10 @@
   }
 
   &__inner {
-    padding: rem(23px) rem(60px) rem(20px) $input-padding-base;
-    height: $input-height-base;
+    display: flex;
+    align-items: center;
+    padding: rem(6px) var(--input-padding-base) rem(4px);
+    height: var(--input-height-base);
     font-size: inherit;
     background: transparent;
     border: 1px solid $gray-300;
@@ -109,40 +117,50 @@
 
     &--dropdown {
       z-index: $zindex-dropdown;
-      padding-right: rem(10px);
       border: 1px solid $secondary-color;
       background-color: $bg-color;
       border-radius: $border-radius-xs;
+
+      @include breakpoint(xl) {
+        padding-right: rem(8px, xl);
+      }
 
       .choices {
         &__list {
           max-height: 430px;
           overflow-x: hidden;
 
-          &::-webkit-scrollbar {
-            width: rem(8px);
+          @include breakpoint(xl) {
+            &::-webkit-scrollbar {
+              width: rem(8px, xl);
+            }
+
+            &::-webkit-scrollbar-track {
+              background: transparent;
+            }
+
+            &::-webkit-scrollbar-thumb {
+              background: $primary-color;
+              border-radius: $border-radius;
+            }
           }
 
-          &::-webkit-scrollbar-track {
-            background: transparent;
-          }
-
-          &::-webkit-scrollbar-thumb {
-            background: $primary-color;
-            border-radius: $border-radius;
-          }
         }
 
         &__item {
-          margin-right: rem(-10px);
-          padding: rem(21px) $input-padding-base;
+          padding: rem(15px) var(--input-padding-base);
           font-size: inherit;
+
+          @include breakpoint(xl) {
+            margin-right: rem(-10px, xl);
+            padding: rem(21px, xl) var(--input-padding-base);
+          }
 
           &:not(:first-child) {
             border-top: 1px solid $secondary-color;
           }
 
-          &:hover {
+          @include hover {
             background-color: $secondary-color;
             transition: background-color 0.25s ease-in-out;
           }

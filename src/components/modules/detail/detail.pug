@@ -4,11 +4,27 @@ include ../../ui/price/price
 include ../../ui/form/button/button
 
 mixin detail(data, attributes)
-  - var { title, caption, img } = data ? data : {}
+  -
+    var { title, caption, img } = data ? data : {}
+    var i = 1;
+    var j = 1;
 
   .detail&attributes(attributes)
     ._media
+      .splide._slider.js-slider-detail
+        ._track
+          ._list
+            while i <= 10
+              ._slide
+                a.detail__photo(href=`/src/assets/img/tmp/detail/${i}.jpg` title='' data-fancybox='gallery')
+                  img.detail__img(src=`/src/assets/img/tmp/detail/${i}.jpg` alt='')
+              - i++;
 
+      ._thumbnails.js-detail-thumbnails
+        while j <= 10
+          .detail__photo
+            img.detail__img(src=`/src/assets/img/tmp/detail/${j}.jpg` alt='')
+          - j++;
 
     ._content
       +heading({ tag: 'h1', level: 3 })._heading BMW 5 серия 2.0 AT

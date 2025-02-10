@@ -1,11 +1,11 @@
 @use '@assets/styles/vars' as *;
 
 .input {
-  padding: 0 $input-padding-base;
+  padding: 0 var(--input-padding-base);
   width: 100%;
-  height: $input-height-base;
+  height: var(--input-height-base);
   font-family: inherit;
-  font-size: $font-size-md;
+  font-size: var(--font-size-md);
   outline: 0;
   border: 1px solid $gray-300;
   appearance: none;

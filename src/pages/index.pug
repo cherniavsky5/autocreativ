@@ -25,7 +25,7 @@ block main
       // end filter
 
       // start popular-cars
-      +section({ heading: 'Популярные авто', arrows: true })._section
+      +section({ heading: 'Популярные авто', headerClass: 'inline', arrows: true })._section
         +slider({
           jsClass: 'js-slider-default',
           card: 'card-car',
@@ -34,7 +34,7 @@ block main
       // end popular-cars
 
       // start features
-      +section({ heading: 'Почему <span class="text-primary">выбирают</span> Autocreativ' })._section
+      +section({ heading: 'Почему <span class="text text--gradient">выбирают</span><br>Autocreativ' })._section
         +features([
           {
             icon: {
@@ -93,7 +93,8 @@ block main
             attrs: {
               'data-modal-trigger': 'modal-feedback'
             }
-          }
+          },
+          arrows: true
         })._section-secondary
           +slider({
               jsClass: 'js-slider-secondary',
@@ -112,7 +113,8 @@ block main
             attrs: {
               'data-modal-trigger': 'modal-feedback'
             }
-          }
+          },
+          arrows: true
         })._section-secondary
           +slider({
               jsClass: 'js-slider-secondary',
@@ -122,9 +124,9 @@ block main
         // end auction-cars
 
       // start reviews
-      +section({ heading: 'Отзывы наших клиентов', arrows: true })._section
+      +section({ heading: 'Отзывы наших клиентов', headerClass: 'inline', arrows: true })._section
         +slider({
-          jsClass: 'js-slider-default',
+          jsClass: 'js-slider-padding',
           card: 'card-review',
           slides: reviews
         })
@@ -146,10 +148,11 @@ block main
             'target': '_blank'
           }
         },
-        arrows: true
+        arrows: true,
+        headerClass: 'inline-md'
       })._section
         +slider({
-          jsClass: 'js-slider-default',
+          jsClass: 'js-slider-padding',
           card: 'card-blog',
           slides: blog
         })

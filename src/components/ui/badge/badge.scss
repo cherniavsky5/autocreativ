@@ -2,11 +2,11 @@
 @use '@assets/styles/mixins' as *;
 
 .badge {
-  padding: rem(8px) rem(11px);
+  padding: rem(6px) rem(9px);
   display: inline-block;
   color: $text-color;
   font-family: $font-family-base;
-  font-size: $font-size-xs;
+  font-size: var(--font-size-xs);
   font-weight: $font-weight-normal;
   line-height: 1;
   text-align: center;
@@ -18,7 +18,11 @@
   appearance: none;
   overflow: hidden;
   vertical-align: middle;
-  border-radius: $border-radius;
+  border-radius: var(--border-radius);
+
+  @include breakpoint(xl) {
+    padding: rem(8px, xl) rem(11px, xl);
+  }
 
   &--primary-light {
     color: $white-color;

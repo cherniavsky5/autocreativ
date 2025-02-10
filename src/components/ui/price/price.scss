@@ -5,27 +5,44 @@
   display: flex;
   align-items: center;
   color: $primary-color;
-  font-size: rem(32px);
+  font-size: rem(20px);
   font-weight: $font-weight-medium;
   white-space: nowrap;
+
+  @include breakpoint(md) {
+    font-size: rem(26px, md);
+  }
+
+  @include breakpoint(xl) {
+    font-size: rem(32px, xl);
+  }
 
   &__item {
     &--current {
       .price__label {
-        font-size: $font-size-md;
+        font-size: var(--font-size-md);
       }
     }
 
     &--old {
-      position: relative;
-      top: -1px;
-      margin-left: $gutter-lg;
+      margin-left: rem(10px);
       color: $gray-600;
-      font-size: 0.68em;
+      font-size: rem(16px);
       font-weight: $font-weight-normal;
 
+      @include breakpoint(md) {
+        font-size: rem(20px, md);
+      }
+
+      @include breakpoint(xl) {
+        position: relative;
+        top: -1px;
+        margin-left: $gutter-lg;
+        font-size: 0.68em;
+      }
+
       .price__label {
-        font-size: $font-size-sm;
+        font-size: var(--font-size-sm);
         font-weight: $font-weight-normal;
       }
 

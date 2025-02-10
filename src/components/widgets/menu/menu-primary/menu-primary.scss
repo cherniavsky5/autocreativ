@@ -6,7 +6,7 @@
   display: flex;
   margin: 0;
   padding-left: 0;
-  font-size: $font-size-sm;
+  font-size: var(--font-size-sm);
   list-style: none;
 
   &__item {
@@ -19,8 +19,12 @@
         color: $primary-color;
       }
 
-      .menu-primary__link:hover .icon {
-        color: $white-color;
+      .menu-primary__link {
+        @include hover {
+          .icon {
+            color: $white-color;
+          }
+        }
       }
     }
   }
@@ -29,8 +33,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: rem(10px) rem(24px);
-    height: rem(62px);
+    padding: rem(10px) rem(20px);
+    height: rem(50px);
     color: $text-color;
     background-color: $bg-color;
     text-decoration: none;
@@ -38,16 +42,26 @@
     overflow: hidden;
     border-radius: $border-radius;
 
-    &:hover {
+    @include hover {
       color: $white-color;
       background-color: $primary-color;
     }
 
+    @include breakpoint(xl) {
+      padding: rem(10px, xl) rem(24px, xl);
+      height: rem(62px, xl);
+    }
+
     .icon {
       margin-right: rem(10px);
-      width: rem(22px);
-      height: rem(22px);
+      width: rem(18px);
+      height: rem(18px);
       transition: 0.25s ease-in-out;
+
+      @include breakpoint(xl) {
+        width: rem(22px, xl);
+        height: rem(22px, xl);
+      }
     }
   }
 }

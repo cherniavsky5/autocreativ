@@ -2,19 +2,22 @@
 @use '@assets/styles/mixins' as *;
 
 .control {
-  --size: 18px;
+  --size: 1.285rem;
 
   position: relative;
   display: inline-block;
-  font-size: $font-size-md;
   overflow: hidden;
   vertical-align: top;
+
+  @include breakpoint(xl) {
+    font-size: var(--font-size-md);
+  }
 
   &--bordered {
     display: block;
     text-align: center;
 
-    &:hover {
+    @include hover {
       .control {
         &__label {
           border-color: #1D8EE1;
@@ -24,9 +27,17 @@
 
     .control {
       &__label {
-        padding: rem(20px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: var(--input-height-base);
+        padding: 0 var(--input-padding-base);
         border: 1px solid rgba($text-color, 0.2);
         border-radius: $border-radius-sm;
+
+        @include breakpoint(xl) {
+          padding: rem(20px, xl);
+        }
         
         &::before, &::after {
           display: none;
@@ -131,7 +142,7 @@
     &::before {
       content: '';
       position: absolute;
-      top: 2px;
+      top: 0;
       left: 0;
       width: var(--size);
       height: var(--size);

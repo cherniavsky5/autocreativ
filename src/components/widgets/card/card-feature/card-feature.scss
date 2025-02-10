@@ -7,16 +7,28 @@
   flex-direction: column;
   position: relative;
   z-index: 1;
-  padding: $gutter-xl $gutter $gutter-xl $gutter-xl;
+  padding: rem(20px);
   min-height: 100%;
   color: $text-color;
   text-decoration: none;
   background-color: $white-color;
   overflow: hidden;
-  border-radius: $border-radius;
+  border-radius: var(--border-radius);
+
+  @include breakpoint(md) {
+    padding: rem(25px, md);
+  }
+
+  @include breakpoint(xl) {
+    padding: $gutter-xl $gutter $gutter-xl $gutter-xl;
+  }
 
   &__icon {
-    margin-bottom: rem(58px);
+    margin-bottom: rem(30px);
+
+    @include breakpoint(xl) {
+      margin-bottom: rem(58px, xl);
+    }
   }
 
   &__svg {
@@ -25,7 +37,17 @@
   }
 
   &__heading {
-    margin-bottom: rem(15px);
+    margin-bottom: rem(8px);
+
+    @include breakpoint(xl) {
+      margin-bottom: rem(15px, xl);
+    }
+
+    br {
+      @include breakpoint(xl, max) {
+        display: none;
+      }
+    }
   }
 
   &__img {
@@ -40,8 +62,19 @@
 
   &__blank {
     position: absolute;
-    top: $gutter-xl;
-    right: $gutter-xl;
+    top: rem(20px);
+    right: rem(20px);
+    border: 1px solid $gray-100;
+
+    @include breakpoint(md) {
+      top: rem(25px, md);
+      right: rem(25px, md);
+    }
+
+    @include breakpoint(xl) {
+      top: $gutter-xl;
+      right: $gutter-xl;
+    }
   }
 }
 
@@ -69,7 +102,7 @@ a.card-feature {
     }
   }
 
-  &:hover {
+  @include hover {
     color: $white-color;
 
     &::before {

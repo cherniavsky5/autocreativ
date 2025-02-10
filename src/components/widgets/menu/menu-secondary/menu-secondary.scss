@@ -6,18 +6,22 @@
   display: flex;
   margin: 0;
   padding-left: 0;
-  font-size: $font-size-sm;
+  font-size: var(--font-size-sm);
   list-style: none;
 
   &__item {
-    margin-right: $gutter-xl;
+    margin-right: rem(15px);
+
+    @include breakpoint(xl) {
+      margin-right: $gutter-xl;
+    }
   }
   
   &__link {
     color: $text-color;
     text-decoration: none;
 
-    &:hover {
+    @include hover {
       color: $primary-color;
     }
   }

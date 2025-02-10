@@ -4,23 +4,41 @@
 .consult {
   position: relative;
   z-index: 1;
-  padding: rem(457px) rem(50px) rem(50px);
+  padding: rem(370px) rem(18px) rem(18px);
   overflow: hidden;
-  border-radius: $border-radius-xl;
+  border-radius: var(--border-radius-xl);
+
+  @include breakpoint(xl) {
+    padding: rem(457px, xl) rem(50px, xl) rem(50px, xl);
+  }
 
   &__card {
-    padding: rem(50px);
-    max-width: rem(815px);
+    padding: rem(20px);
     background-color: $white-color;
-    border-radius: $border-radius-lg;
+    border-radius: var(--border-radius-lg);
+
+    @include breakpoint(xl) {
+      padding: rem(50px, xl);
+      max-width: rem(815px, xl);
+    }
   }
 
   &__heading {
-    margin-bottom: $gutter-xxl;
+    margin-bottom: rem(20px);
+
+    @include breakpoint(xl) {
+      margin-bottom: $gutter-xxl;
+    }
 
     .text {
-      display: block;
+      @include breakpoint(xl) {
+        display: block;
+      }
     }
+  }
+
+  &__button {
+    width: 100%;
   }
 
   &__img {

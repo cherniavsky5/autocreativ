@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   MicroModal.init({
     disableScroll: true,
+    disableFocus: true,
     awaitOpenAnimation: true,
     awaitCloseAnimation: true,
     openTrigger: 'data-modal-trigger',

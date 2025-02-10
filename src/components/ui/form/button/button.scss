@@ -5,11 +5,11 @@
 .button {
   position: relative;
   z-index: 1;
-  padding: rem(33px) rem(40px);
+  padding: rem(22px) rem(30px);
   display: inline-block;
   color: inherit;
   font-family: $font-family-base;
-  font-size: rem(20px);
+  font-size: 1rem;
   font-weight: $font-weight-semibold;
   line-height: 1;
   text-align: center;
@@ -25,9 +25,17 @@
   border-radius: $border-radius-lg;
   transition: background 0.25s ease-in-out, border-color 0.25s ease-in-out, color 0.2s;
 
+  @include breakpoint(xl) {
+    padding: rem(33px, xl) rem(40px, xl);
+  }
+
   &--md {
-    padding: rem(22px) rem(30px);
-    font-size: $font-size-sm;
+    padding: rem(14px) rem(19px);
+    font-size: var(--font-size-sm);
+
+    @include breakpoint(xl) {
+      padding: rem(22px, xl) rem(30px, xl);
+    }
   }
 
   &--primary {
@@ -49,7 +57,7 @@
       transition: opacity 0.25s ease-in-out;
     }
 
-    &:hover {
+    @include hover {
       &::before {
         opacity: 1;
       }
@@ -75,7 +83,7 @@
       transition: opacity 0.25s ease-in-out;
     }
 
-    &:hover {
+    @include hover {
       color: $white-color;
 
       &::before {
@@ -89,7 +97,7 @@
     background-color: $white-color;
     border-color: $white-color;
 
-    &:hover {
+    @include hover {
       color: $white-color;
       background-color: $primary-color;
     }
@@ -99,7 +107,7 @@
     color: $danger-color;
     border-color: $danger-color;
 
-    &:hover {
+    @include hover {
       color: $white-color;
       background-color: $danger-color;
     }
@@ -113,8 +121,16 @@
   }
 
   .icon {
-    margin-left: $gutter;
-    width: rem(20px);
-    height: rem(20px);
+    margin-top: rem(-3px);
+    margin-bottom: rem(-3px);
+    margin-left: rem(10px);
+    width: rem(18px);
+    height: rem(18px);
+
+    @include breakpoint(xl) {
+      margin-left: $gutter;
+      width: rem(20px, xl);
+      height: rem(20px, xl);
+    }
   }
 }

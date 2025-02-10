@@ -7,10 +7,13 @@ mixin properties(data, attributes)
 
   ul.properties(class=[theme && `properties--${theme}`, `properties--${orientation}`])&attributes(attributes)
     each item in list
-      ._property
+      li._property
         if item.icon
           +icon(item.icon)._icon
 
         ._content
-          span._label= item.label
-          span._value= item.value
+          if item.label
+            span._label= item.label
+
+          if item.value
+            span._value= item.value

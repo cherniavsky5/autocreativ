@@ -2,20 +2,41 @@
 @use '@assets/styles/mixins' as *;
 
 .help-box {
-  padding: $gutter-xxl;
+  padding: rem(15px);
   width: 100%;
   color: $white-color;
   background: $gradient;
-  border-radius: $border-radius-sm;
+  border-radius: var(--border-radius-sm);
+
+  @include breakpoint(md) {
+    padding: rem(30px, md);
+  }
+
+  @include breakpoint(xl) {
+    padding: $gutter-xxl;
+  }
 
   &__heading {
-    margin-bottom: $gutter-xl;
-    max-width: 95%;
     line-height: 1.33;
+
+    @include breakpoint(md) {
+      margin-bottom: rem(20px, md);
+    }
+
+    @include breakpoint(xl) {
+      margin-bottom: $gutter-xl;
+    }
   }
 
   &__button {
-    min-width: rem(262px);
-    font-size: $font-size-md;
+    font-size: var(--font-size-md);
+
+    @include breakpoint(md) {
+      min-width: rem(207px, md);
+    }
+
+    @include breakpoint(xl) {
+      min-width: rem(262px, xl);
+    }
   }
 }

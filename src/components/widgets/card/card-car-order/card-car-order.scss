@@ -3,11 +3,23 @@
 @use '@assets/styles/mixins' as *;
 
 .card-car--order {
+  &.card-car {
+    padding: rem(12px);
+
+    @include breakpoint(md) {
+      padding: rem(20px, md);
+    }
+  }
+
   .card-car {
     &__properties {
       justify-content: flex-start;
       gap: $gutter-lg;
       margin-top: rem(12px);
+
+      @include breakpoint(md) {
+        margin-top: rem(20px, md);
+      }
     }
 
     &__media {
@@ -16,11 +28,27 @@
     }
 
     &__footer {
-      margin-top: rem(18px);
+      margin-top: rem(12px);
+
+      @include breakpoint(md) {
+        margin-top: rem(20px, md);
+      }
+
+      @include breakpoint(xl) {
+        margin-top: rem(18px, xl);
+      }
     }
 
     &__button {
-      margin-top: $gutter;
+      margin-top: rem(12px);
+
+      @include breakpoint(md) {
+        margin-top: rem(20px, md);
+      }
+
+      @include breakpoint(xl) {
+        margin-top: $gutter;
+      }
     }
   }
 }

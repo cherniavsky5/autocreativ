@@ -4,41 +4,77 @@
 .features {
   &__grid {
     display: grid;
-    //grid-template-columns: repeat(3, 1fr);
-    gap: $gutter;
+    gap: rem(20px);
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint(xl) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: $gutter;
+    }
   }
 
   &__column {
     &:nth-child(3).features__column--photo {
-      //margin-top: rem(-217px);
+      @include breakpoint(xl) {
+        margin-top: rem(-217px, xl);
+      }
 
       .card-feature {
         justify-content: flex-end;
         color: $white-color;
 
-        //&__blank {
-        //  width: rem(90px);
-        //  height: rem(90px);
-        //
-        //  .icon {
-        //    width: rem(34px);
-        //    height: rem(34px);
-        //  }
-        //}
+        &__blank {
+
+          @include breakpoint(md) {
+            width: rem(64px, md);
+            height: rem(64px, md);
+          }
+
+          @include breakpoint(xl) {
+            width: rem(90px, xl);
+            height: rem(90px, xl);
+          }
+
+          .icon {
+            @include breakpoint(md) {
+              width: rem(30px, md);
+              height: rem(30px, md);
+            }
+
+            @include breakpoint(xl) {
+              width: rem(34px, xl);
+              height: rem(34px, xl);
+            }
+          }
+        }
       }
     }
   }
 
   .card-feature {
-    //padding: $gutter-xxl;
     padding: rem(20px);
 
+    @include breakpoint(xl) {
+      padding: $gutter-xxl;
+    }
+
     &__icon {
-      margin-bottom: rem(50px);
+      margin-bottom: rem(30px);
+
+      @include breakpoint(xl) {
+        margin-bottom: rem(50px, xl);
+      }
     }
 
     &__heading {
-      margin-bottom: rem(22px);
+      margin-bottom: rem(14px);
+
+      @include breakpoint(xl) {
+        margin-bottom: rem(22px, xl);
+      }
     }
   }
 }

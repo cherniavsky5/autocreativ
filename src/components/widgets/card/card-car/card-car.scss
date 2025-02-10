@@ -5,66 +5,99 @@
 .card-car {
   display: flex;
   flex-direction: column;
-  padding: $gutter-lg;
+  padding: rem(15px);
   min-height: 100%;
   background-color: $white-color;
   border: 2px solid $white-color;
-  border-radius: $border-radius;
+  border-radius: var(--border-radius);
   transition: border-color 0.25s ease-in-out;
 
-  &:hover {
+  @include hover {
     border-color: $primary-color;
   }
 
+  @include breakpoint(xl) {
+    padding: $gutter-lg;
+  }
+
   &--row {
-    flex-direction: row;
-    align-items: center;
-    padding: $gutter-xl;
+    @include breakpoint(lg) {
+      flex-direction: row;
+      align-items: center;
+      padding: $gutter-xl;
 
-    .card-car {
-      &__media {
-        flex: 0 0 22.5%;
-        max-width: 22.5%;
-        margin-right: rem(50px);
-        margin-bottom: 0;
-        padding-bottom: 13%;
-      }
+      .card-car {
+        &__media {
+          flex: 0 0 22.5%;
+          max-width: 22.5%;
+          margin-right: rem(50px);
+          margin-bottom: 0;
+          padding-bottom: 13%;
+        }
 
-      &__content {
-        flex: 1 0 auto;
-        min-width: 0;
-      }
+        &__content {
+          flex: 1 0 auto;
+          min-width: 0;
+        }
 
-      &__title {
-        flex-grow: 0;
-      }
+        &__title {
+          flex-grow: 0;
+        }
 
-      &__properties {
-        justify-content: flex-start;
+        &__properties {
+          justify-content: flex-start;
 
-        .properties__property:not(:last-child) {
-          margin-right: 8.38%;
+          .properties__property:not(:last-child) {
+            margin-right: 8.38%;
+          }
+        }
+
+        &__footer {
+          flex: 0 0 rem(350px);
+          max-width: rem(350px);
+          margin-top: 0;
+          margin-left: 10%;
+        }
+
+        &__button {
+          margin-top: $gutter;
+          min-width: rem(320px);
         }
       }
+    }
 
-      &__footer {
-        flex: 0 0 rem(350px);
-        max-width: rem(350px);
-        margin-top: 0;
-        margin-left: 10%;
-      }
+    @include breakpoint(lg, max) {
+      .card-car {
+        &__properties {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: rem(16px);
+        }
 
-      &__button {
-        margin-top: $gutter;
-        min-width: rem(320px);
+        &__button {
+          margin-top: rem(20px);
+          width: 100%;
+        }
       }
     }
   }
 
   &__media {
     position: relative;
-    margin-bottom: $gutter-lg;
-    padding-bottom: 60.5%;
+    margin-bottom: rem(20px);
+    padding-bottom: 65.5%;
+    overflow: hidden;
+    border-radius: var(--border-radius-xs);
+
+    @include breakpoint(md) {
+      padding-bottom: 71%;
+    }
+
+    @include breakpoint(xl) {
+      margin-bottom: $gutter-lg;
+      padding-bottom: 60.5%;
+      border-radius: $border-radius-xs;
+    }
   }
 
   &__img {
@@ -74,20 +107,29 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: $border-radius-xs;
   }
 
   &__badge {
     position: absolute;
-    top: $gutter;
-    left: $gutter;
+    top: rem(10px);
+    left: rem(10px);
     z-index: 2;
+
+    @include breakpoint(xl) {
+      top: $gutter;
+      left: $gutter;
+    }
   }
 
   &__blank {
     position: absolute;
-    top: $gutter;
-    right: $gutter;
+    top: rem(10px);
+    right: rem(10px);
+
+    @include breakpoint(xl) {
+      top: $gutter;
+      right: $gutter;
+    }
   }
 
   &__video {
@@ -99,8 +141,8 @@
     align-items: center;
     justify-content: center;
     padding: 0;
-    width: rem(92px);
-    height: rem(92px);
+    width: rem(55px);
+    height: rem(55px);
     color: $white-color;
     background: none;
     border: 1px solid rgba($white-color, 0.25);
@@ -110,14 +152,29 @@
     transform: translate(-50%, -50%);
     transition: 0.25s ease-in-out;
 
-    .icon {
-      width: rem(24px);
-      height: rem(24px);
+    @include breakpoint(xl) {
+      width: rem(92px, xl);
+      height: rem(92px, xl);
     }
 
-    &:hover {
+    .icon {
+      width: rem(18px);
+      height: rem(18px);
+
+      @include breakpoint(xl) {
+        width: rem(24px, xl);
+        height: rem(24px, xl);
+      }
+    }
+
+    @include hover {
       color: $primary-color;
       background-color: $white-color;
+    }
+
+    @include breakpoint(md) {
+      width: rem(70px, md);
+      height: rem(70px, md);
     }
   }
 
@@ -131,27 +188,66 @@
     min-width: 0;
     display: block;
     color: inherit;
-    font-size: rem(30px);
+    font-size: rem(18px);
     text-decoration: none;
     text-overflow: ellipsis;
     white-space: nowrap;
+
+    @include breakpoint(md) {
+      font-size: rem(24px, md);
+    }
+
+    @include breakpoint(xl) {
+      font-size: rem(30px, xl);
+    }
   }
 
   &__caption {
     margin-top: rem(4px);
+
+    @include breakpoint(md) {
+      font-size: rem(20px, md);
+    }
   }
 
   &__availability {
     flex-shrink: 0;
-    margin-left: $gutter;
-    margin-top: rem(2px);
+    margin-top: rem(-2px);
+    margin-left: rem(20px);
+
+    @include breakpoint(md) {
+      margin-top: 0;
+    }
+
+    @include breakpoint(xl) {
+      margin-left: $gutter;
+      margin-top: rem(2px, xl);
+    }
   }
 
   &__properties {
-    margin-top: $gutter-lg;
+    justify-content: space-between;
+    margin-top: rem(15px);
+    font-size: var(--font-size-md);
+
+    @include breakpoint(md) {
+      margin-top: rem(20px, md);
+    }
+
+    @include breakpoint(xl) {
+      margin-top: $gutter-lg;
+    }
   }
 
   &__footer {
-    margin-top: $gutter-xl;
+    margin-top: rem(15px);
+
+    @include breakpoint(md) {
+      margin-top: rem(20px, md);
+    }
+
+    @include breakpoint(xl) {
+      margin-top: $gutter-xl;
+    }
   }
 }

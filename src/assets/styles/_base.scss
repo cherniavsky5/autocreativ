@@ -9,10 +9,12 @@
 }
 
 html {
-  font-size: 14px;
-  //font-size: clamp(14px, 1.04vw, 20px);
-
+  font-size: var(--font-size-base);
   //background: url('/public/homepage.jpg') center top no-repeat;
+
+  @include breakpoint(xl) {
+    font-size: clamp(14px, 1.04vw, 20px);
+  }
 }
 
 body {
@@ -23,7 +25,7 @@ body {
   background-color: $bg-color;
 
   //opacity: 0.5;
-
+  //
   //&::-webkit-scrollbar {
   //  width: 0;
   //}
@@ -79,19 +81,39 @@ h6 {
   align-items: center;
   justify-content: center;
   color: $text-color;
-  width: rem(58px);
-  height: rem(58px);
+  width: rem(42px);
+  height: rem(42px);
   background-color: $white-color;
   border-radius: $border-radius;
 
+  @include breakpoint(md) {
+    width: rem(50px, md);
+    height: rem(50px, md);
+  }
+
+  @include breakpoint(xl) {
+    width: rem(58px, xl);
+    height: rem(58px, xl);
+  }
+
   .icon {
-    width: rem(25px);
-    height: rem(25px);
+    width: rem(18px);
+    height: rem(18px);
+
+    @include breakpoint(md) {
+      width: rem(22px, md);
+      height: rem(22px, md);
+    }
+
+    @include breakpoint(xl) {
+      width: rem(25px, xl);
+      height: rem(25px, xl);
+    }
   }
 }
 
 .accent {
-  padding: 0 rem(30px) rem(20px);
+  padding: rem(1px) rem(6px) rem(4px);
   display: inline-block;
   color: $primary-color;
   line-height: 0.9;
@@ -100,6 +122,10 @@ h6 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-radius: $border-radius;
+
+  @include breakpoint(xl) {
+    padding: 0 rem(30px) rem(20px);
+  }
 }
 
 .nowrap {

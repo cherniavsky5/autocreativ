@@ -1,3 +1,4 @@
+include ../../ui/icon/icon
 include ../../ui/socials/socials
 include ../../ui/contact/contact
 include ../../ui/form/button/button
@@ -22,6 +23,10 @@ mixin header(_, attributes)
         a._logo(href='/' title='')
           img(src='/src/assets/img/logo.svg' alt='')
 
+        ._menu-button.js-menu-button
+          +icon('menu')
+          | Меню
+
         +menu-primary([
           { href: '/catalog.html', title: 'Каталог', icon: 'catalog' },
           { href: '/', title: 'О компании' },
@@ -31,7 +36,7 @@ mixin header(_, attributes)
           { href: '/', title: 'Китай', icon: 'china' },
           { href: '/', title: 'США', icon: 'usa' },
           { href: '/', title: 'Европа', icon: 'europe' },
-        ])._menu-primary
+        ])._menu-primary.js-menu-primary
 
         +contact({
           icon: 'call',

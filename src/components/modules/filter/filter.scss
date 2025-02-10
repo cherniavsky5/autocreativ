@@ -2,27 +2,59 @@
 @use '@assets/styles/mixins' as *;
 
 .filter {
-  //padding: rem(60px);
   padding: rem(20px);
   background-color: $white-color;
-  //border-radius: $border-radius-xl;
-  border-radius: $border-radius-xs;
+  border-radius: var(--border-radius-xl);
+
+  @include breakpoint(xl) {
+    padding: rem(60px, xl);
+  }
 
   &__grid {
-    //@include grid-container();
-    margin-bottom: -$gutter-xl;
+    @include breakpoint(md) {
+      @include grid-container();
+    }
+
+    @include breakpoint(xl) {
+      margin-bottom: -$gutter-xl;
+    }
   }
 
   &__column {
-    //@include grid-item(2, 10);
-    margin-bottom: $gutter-xl;
+
+    @include breakpoint(md) {
+      @include grid-item(5, 10);
+    }
+
+    @include breakpoint(xl) {
+      @include grid-item(2, 10);
+      margin-bottom: $gutter-xl;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(15px);
+
+      @include breakpoint(md) {
+        margin-bottom: rem(20px, md);
+      }
+    }
 
     &--large {
-      //@include grid-item(3, 10);
+      @include breakpoint(xl) {
+        @include grid-item(3, 10);
+      }
     }
 
     &--button {
       align-self: flex-end;
+
+      @include breakpoint(md) {
+        @include grid-item(1, 1);
+
+        @include breakpoint(xl) {
+          @include grid-item(2, 10);
+        }
+      }
     }
   }
 }

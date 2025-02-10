@@ -8,13 +8,21 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: rem(80px);
-  height: rem(80px);
-  //width: rem(50px);
-  //height: rem(50px);
+  width: rem(50px);
+  height: rem(50px);
   color: $white-color;
   overflow: hidden;
-  border-radius: $border-radius-xxs;
+  border-radius: var(--border-radius-xxs);
+
+  @include breakpoint(md) {
+    width: rem(70px, md);
+    height: rem(70px, md);
+  }
+
+  @include breakpoint(xl) {
+    width: rem(80px, xl);
+    height: rem(80px, xl);
+  }
 
   &::before {
     content: '';
@@ -25,7 +33,7 @@
     width: 100%;
     height: 100%;
     background: $gradient;
-    border-radius: $border-radius-xxs;
+    border-radius: var(--border-radius-xxs);
     transition: opacity 0.25s ease-in-out;
   }
 
@@ -38,7 +46,7 @@
     width: 100%;
     height: 100%;
     background: $gradient-reverse;
-    border-radius: $border-radius-xxs;
+    border-radius: var(--border-radius-xxs);
     transition: opacity 0.25s ease-in-out;
   }
 
@@ -65,13 +73,33 @@
   }
 
   &--sm {
-    width: rem(58px);
-    height: rem(58px);
+    width: rem(36px);
+    height: rem(36px);
+
+    @include breakpoint(md) {
+      width: rem(45px, md);
+      height: rem(45px, md);
+    }
+
+    @include breakpoint(xl) {
+      width: rem(58px, xl);
+      height: rem(58px, xl);
+    }
   }
 
   .icon {
-    width: rem(40px);
-    height: rem(40px);
+    width: rem(20px);
+    height: rem(20px);
     pointer-events: none;
+
+    @include breakpoint(md) {
+      width: rem(30px, md);
+      height: rem(30px, md);
+    }
+
+    @include breakpoint(xl) {
+      width: rem(40px, xl);
+      height: rem(40px, xl);
+    }
   }
 }

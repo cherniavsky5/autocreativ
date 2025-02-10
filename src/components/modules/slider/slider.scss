@@ -2,27 +2,46 @@
 @use '@assets/styles/mixins' as *;
 
 .splide {
-  &__slide {
-    margin-right: 20px;
-    width: 25%;
-  }
+  display: flex;
+  flex-direction: column-reverse;
 
   &__arrows {
     display: flex;
-    gap: $gutter;
+    gap: rem(10px);
+    margin-top: rem(20px);
+
+    @include breakpoint(md) {
+      gap: rem(20px, md);
+    }
+
+    @include breakpoint(xl) {
+      gap: $gutter;
+    }
   }
 
   &__arrow {
-    width: rem(90px);
-    height: rem(90px);
+    width: rem(50px);
+    height: rem(50px);
     background-color: transparent;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: rem(35px);
+    background-size: rem(20px);
     border: 1px solid $gray-200;
     cursor: pointer;
     border-radius: 50%;
     transition: 0.25s ease-in-out;
+
+    @include breakpoint(md) {
+      width: rem(74px, md);
+      height: rem(74px, md);
+      background-size: rem(30px, md);
+    }
+
+    @include breakpoint(xl) {
+      width: rem(90px, xl);
+      height: rem(90px, xl);
+      background-size: rem(35px, xl);
+    }
 
     svg {
       display: none;
@@ -36,20 +55,24 @@
     &--prev {
       background-image: url($icon-arrow-left);
 
-      &:hover:not(:disabled) {
-        border-color: $primary-color;
-        background-color: $primary-color;
-        background-image: url($icon-arrow-left-white);
+      @include hover {
+        &:not(:disabled) {
+          border-color: $primary-color;
+          background-color: $primary-color;
+          background-image: url($icon-arrow-left-white);
+        }
       }
     }
 
     &--next {
       background-image: url($icon-arrow-right);
 
-      &:hover:not(:disabled) {
-        border-color: $primary-color;
-        background-color: $primary-color;
-        background-image: url($icon-arrow-right-white);
+      @include hover {
+        &:not(:disabled) {
+          border-color: $primary-color;
+          background-color: $primary-color;
+          background-image: url($icon-arrow-right-white);
+        }
       }
     }
   }

@@ -10,9 +10,10 @@ mixin quiz(data, attributes)
       span чтобы узнать точную цену автомобиля
 
     ._sale
-      ._sale-icon.icon-grad
-        +b-icon({ icon: 'gift' })
-      ._sale-text После опроса вы получите скидку на подбор <span class="text text--primary">5 000 ₽</span>
+      ._sale-content
+        ._sale-icon.icon-grad
+          +b-icon({ icon: 'gift' })
+        ._sale-text После опроса вы получите скидку на подбор <span class="text text--primary">5 000 ₽</span>
 
     ._content
       form.quiz-form._form.js-quiz-form
@@ -46,7 +47,7 @@ mixin quiz(data, attributes)
               ._step.js-quiz-step
                 ._title Какие марки авто вы рассматриваете?
 
-                ._grid
+                ._grid.-columns
                   ._column
                     +control({ name: 'model[]' }) KIA
                   ._column

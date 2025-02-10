@@ -3,6 +3,11 @@
 
 .icon {
   flex-shrink: 0;
-  width: rem(20px);
-  height: rem(20px);
+  width: rem(14px);
+  height: rem(14px);
+
+  @include breakpoint(xl) {
+    width: rem(20px, xl);
+    height: rem(20px, xl);
+  }
 }

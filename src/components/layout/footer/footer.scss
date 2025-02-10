@@ -2,19 +2,44 @@
 @use '@assets/styles/mixins' as *;
 
 .footer {
-  padding: rem(60px) 0 rem(15px);
+  padding: rem(30px) 0 rem(10px);
+
+  @include breakpoint(md) {
+    padding: rem(40px, md) 0 rem(15px, md);
+  }
+
+  @include breakpoint(xl) {
+    padding: rem(60px, xl) 0 rem(15px, xl);
+  }
 
   &__body {
-    padding: rem(50px);
+    padding: rem(30px) rem(20px);
     background-color: $white-color;
-    border-radius: $border-radius;
+    border-radius: var(--border-radius);
+
+    @include breakpoint(xl) {
+      padding: rem(50px, xl);
+    }
   }
 
   &__top {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: rem(45px);
+
+    @include breakpoint(md) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    @include breakpoint(xl) {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: rem(45px, xl);
+    }
   }
 
   &__logo, &__contact {
@@ -22,35 +47,130 @@
   }
 
   &__logo {
-    width: rem(250px);
+    order: 1;
+    margin-bottom: rem(15px);
+    width: rem(195px);
+
+    @include breakpoint(md) {
+      margin-bottom: 0;
+      width: rem(228px, md);
+    }
+
+    @include breakpoint(xl) {
+      width: rem(250px, xl);
+    }
+  }
+
+  &__contact {
+    order: 2;
+    margin-bottom: rem(25px);
+
+    @include breakpoint(md) {
+      margin-bottom: 0;
+    }
+
+    @include breakpoint(xl) {
+      order: 3;
+    }
+
+    .contact {
+      &__title {
+        @include breakpoint(xl) {
+          //display: none;
+        }
+      }
+    }
   }
 
   &__menu-primary {
-    flex: 0 0 auto;
-    min-width: 0;
-    padding: 0 $gutter;
+    order: 3;
+    display: block;
+    column-count: 2;
+
+    @include breakpoint(md) {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: rem(35px, md);
+      width: 100%;
+      column-count: auto;
+      gap: rem(4px, md);
+    }
+
+    @include breakpoint(xl) {
+      order: 2;
+      flex: 0 0 auto;
+      min-width: 0;
+      margin-top: 0;
+      padding: 0 $gutter;
+      width: auto;
+    }
+
+    .menu-primary {
+      &__item {
+        &:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: rem(4px);
+
+          @include breakpoint(md) {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      &__link {
+        height: rem(38px);
+      }
+    }
   }
 
   &__content {
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-top: rem(25px);
+
+    @include breakpoint(md) {
+      align-items: flex-start;
+      margin-top: rem(50px, md);
+    }
+
+    @include breakpoint(xl) {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
   }
 
   &__info {
-    display: flex;
+    margin-top: rem(35px);
+    width: 100%;
+
+    @include breakpoint(md) {
+      display: flex;
+      margin-top: rem(50px, md);
+    }
+
+    @include breakpoint(xl) {
+      margin-top: 0;
+      width: auto;
+    }
 
     .text {
+      margin-bottom: rem(10px);
+
       &:not(:last-child) {
-        margin-bottom: rem(10px);
+        @include breakpoint(xl) {
+          margin-bottom: rem(10px, xl);
+        }
       }
-      
+
+
       a {
         color: $primary-color;
         text-decoration: none;
         border-bottom: 1px solid;
 
-        &:hover {
+        @include hover {
           border-bottom-color: transparent;
         }
       }
@@ -59,7 +179,13 @@
   
   &__column {
     &:not(:last-child) {
-      margin-right: rem(180px);
+      @include breakpoint(md) {
+        margin-right: rem(90px, md);
+      }
+
+      @include breakpoint(xl) {
+        margin-right: rem(180px, xl);
+      }
     }
   }
 }

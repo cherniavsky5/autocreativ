@@ -4,10 +4,19 @@
 .quiz {
   position: relative;
   z-index: 1;
-  padding: rem(94px) rem(90px) rem(90px);
+  padding: rem(30px) rem(20px) 90.5%;
   color: $white-color;
   background: $gradient;
-  border-radius: $border-radius-xl;
+  overflow: hidden;
+  border-radius: var(--border-radius-xl);
+
+  @include breakpoint(md) {
+    padding: rem(50px, md) rem(50px, md) 65%;
+  }
+
+  @include breakpoint(xl) {
+    padding: rem(94px, xl) rem(90px, xl) rem(90px, xl);
+  }
 
   &::after {
     content: '';
@@ -18,23 +27,44 @@
     height: 100%;
     z-index: -1;
     background: url('../img/bg-quiz.png') right bottom no-repeat;
-    background-size: 100% auto;
+    background-size: 180% auto;
+
+    @include breakpoint(xl) {
+      background-size: 100% auto;
+    }
   }
 
   &__heading {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    margin-bottom: $gutter-xxl;
+    margin-bottom: rem(15px);
+
+    @include breakpoint(md) {
+      margin-bottom: rem(35px, md);
+    }
+
+    @include breakpoint(xl) {
+      margin-bottom: $gutter-xxl;
+    }
 
     span {
       margin-top: rem(13px);
       padding: rem(11px) $gutter rem(16px);
       display: inline-block;
-      font-size: 0.68em;
-      letter-spacing: rem(-3.5px);
+      font-size: 0.73em;
+      letter-spacing: rem(0.5px);
       border: 2px solid;
-      border-radius: $border-radius;
+      border-radius: var(--border-radius-xl);
+
+      @include breakpoint(md) {
+        font-size: 0.57em;
+      }
+
+      @include breakpoint(xl) {
+        font-size: 0.68em;
+        letter-spacing: rem(-3.5px, xl);
+      }
     }
   }
 
@@ -43,25 +73,53 @@
   }
 
   &__sale {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     position: absolute;
-    right: 14%;
-    top: 24%;
+    right: 16%;
+    bottom: 6%;
     z-index: -2;
-    padding-bottom: rem(70px);
-    width: rem(320px);
-    height: rem(320px);
+    padding-bottom: 55%;
+    width: 55%;
     color: $text-color;
-    font-size: rem(26px);
+    font-size: rem(16px);
     font-weight: $font-weight-medium;
     line-height: 1.1;
     text-align: center;
     background: $white-color;
     border-radius: 50%;
     transform: rotate(-19deg);
+
+    @include breakpoint(md) {
+      right: 26%;
+      bottom: 17%;
+      width: 35%;
+      padding-bottom: 35%;
+    }
+
+    @include breakpoint(xl) {
+      right: 14%;
+      top: 24%;
+      padding-bottom: rem(70px, xl);
+      width: rem(320px, xl);
+      height: rem(320px, xl);
+      font-size: rem(26px, xl);
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: rem(15px) rem(15px) 45%;
+
+      @include breakpoint(md) {
+        padding-bottom: 40%;
+      }
+    }
 
     &-icon {
       position: absolute;
@@ -70,19 +128,32 @@
       transform: translate(-50%, -50%);
 
       .icon {
-        width: rem(52px);
-        height: rem(52px);
+        width: rem(32px);
+        height: rem(32px);
         transform: rotate(19deg);
+
+        @include breakpoint(xl) {
+          width: rem(52px, xl);
+          height: rem(52px, xl);
+        }
       }
     }
   }
 }
 
 .quiz-form {
-  padding: $gutter-xxl;
+  padding: rem(20px);
   color: $text-color;
   background-color: $white-color;
-  border-radius: $border-radius-lg;
+  border-radius: var(--border-radius-lg);
+
+  @include breakpoint(md) {
+    padding: rem(30px, md);
+  }
+
+  @include breakpoint(xl) {
+    padding: $gutter-xxl;
+  }
 
   &__header {
     display: flex;
@@ -96,7 +167,7 @@
       color: $gray-600;
       font-size: 14px;
       border: 1px solid rgba($text-color, 0.12);
-      border-radius: $border-radius;
+      border-radius: var(--border-radius);
 
       span {
         color: $text-color;
@@ -107,14 +178,22 @@
       display: flex;
       flex: 1 1 auto;
       min-width: 0;
-      gap: rem(15px);
+      gap: rem(10px);
+
+      @include breakpoint(xl) {
+        gap: rem(15px);
+      }
     }
 
     &-item {
       flex: 1;
-      height: rem(7px);
+      height: rem(6px);
       background-color: #E9EBED;
       border-radius: $border-radius;
+
+      @include breakpoint(xl) {
+        height: rem(7px, xl);
+      }
 
       &.is-active {
         background-color: #1D8EE1;
@@ -123,52 +202,95 @@
   }
 
   &__title {
-    margin-bottom: rem(27px);
-    font-size: rem(26px);
+    margin-bottom: rem(15px);
+    font-size: rem(18px);
     font-weight: 500;
     letter-spacing: rem(-0.5px);
+
+    @include breakpoint(xl) {
+      margin-bottom: rem(27px, xl);
+      font-size: rem(26px, xl);
+    }
   }
 
   &__grid {
-    @include grid-container(10px);
-    margin-bottom: rem(-10px);
+    @include breakpoint(md) {
+      @include grid-container(10px);
+      margin-bottom: rem(-10px, md);
+    }
+
+    &--columns {
+      @include grid-container(10px);
+
+      .quiz-form__column {
+        @include grid-item(6);
+      }
+    }
   }
 
   &__column {
-    @include grid-item(6);
     margin-bottom: rem(10px);
+
+    @include breakpoint(md) {
+      @include grid-item(6);
+    }
   }
 
   &__buttons {
     display: flex;
-    gap: $gutter;
-    margin-top: $gutter;
+    flex-direction: column-reverse;
+    gap: rem(15px);
+    margin-top: rem(20px);
+
+    @include breakpoint(md) {
+      flex-direction: row;
+    }
+
+    @include breakpoint(xl) {
+      gap: $gutter;
+      margin-top: $gutter;
+    }
   }
 
   &__button {
     flex: 1;
-    max-width: calc(50% - 10px);
+    width: 100%;
+
+    @include breakpoint(md) {
+      max-width: calc(50% - 10px);
+    }
   }
 
   &__submit {
     .control {
-      color: rgba($text-color, 0.5);
-      font-size: 16px;
+      color: $gray-500;
+      font-size: var(--font-size-md);
     }
   }
 
   &__inline {
     display: flex;
-    align-items: flex-end;
-    gap: $gutter;
-    margin-bottom: $gutter;
+    flex-direction: column;
+    gap: rem(20px);
+    margin-bottom: rem(15px);
+
+    @include breakpoint(xl) {
+      flex-direction: row;
+      align-items: flex-end;
+      gap: $gutter;
+      margin-bottom: $gutter;
+    }
 
     .form-group {
-      flex: 1 1 auto;
+      @include breakpoint(xl) {
+        flex: 1 1 auto;
+      }
     }
 
     .button {
-      max-width: 290px;
+      @include breakpoint(xl) {
+        max-width: 290px;
+      }
     }
   }
 }

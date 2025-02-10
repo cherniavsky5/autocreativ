@@ -3,7 +3,7 @@
 
 .properties {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   margin: 0;
   padding-left: 0;
   list-style: none;
@@ -90,10 +90,16 @@
 
   &__icon {
     flex-shrink: 0;
-    margin-right: rem(13px);
-    width: rem(25px);
-    height: rem(25px);
+    margin-right: rem(8px);
+    width: rem(20px);
+    height: rem(20px);
     color: $gray-200;
+
+    @include breakpoint(xl) {
+      margin-right: rem(13px, xl);
+      width: rem(25px, xl);
+      height: rem(25px, xl);
+    }
   }
 
   &__content {

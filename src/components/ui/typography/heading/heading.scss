@@ -6,37 +6,79 @@
   line-height: 1;
 
   &--1 {
-    //font-size: clamp(38px, vw($font-size-h1), 85px);
-    font-size: clamp(38px, 4.427vw, 85px);
-    letter-spacing: rem(-1.6px);
+    font-size: rem(38px);
+
+    @include breakpoint(md) {
+      font-size: rem(56px, md);
+    }
+
+    @include breakpoint(xl) {
+      font-size: clamp(38px, 4.427vw, 85px);
+      letter-spacing: rem(-1.6px);
+    }
   }
 
   &--2 {
-    //font-size: clamp(30px, vw($font-size-h2), 80px);
-    font-size: clamp(30px, 4.166vw, 80px);
+    font-size: rem(30px);
     letter-spacing: rem(-1.6px);
+
+    @include breakpoint(md) {
+      font-size: rem(50px, md);
+    }
+
+    @include breakpoint(xl) {
+      font-size: clamp(30px, 4.166vw, 80px);
+    }
   }
 
   &--3 {
-    //font-size: clamp(22px, vw($font-size-h3), 50px);
-    font-size: clamp(22px, 2.604vw, 50px);
+    font-size: rem(22px);
+
+    @include breakpoint(md) {
+      font-size: rem(32px, md);
+    }
+
+    @include breakpoint(xl) {
+      font-size: clamp(22px, 2.604vw, 50px);
+    }
   }
 
   &--4 {
-    //font-size: clamp(20px, vw($font-size-h4), 32px);
-    font-size: clamp(20px, 1.666vw, 32px);
+    font-size: rem(20px);
     letter-spacing: rem(-0.6px);
+
+    @include breakpoint(md) {
+      font-size: rem(26px, md);
+    }
+
+    @include breakpoint(xl) {
+      font-size: clamp(20px, 1.666vw, 32px);
+    }
   }
 
   &--5 {
-    //font-size: clamp(16px, vw($font-size-h5), 24px);
-    font-size: clamp(16px, 1.25vw, 24px);
+    font-size: rem(16px);
     letter-spacing: rem(-0.5px);
+
+    @include breakpoint(md) {
+      font-size: rem(20px, md);
+    }
+
+    @include breakpoint(xl) {
+      font-size: clamp(16px, 1.25vw, 24px);
+    }
   }
 
   &--6 {
-    //font-size: clamp(14px, vw($font-size-h6), 20px);
-    font-size: clamp(14px, 1.041vw, 20px);
+    font-size: rem(14px);
+
+    @include breakpoint(md) {
+      font-size: rem(16px, md);
+    }
+
+    @include breakpoint(xl) {
+      font-size: clamp(14px, 1.041vw, 20px);
+    }
   }
 
   .accent {

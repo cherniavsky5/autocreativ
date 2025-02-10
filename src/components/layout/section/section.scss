@@ -3,16 +3,59 @@
 
 .section {
   &--secondary {
-    padding: rem(90px);
+    padding: rem(30px) rem(20px);
     background-color: #e0edf8;
-    border-radius: $border-radius-xl;
+    border-radius: var(--border-radius-xl);
+
+    @include breakpoint(md) {
+      padding: rem(50px, md);
+    }
+
+    @include breakpoint(xl) {
+      padding: rem(90px, xl);
+    }
+
+    .splide {
+      margin-right: rem(-20px);
+    }
   }
 
   &__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: rem(40px);
+    margin-bottom: rem(30px);
+
+    @include breakpoint(md) {
+      margin-bottom: rem(35px, md);
+    }
+
+    @include breakpoint(xl) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: rem(40px, xl);
+    }
+
+    &--inline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: rem(20px);
+
+      .section__aside {
+        margin-top: 0;
+      }
+
+      & ~ .section__body {
+        .splide__arrows {
+          display: none;
+        }
+      }
+    }
+
+    &--inline-md {
+      @include breakpoint(md) {
+        display: flex;
+      }
+    }
   }
 
   &__description {
@@ -26,19 +69,50 @@
   }
 
   &__caption {
-    margin: rem(30px) 0 0;
-    max-width: 750px;
+    margin: rem(15px) 0 0;
+
+    @include breakpoint(xl) {
+      margin: rem(30px) 0 0;
+      max-width: 750px;
+    }
   }
 
   &__aside {
     display: flex;
     align-items: center;
-    align-self: flex-end;
+    justify-content: space-between;
+    flex-shrink: 0;
     gap: $gutter-xl;
+    margin-top: rem(25px);
+
+    @include breakpoint(md) {
+      gap: rem(25px, md);
+    }
+
+    @include breakpoint(xl) {
+      align-self: flex-end;
+      margin-left: rem(20px, xl);
+    }
+  }
+
+  &__body {
+    .splide__arrows {
+      @include breakpoint(md) {
+        display: none;
+      }
+    }
   }
 
   &__arrows {
     display: flex;
-    gap: $gutter;
+    gap: rem(10px);
+
+    @include breakpoint(md) {
+      gap: rem(20px, md);
+    }
+
+    @include breakpoint(xl) {
+      gap: $gutter;
+    }
   }
 }
