@@ -4,13 +4,16 @@ import path from 'path';
 import pug from '@vituum/vite-plugin-pug';
 import pugBem from 'pug-bem';
 import sassGlobImports from 'vite-plugin-sass-glob-import';
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import IconSpritePlugin from './plugins/vite-plugin-icon-sprite';
 
 export default defineConfig({
-  plugins: [vituum(),
+  plugins: [
+    vituum(),
     pug({ options: { plugins: [pugBem] } }),
     sassGlobImports(),
-    IconSpritePlugin()
+    IconSpritePlugin(),
+    ViteImageOptimizer(),
   ],
 
   resolve: {
@@ -24,6 +27,34 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         additionalData: ``,
+      },
+    },
+  },
+
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    assetsInlineLimit: 0,
+    cssCodeSplit: false,
+    rollupOptions: {
+      output: {
+        entryFileNames: 'assets/js/[name].[hash].js',
+        chunkFileNames: 'assets/js/[name].[hash].js',
+        assetFileNames: ({ name, originalFileName }) => {
+          if (/\.(gif|jpe?g|png|svg|webp|ico)$/.test(name ?? '')) {
+            return 'assets/img/' + originalFileName.split('assets/img/')[1];
+          }
+          if (/\.(woff2?|eot|ttf|otf)$/.test(name ?? '')) {
+            return 'assets/fonts/[name][extname]';
+          }
+          if (/\.css$/.test(name ?? '')) {
+            return 'assets/css/[name].[hash][extname]';
+          }
+          if (/\.js$/.test(name ?? '')) {
+            return 'assets/js/[name].[hash][extname]';
+          }
+          return 'assets/[name][extname]';
+        },
       },
     },
   },

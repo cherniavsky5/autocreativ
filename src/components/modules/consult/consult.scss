@@ -8,8 +8,8 @@
   overflow: hidden;
   border-radius: var(--border-radius-xl);
 
-  @include breakpoint(xl) {
-    padding: rem(457px, xl) rem(50px, xl) rem(50px, xl);
+  @include breakpoint(lg) {
+    padding: rem(457px, lg) rem(50px, lg) rem(50px, lg);
   }
 
   &__card {
@@ -17,21 +17,21 @@
     background-color: $white-color;
     border-radius: var(--border-radius-lg);
 
-    @include breakpoint(xl) {
-      padding: rem(50px, xl);
-      max-width: rem(815px, xl);
+    @include breakpoint(lg) {
+      padding: rem(50px, lg);
+      max-width: rem(815px, lg);
     }
   }
 
   &__heading {
     margin-bottom: rem(20px);
 
-    @include breakpoint(xl) {
+    @include breakpoint(lg) {
       margin-bottom: $gutter-xxl;
     }
 
     .text {
-      @include breakpoint(xl) {
+      @include breakpoint(lg) {
         display: block;
       }
     }
@@ -39,6 +39,10 @@
 
   &__button {
     width: 100%;
+
+    @include breakpoint(lg) {
+      width: auto;
+    }
   }
 
   &__img {

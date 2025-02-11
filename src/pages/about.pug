@@ -2,8 +2,14 @@ extends  ../layouts/root
 
 include ../components/ui/breadcrumbs/breadcrumbs
 include ../components/ui/typography/heading/heading
+include ../components/ui/typography/text/text
+
+include ../components/ui/contact/contact
+include ../components/ui/socials/socials
 
 include ../components/modules/consult/consult
+
+include ../components/layout/section/section
 
 block main
   main.main
@@ -16,10 +22,159 @@ block main
 
       ._body
         .content._content
+          // start hero
+          .hero.-inner._hero&attributes(attributes)
+            +heading({ level: 1 })._heading О компании <span class="text text--gradient">Avtocreativ</span>
+
+            .hero__media
+              img.hero__img(src='/src/assets/img/tmp/about.jpg' alt='')
+
+            ._content
+              // start card-description
+              .card-description._card
+                +text Autocreativ осуществляет параллельный импорт автомобилей из Азии, Америки и Европы. Команда профессионалов обеспечивает подбор автомобиля под заказ, а также подготавливает и предоставляет авто из наличия.
+              // end card-description
+          // end hero
+
+          // start description
+          .description._description
+            ._list
+              ._column
+                // start card-description
+                .card-description._card
+                  +text Autocreativ осуществляет параллельный импорт автомобилей из Азии, Америки и Европы. Команда профессионалов обеспечивает подбор автомобиля под заказ, а также подготавливает и предоставляет авто из наличия.
+                // end card-description
+
+              ._column
+                // start card-description
+                .card-description._card
+                  +text Autocreativ осуществляет параллельный импорт автомобилей из Азии, Америки и Европы. Команда профессионалов обеспечивает подбор автомобиля под заказ, а также подготавливает и предоставляет авто из наличия.
+                // end card-description
+          // end description
+
+          // start team
+          +section({ heading: 'Наша команда' }).content__section
+            .team.section__team
+              ._grid
+                ._column
+                  // start team-card
+                  .card-team._card
+                    ._photo
+                      img._img(src='/src/assets/img/tmp/team/1.jpg' alt='')
+
+                    ._content
+                      +heading({ level: 4 })._title Дмитрий Сорокин
+                      +text({ theme: 'muted' })._caption Генеральный директор
+                  // end team-card
+
+                ._column
+                  // start team-card
+                  .card-team._card
+                    ._photo
+                      img._img(src='/src/assets/img/tmp/team/2.jpg' alt='')
+
+                    ._content
+                      +heading({ level: 4 })._title Юлия Лебедева
+                      +text({ theme: 'muted' })._caption Менеджер
+
+                ._column
+                  // start team-card
+                  .card-team._card
+                    ._photo
+                      img._img(src='/src/assets/img/tmp/team/3.jpg' alt='')
+
+                    ._content
+                      +heading({ level: 4 })._title Владимир Тарасенко
+                      +text({ theme: 'muted' })._caption Подборщик авто
+
+                ._column
+                  // start team-card
+                  .card-team._card
+                    ._photo
+                      img._img(src='/src/assets/img/tmp/team/4.jpg' alt='')
+
+                    ._content
+                      +heading({ level: 4 })._title Дмитрий Журавлев
+                      +text({ theme: 'muted' })._caption Подборщик авто
+                  // end team-card
+
+                ._column
+                  // start team-card
+                  .card-team._card
+                    ._photo
+                      img._img(src='/src/assets/img/tmp/team/1.jpg' alt='')
+
+                    ._content
+                      +heading({ level: 4 })._title Дмитрий Сорокин
+                      +text({ theme: 'muted' })._caption Генеральный директор
+                  // end team-card
+
+                ._column
+                  // start team-card
+                  .card-team._card
+                    ._photo
+                      img._img(src='/src/assets/img/tmp/team/2.jpg' alt='')
+
+                    ._content
+                      +heading({ level: 4 })._title Юлия Лебедева
+                      +text({ theme: 'muted' })._caption Менеджер
+
+                ._column
+                  // start team-card
+                  .card-team._card
+                    ._photo
+                      img._img(src='/src/assets/img/tmp/team/3.jpg' alt='')
+
+                    ._content
+                      +heading({ level: 4 })._title Владимир Тарасенко
+                      +text({ theme: 'muted' })._caption Подборщик авто
+
+                ._column
+                  // start team-card
+                  .card-team._card
+                    ._photo
+                      img._img(src='/src/assets/img/tmp/team/4.jpg' alt='')
+
+                    ._content
+                      +heading({ level: 4 })._title Дмитрий Журавлев
+                      +text({ theme: 'muted' })._caption Подборщик авто
+                  // end team-card
+          // end team
+
+          // start contacts
+          .contacts.content__section
+            ._main
+              ._content
+                +heading()._heading Контакты
+
+                +contact({
+                  icon: 'call',
+                  href: 'tel:+79999999999'
+                })._contact
+                  | +7 (999) 999-99-99
+
+                +contact({
+                  icon: 'location'
+                })._contact
+                  | г. Санкт-Петербург, Бизнес Центр АБМ, просп. Маршала Блюхера, 12, корп. 7 (ежедневно 9:00-21:00)
+
+                +socials({
+                  type: 'rounded',
+                  theme: 'primary',
+                  list: ['youtube', 'telegram', 'whatsapp', 'vk']
+                })._socials
+
+                +text({ theme: 'muted', size: 'md' })._caption ИНН 2543169910, ОГРН 1222500026440
+
+            ._aside
+              ._map
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1996.060289002821!2d30.376310476855757!3d59.98091005869572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469633c898f4d33b%3A0xbd866b19a9c28200!2sBiznes%20Tsentr!5e0!3m2!1suk!2sua!4v1739173924348!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          // end contacts
+
           // start consult
           +consult({
             title: 'Не нашли подходящее авто?',
             caption: 'Мы вам поможем!',
             img: '/src/assets/img/tmp/consult-4.jpg'
-          })._consult
+          }).content__consult
           // end consult

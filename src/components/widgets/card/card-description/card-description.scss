@@ -1,0 +1,8 @@
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
+.card-description {
+  padding: rem(60px, xl) rem(50px, xl);
+  background-color: $white-color;
+  border-radius: var(--border-radius);
+}

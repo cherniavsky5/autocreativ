@@ -1,7 +1,14 @@
 extends  ../layouts/root
 
+include ../components/layout/section/section
+
 include ../components/ui/breadcrumbs/breadcrumbs
 include ../components/ui/typography/heading/heading
+
+include ../components/ui/icon/icon
+include ../components/ui/form/button/button
+
+include ../components/widgets/help-box/help-box
 
 include ../components/modules/consult/consult
 
@@ -14,15 +21,168 @@ block main
           { title: 'Как происходит покупка авто' }
         ])._breadcrumbs
 
-        +heading({ level: 1 }) Как происходит покупка авто
+        +heading({ level: 1 })._heading Как происходит покупка авто
 
       ._body
         .content._content
+
+          // start steps
+          .steps._steps
+            ._main
+              // start card-step
+              .card-step._card
+                +heading({ level: 4, sup: '01' })._heading Консультация
+                +text({ size: 'md' })._caption Обсуждаем вашу задачу, формируем индивидуальное предложение и заключаем договор, в том числе дистанционно
+              // end card-step
+
+              // start card-step
+              .card-step._card
+                +heading({ level: 4, sup: '02' })._heading Поиск
+                +text({ size: 'md' })._caption Подбираем наилучшие варианты автомобилей по заданным параметрам
+
+              // start card-step
+              .card-step._card
+                +heading({ level: 4, sup: '03' })._heading Проверка
+                +text({ size: 'md' })._caption Технический эксперт компании проводит полную проверку автомобиля для подтверждения его соответствия заявленному состоянию и предоставляет детальные фото и видео отчеты
+
+              // start card-step
+              .card-step._card
+                +heading({ level: 4, sup: '04' })._heading Выкуп
+                +text({ size: 'md' })._caption Рассчитываем цену нового автомобиля и при необходимости принимаем ваш автомобиль в трейд-ин
+
+              // start card-step
+              .card-step._card
+                +heading({ level: 4, sup: '05' })._heading Передача авто
+                ul
+                  li Доставляем автомобиль в любую точку России и СНГ;
+                  li Проводим все процедуры по таможенному оформлению;
+                  li Полный спектр услуг по запросу дооснащения вашего автомобиля;
+                  li Выдача с последующим сопровождением в МРЭО ГИБДД для постановки автомобиля на учет
+              // end card-step
+
+            ._aside
+              ._photo
+                img._img(src='/src/assets/img/tmp/faq.jpg' alt='')
+
+              +help-box({
+                title: 'Закажите свое идеальное авто уже сейчас!',
+                button: {
+                  title: 'Оставить заявку',
+                  theme: 'white'
+                }
+              })._help-box
+          // end steps
+
+          // start subscribe
+          section.subscribe.-secondary.content__section
+            ._main
+              +heading()._heading <span class="accent">Полное</span> сопровождение с фото- и видеоотчетами
+
+              +text()._text Ведем переписку с вами с дня заключения договора: выбор и осмотр авто, видео демонстрация, ответы на волнующие вопросы
+
+              +button({ theme: 'white' })&attributes({ 'data-modal-trigger': 'modal-feedback' })._button Получить консультацию
+
+            ._aside
+              img._img(src='/src/assets/img/tmp/faq-phone.png' alt='')
+          // end subscribe
+
+          // start faq
+          +section({ heading: 'Ответы на частые вопросы' }).content__section
+            .faq
+              ._list
+                // start card-faq
+                .card-faq._card
+                  ._header
+                    ._title Застрахован ли автомобиль на время его доставки до меня?
+                    ._icon
+                      +icon('chevron-down')
+
+                  ._body
+                    +text()._caption Да. С момента покупки и до отправки в порт автомобиль застрахован от внешних воздействий с полным покрытием страховых рисков. Далее, при транспортировке, страхование организует перевозчик.
+                // end card-faq
+
+                // start card-faq
+                .card-faq._card
+                  ._header
+                    ._title В моем городе нет вашего представителя. Как заключить с вами договор на авто?
+                    ._icon
+                      +icon('chevron-down')
+
+                  ._body
+                    +text()._caption Да. С момента покупки и до отправки в порт автомобиль застрахован от внешних воздействий с полным покрытием страховых рисков. Далее, при транспортировке, страхование организует перевозчик.
+                // end card-faq
+
+                // start card-faq
+                .card-faq._card
+                  ._header
+                    ._title Как я могу отслеживать на каком этапе ведется работа по моему заказу?
+                    ._icon
+                      +icon('chevron-down')
+
+                  ._body
+                    +text()._caption Да. С момента покупки и до отправки в порт автомобиль застрахован от внешних воздействий с полным покрытием страховых рисков. Далее, при транспортировке, страхование организует перевозчик.
+                // end card-faq
+
+                // start card-faq
+                .card-faq._card
+                  ._header
+                    ._title Как осуществляется доставка авто до клиента?
+                    ._icon
+                      +icon('chevron-down')
+
+                  ._body
+                    +text()._caption Да. С момента покупки и до отправки в порт автомобиль застрахован от внешних воздействий с полным покрытием страховых рисков. Далее, при транспортировке, страхование организует перевозчик.
+                // end card-faq
+
+                // start card-faq
+                .card-faq._card
+                  ._header
+                    ._title Какие вы предоставляете гарантии?
+                    ._icon
+                      +icon('chevron-down')
+
+                  ._body
+                    +text()._caption Да. С момента покупки и до отправки в порт автомобиль застрахован от внешних воздействий с полным покрытием страховых рисков. Далее, при транспортировке, страхование организует перевозчик.
+                // end card-faq
+
+                // start card-faq
+                .card-faq._card
+                  ._header
+                    ._title Можно ли приобрести авто в кредит?
+                    ._icon
+                      +icon('chevron-down')
+
+                  ._body
+                    +text()._caption Да. С момента покупки и до отправки в порт автомобиль застрахован от внешних воздействий с полным покрытием страховых рисков. Далее, при транспортировке, страхование организует перевозчик.
+                // end card-faq
+
+                // start card-faq
+                .card-faq._card
+                  ._header
+                    ._title Насколько актуальна информация в каталоге?
+                    ._icon
+                      +icon('chevron-down')
+
+                  ._body
+                    +text()._caption Да. С момента покупки и до отправки в порт автомобиль застрахован от внешних воздействий с полным покрытием страховых рисков. Далее, при транспортировке, страхование организует перевозчик.
+                // end card-faq
+
+                // start card-faq
+                .card-faq._card
+                  ._header
+                    ._title Может ли в процессе доставки измениться цена на авто?
+                    ._icon
+                      +icon('chevron-down')
+
+                  ._body
+                    +text()._caption Да. С момента покупки и до отправки в порт автомобиль застрахован от внешних воздействий с полным покрытием страховых рисков. Далее, при транспортировке, страхование организует перевозчик.
+                // end card-faq
+          // end faq
 
           // start consult
           +consult({
             title: 'Не нашли подходящее авто?',
             caption: 'Мы вам поможем!',
             img: '/src/assets/img/tmp/consult-3.jpg'
-          })._consult
+          }).content__consult
           // end consult

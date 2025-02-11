@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "vite dev --host",
-    "build": "vite build",
+    "build": "vite build --mode production && node fix-dist-html.js",
     "preview": "vite preview",
     "pug-prettier": "npm prettier --write \"**/*.pug\" --plugin=\"@prettier/plugin-pug\""
   },
@@ -17,7 +17,10 @@
     "pug-bem": "^1.2.2",
     "sass": "^1.83.4",
     "sass-embedded": "^1.83.4",
+    "sharp": "^0.33.5",
+    "svgo": "^3.3.2",
     "vite": "^6.0.11",
+    "vite-plugin-image-optimizer": "^1.1.8",
     "vite-plugin-sass-glob-import": "^5.0.0",
     "vite-plugin-svg-sprite": "^0.6.2",
     "vituum": "^1"

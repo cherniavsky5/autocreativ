@@ -21,7 +21,7 @@
   }
 
   &--row {
-    @include breakpoint(lg) {
+    @include breakpoint(xl) {
       flex-direction: row;
       align-items: center;
       padding: $gutter-xl;
@@ -30,7 +30,7 @@
         &__media {
           flex: 0 0 22.5%;
           max-width: 22.5%;
-          margin-right: rem(50px);
+          margin-right: rem(50px, xl);
           margin-bottom: 0;
           padding-bottom: 13%;
         }
@@ -53,20 +53,20 @@
         }
 
         &__footer {
-          flex: 0 0 rem(350px);
-          max-width: rem(350px);
+          flex: 0 0 rem(350px, xl);
+          max-width: rem(350px, xl);
           margin-top: 0;
           margin-left: 10%;
         }
 
         &__button {
           margin-top: $gutter;
-          min-width: rem(320px);
+          min-width: rem(320px, xl);
         }
       }
     }
 
-    @include breakpoint(lg, max) {
+    @include breakpoint(xl, max) {
       .card-car {
         &__properties {
           display: grid;
@@ -226,6 +226,7 @@
   }
 
   &__properties {
+    flex-wrap: nowrap;
     justify-content: space-between;
     margin-top: rem(15px);
     font-size: var(--font-size-md);

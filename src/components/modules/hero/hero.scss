@@ -4,6 +4,28 @@
 .hero {
   position: relative;
 
+  &--inner {
+    .hero {
+      &__media {
+        padding-bottom: 100%;
+
+        @include breakpoint(xl) {
+          padding-bottom: 45%;
+        }
+      }
+
+      &__img {
+        @include breakpoint(xl) {
+          mask-image: url('data:image/svg+xml,%3Csvg width="1880" height="850" viewBox="0 0 1880 850" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath fill-rule="evenodd" clip-rule="evenodd" d="M496 258C540.183 258 576 222.183 576 178L576 80C576 35.8172 611.817 0 656 0H1800C1844.18 0 1880 35.8172 1880 80V500C1880 544.183 1844.18 580 1800 580H1286C1241.82 580 1206 615.817 1206 660V770C1206 814.183 1170.18 850 1126 850H80C35.8172 850 0 814.183 0 770V338C0 293.817 35.8172 258 80 258L496 258Z" fill="%23001435"/%3E%3C/svg%3E%0A');
+        }
+      }
+
+      &__content {
+        margin-top: rem(20px);
+      }
+    }
+  }
+
   &__heading {
     z-index: 2;
     margin-bottom: rem(25px);
@@ -100,12 +122,7 @@
     }
   }
 
-  &__blocks {
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    gap: rem(20px);
-    margin-top: rem(20px);
-
+  &__content {
     @include breakpoint(xl) {
       position: absolute;
       bottom: rem(-3px);
@@ -116,6 +133,13 @@
       background: $bg-color;
       border-radius: var(--border-radius) 0 0 0;
     }
+  }
+
+  &__blocks {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    gap: rem(20px);
+    margin-top: rem(20px);
 
     @include breakpoint(md) {
       grid-template-columns: repeat(2, 1fr);

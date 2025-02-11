@@ -54,13 +54,14 @@ block main
             })
           // end sorting
 
-          // start content-list
-          ._list
+          // start content-grid
+          ._grid
             each item in cars
-              // start card-car
-              +card-car({ ...item, type: 'row' })
-              // end card-car
-          // end content-list
+              ._column
+                // start card-car
+                +card-car({ ...item, type: 'row' })
+                // end card-car
+          // end content-grid
 
           // start pagination
           +pagination()._pagination

@@ -34,23 +34,24 @@ mixin hero(data, attributes)
               }
             }).hero__help-box
 
-    ._blocks
-      +card-feature({
-        href: '#',
-        title: '50 авто <br>в наличии',
-        caption: 'посмотрите авто в наличии',
-        icon: {
-          icon: 'car-key',
-          theme: 'primary-outline'
-        }
-      })
+    ._content
+      ._blocks
+        +card-feature({
+          href: '#',
+          title: '50 авто <br>в наличии',
+          caption: 'посмотрите авто в наличии',
+          icon: {
+            icon: 'car-key',
+            theme: 'primary-outline'
+          }
+        })
 
-      +card-feature({
-        href: '#',
-        title: '25 авто <br>в пути',
-        caption: 'забронируйте авто со скидкой',
-        icon: {
-          icon: 'car',
-          theme: 'primary-outline'
-        }
-      })
+        +card-feature({
+          href: '#',
+          title: '25 авто <br>в пути',
+          caption: 'забронируйте авто со скидкой',
+          icon: {
+            icon: 'car',
+            theme: 'primary-outline'
+          }
+        })

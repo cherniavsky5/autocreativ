@@ -17,6 +17,18 @@
 
     .splide {
       margin-right: rem(-20px);
+
+      @include breakpoint(md) {
+        margin-right: rem(-50px, md);
+      }
+    }
+
+    .section {
+      &__arrows {
+        @include breakpoint(xl) {
+          display: none;
+        }
+      }
     }
   }
 

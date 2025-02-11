@@ -1,0 +1,64 @@
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
+.card-faq {
+  padding: rem(30px, xl) rem(35px, xl);
+  background-color: $white-color;
+  border-radius: var(--border-radius-xxs);
+  
+  &.is-opened {
+    .card-faq {
+      &__icon {
+        color: $primary-color;
+        background: none;
+
+        .icon {
+          transform: scaleY(-1);
+        }
+      }
+      
+      &__body {
+        display: block;
+      }
+    }
+  }
+
+  &__header {
+    position: relative;
+    padding: rem(10px, xl) rem(60px, xl) rem(10px, xl) 0;
+    cursor: pointer;
+  }
+
+  &__title {
+    margin-bottom: 0;
+    color: $primary-color;
+    font-size: rem(22px, xl);
+    font-weight: $font-weight-medium;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: rem(34px);
+    height: rem(34px);
+    color: $white-color;
+    background: $gradient;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+
+    @include breakpoint(md) {
+      width: rem(50px, md);
+      height: rem(50px, md);
+    }
+  }
+
+  &__body {
+    margin-top: rem(10px);
+    max-width: rem(1350px, xl);
+    display: none;
+  }
+}

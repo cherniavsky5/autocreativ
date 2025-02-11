@@ -97,7 +97,7 @@
   &__inner {
     display: flex;
     align-items: center;
-    padding: rem(6px) var(--input-padding-base) rem(4px);
+    padding: rem(6px) calc(var(--input-padding-base) * 2) rem(4px) var(--input-padding-base);
     height: var(--input-height-base);
     font-size: inherit;
     background: transparent;

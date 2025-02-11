@@ -131,7 +131,7 @@
       &__title {
         display: none;
 
-        @include breakpoint(xl) {
+        @include breakpoint(xxl) {
           display: block;
         }
       }

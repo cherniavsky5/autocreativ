@@ -1,0 +1,19 @@
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
+.card-step {
+  padding: rem(35px, xl);
+  font-size: var(--font-size-md);
+  background-color: $white-color;
+  border-radius: var(--border-radius);
+
+  &__heading {
+    margin-bottom: rem(15px);
+    color: $primary-color;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1rem;
+  }
+}

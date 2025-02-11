@@ -25,12 +25,39 @@ $font-sizes: (
   flex-wrap: wrap;
   margin-left: -(math.div($gap, 2));
   margin-right: -(math.div($gap, 2));
+  margin-bottom: rem(-20px);
+
+  @include breakpoint(md) {
+    margin-bottom: rem(-20px, md);
+  }
+
+  @include breakpoint(lg) {
+    margin-bottom: rem(-20px, lg);
+  }
+
+  @include breakpoint(xl) {
+    margin-bottom: rem(-20px, xl);
+  }
 }
 
 @mixin grid-item($columns: 1, $grid: 12) {
   flex: 0 0 calc(100% / $grid * $columns);
+  max-width: calc(100% / $grid * $columns);
   padding-left: math.div(20px, 2);
   padding-right: math.div(20px, 2);
+  margin-bottom: rem(20px);
+
+  @include breakpoint(md) {
+    margin-bottom: rem(20px, md);
+  }
+
+  @include breakpoint(lg) {
+    margin-bottom: rem(20px, lg);
+  }
+
+  @include breakpoint(xl) {
+    margin-bottom: rem(20px, xl);
+  }
 }
 
 $breakpoints: (

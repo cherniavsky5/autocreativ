@@ -11,4 +11,12 @@ import { Fancybox } from '@fancyapps/ui';
 
 document.addEventListener('DOMContentLoaded', () => {
   Fancybox.bind('[data-fancybox]', {});
+
+  const faqCards = document.querySelectorAll('.card-faq__header');
+
+  faqCards.forEach((el) => {
+    el.addEventListener('click', () => {
+      el.closest('.card-faq').classList.toggle('is-opened');
+    });
+  });
 });

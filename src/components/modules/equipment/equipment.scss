@@ -2,21 +2,38 @@
 @use '@assets/styles/mixins' as *;
 
 .equipment {
-  display: flex;
+  @include breakpoint(xl) {
+    display: flex;
+  }
 
   &__main {
-    flex: 1 1 auto;
-    min-width: 0;
-    padding: rem(50px) rem(30px) rem(40px) rem(20px);
+    padding: rem(20px);
     background-color: $white-color;
-    border-radius: $border-radius-lg;
+    border-radius: var(--border-radius-lg);
+
+    @include breakpoint(xl) {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    @include breakpoint(md) {
+      padding: rem(30px, md);
+    }
+
+    @include breakpoint(xl) {
+      padding: rem(50px, xl) rem(30px, xl) rem(40px, xl) rem(20px, xl);
+    }
 
     ul {
       margin: 0;
-      column-count: 2;
+      padding-left: 1rem;
+
+      @include breakpoint(xl) {
+        column-count: 2;
+      }
 
       li {
-        margin-bottom: rem(8px);
+        margin-bottom: rem(8px, xl);
 
         &::marker {
           font-size: 0.75em;
@@ -28,12 +45,23 @@
   &__aside {
     display: flex;
     flex-direction: column;
-    flex: 0 0 rem(455px);
-    max-width: rem(455px);
+    margin-top: rem(20px);
     gap: $gutter;
-    margin-left: $gutter;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+    }
+
+    @include breakpoint(xl) {
+      flex-direction: column;
+      flex: 0 0 rem(455px, xl);
+      max-width: rem(455px, xl);
+      margin-left: $gutter;
+      margin-top: 0;
+    }
 
     .card-feature {
+      flex: 1;
       min-height: 0;
     }
   }

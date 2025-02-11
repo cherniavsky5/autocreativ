@@ -1,0 +1,33 @@
+@use '@assets/styles/vars' as *;
+@use '@assets/styles/mixins' as *;
+
+.card-team {
+  padding: rem(20px, xl) rem(20px, xl) rem(40px, xl);
+  background-color: $white-color;
+  border-radius: var(--border-radius);
+
+  &__photo {
+    position: relative;
+    margin-bottom: rem(30px, xl);
+    padding-bottom: 100%;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    padding: 0 rem(10px, xl);
+  }
+
+  &__title {
+    margin-bottom: rem(10px);
+  }
+}

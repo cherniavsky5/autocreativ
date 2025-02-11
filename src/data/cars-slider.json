@@ -4,7 +4,7 @@
       "href": "/detail.html",
       "title": "Renault Megan RS",
       "caption": "Flagship",
-      "img": "/src/assets/img/tmp/cars/1.webp",
+      "img": "/src/assets/img/tmp/cars/1.jpg",
       "badge": {
         "theme": "primary-light",
         "title": "Акция"
@@ -38,7 +38,7 @@
       "href": "/detail.html",
       "title": "KIA Sportage",
       "caption": "Flagship",
-      "img": "/src/assets/img/tmp/cars/2.webp",
+      "img": "/src/assets/img/tmp/cars/2.jpg",
       "badge": {
         "theme": "primary-dark",
         "title": "Новинка"

@@ -33,6 +33,14 @@
     }
   }
 
+  &#modal-feedback {
+    .modal {
+      &__content {
+        max-width: rem(1020px, xl);
+      }
+    }
+  }
+
   &__content {
     margin: auto;
     padding: rem(30px) rem(20px);
@@ -85,6 +93,10 @@
     @include hover {
       color: $primary-color;
       background-color: $white-color;
+    }
+
+    @include breakpoint(xl) {
+      transform: translate(0, 0);
     }
   }
 }

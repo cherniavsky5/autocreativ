@@ -6,7 +6,7 @@
   width: 100%;
   color: $white-color;
   background: $gradient;
-  border-radius: var(--border-radius-sm);
+  border-radius: var(--border-radius-xs);
 
   @include breakpoint(md) {
     padding: rem(30px, md);

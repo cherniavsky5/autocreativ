@@ -134,7 +134,7 @@ $header-height: rem(134px);
     }
 
     @include breakpoint(lg) {
-        --font-size-base: 20px;
+        --font-size-base: 16px;
         --font-size-xs: 0.7rem;
         --font-size-sm: 0.8rem;
         --font-size-md: 0.9rem;

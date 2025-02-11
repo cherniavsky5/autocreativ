@@ -140,6 +140,7 @@
 
   &__heading {
     margin-bottom: rem(30px);
+    max-width: rem(800px, xl);
     font-size: clamp(30px, 4.427vw, 85px);
   }
 }
@@ -156,17 +157,36 @@
   &__header {
     margin-bottom: rem(25px);
 
-    @include breakpoint(xl) {
+    @include breakpoint(lg) {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: $gutter-xxl;
+    }
+
+    .select {
+      @include breakpoint(md) {
+        display: inline-block;
+        min-width: rem(280px, md);
+      }
+    }
+  }
+
+  &__hero {
+    margin-bottom: rem(60px, xl);
+
+    &.hero--inner {
+      margin-bottom: rem(20px);
     }
   }
 
   &__menu-primary {
     flex-wrap: wrap;
     margin-bottom: rem(10px);
+
+    @include breakpoint(lg) {
+      margin-bottom: 0;
+    }
 
     .menu-primary {
       &__item {
@@ -207,20 +227,207 @@
     }
   }
 
-  &__list {
-    display: flex;
-    flex-direction: column;
-    gap: $gutter;
+  &__grid {
+    @include grid-container();
+  }
+
+  &__column {
+    @include grid-item(12);
+
+    @include breakpoint(md) {
+      @include grid-item(6);
+    }
+
+    @include breakpoint(xl) {
+      @include grid-item(12);
+    }
   }
 
   &__pagination {
-    //margin: rem(50px) 0 0;
     margin: rem(30px) 0 0;
     justify-content: center;
+
+    @include breakpoint(xl) {
+      margin: rem(50px, xl) 0 0;
+    }
   }
 
   &__consult, &__section {
-    margin-top: rem(80px);
-    //margin-top: rem(120px);
+    margin-top: rem(60px);
+
+    @include breakpoint(md) {
+      margin-top: rem(80px, md);
+    }
+
+    @include breakpoint(xl) {
+      margin-top: rem(120px, xl);
+    }
+  }
+}
+
+.description {
+  &__list {
+    @include grid-container();
+  }
+
+  &__column {
+    @include grid-item(12);
+
+    @include breakpoint(xl) {
+      @include grid-item(6);
+    }
+  }
+}
+
+.team {
+  &__grid {
+    @include grid-container();
+  }
+
+  &__column {
+    @include grid-item(12);
+
+    @include breakpoint(md) {
+      @include grid-item(6);
+    }
+
+    @include breakpoint(lg) {
+      @include grid-item(4);
+    }
+
+    @include breakpoint(xl) {
+      @include grid-item(3);
+    }
+  }
+}
+
+.contacts {
+  @include grid-container();
+
+  &__main {
+    @include grid-item(12);
+
+    @include breakpoint(xl) {
+      @include grid-item(5);
+    }
+  }
+
+  &__aside {
+    @include grid-item(12);
+
+    @include breakpoint(xl) {
+      @include grid-item(7);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: rem(30px) rem(20px);
+    background-color: $white-color;
+    border-radius: var(--border-radius-lg);
+
+    @include breakpoint(md) {
+      padding: rem(50px, md);
+    }
+
+    @include breakpoint(xl) {
+      padding: rem(70px, xl);
+    }
+  }
+
+  &__heading {
+    margin-bottom: rem(40px, xl);
+  }
+
+  &__contact {
+    margin-bottom: rem(20px, xl);
+  }
+
+  &__socials {
+    margin-top: rem(30px, xl);
+  }
+
+  &__caption {
+    margin-top: rem(40px, xl);
+  }
+
+  &__map {
+    height: 100%;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
+
+    iframe {
+      width: 100%;
+      height: rem(450px);
+
+      @include breakpoint(xl) {
+        height: 100%;
+        min-height: rem(300px, xl);
+      }
+    }
+  }
+}
+
+.steps {
+  @include breakpoint(xl) {
+    @include grid-container();
+  }
+
+  &__main {
+    @include breakpoint(xl) {
+      @include grid-item(7);
+    }
+  }
+
+  &__aside {
+    margin-top: rem(20px);
+
+    @include breakpoint(xl) {
+      @include grid-item(5);
+      margin-top: 0;
+    }
+  }
+
+  &__card {
+    &:not(:last-child) {
+      margin-bottom: rem(20px, xl);
+    }
+  }
+
+  &__photo {
+    margin-bottom: rem(20px, xl);
+    overflow: hidden;
+    border-radius: var(--border-radius);
+  }
+
+  &__img {
+    width: 100%;
+    border-radius: var(--border-radius);
+  }
+  
+  &__help-box {
+    display: flex;
+    align-items: center;
+
+    .help-box {
+      &__heading {
+        margin-bottom: 0;
+      }
+
+      &__button {
+        flex-shrink: 0;
+        margin-left: $gutter-xl;
+      }
+    }
+  }
+}
+
+.faq {
+  &__card {
+    &:not(:last-child) {
+      margin-bottom: rem(20px, xl);
+    }
   }
 }

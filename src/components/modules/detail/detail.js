@@ -3,27 +3,30 @@ import { Grid } from '@splidejs/splide-extension-grid';
 
 document.addEventListener('DOMContentLoaded', () => {
   const slider = document.querySelector('.js-slider-detail');
-  const thumbs = document.querySelector('.js-detail-thumbnails');
-  const thumbsElements = thumbs.querySelectorAll('.detail__photo');
 
-  const sliderInst = new Splide(slider, {
-    gap: 20,
-    perPage: 1,
-    arrows: true,
-    pagination: false,
-  }).mount();
+  if (slider) {
+    const thumbs = document.querySelector('.js-detail-thumbnails');
+    const thumbsElements = thumbs.querySelectorAll('.detail__photo');
 
-  sliderInst.on('move', (index) => {
-    setActiveElement(thumbsElements, index);
-  });
+    const sliderInst = new Splide(slider, {
+      gap: 20,
+      perPage: 1,
+      arrows: true,
+      pagination: false,
+    }).mount();
 
-  thumbsElements.forEach((thumbElement, index) => {
-    thumbElement.addEventListener('click', () => {
-      sliderInst.go(index);
+    sliderInst.on('move', (index) => {
+      setActiveElement(thumbsElements, index);
     });
-  });
 
-  setActiveElement(thumbsElements, sliderInst.index);
+    thumbsElements.forEach((thumbElement, index) => {
+      thumbElement.addEventListener('click', () => {
+        sliderInst.go(index);
+      });
+    });
+
+    setActiveElement(thumbsElements, sliderInst.index);
+  }
 
   function setActiveElement(els, index) {
     els.forEach((el) => {

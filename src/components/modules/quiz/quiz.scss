@@ -119,6 +119,14 @@
       @include breakpoint(md) {
         padding-bottom: 40%;
       }
+
+      @include breakpoint(lg) {
+        padding-bottom: 50%;
+      }
+
+      @include breakpoint(xl) {
+        padding-bottom: 22%;
+      }
     }
 
     &-icon {

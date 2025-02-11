@@ -1,8 +1,11 @@
 mixin heading(data, attributes)
   -
     var options = { level: 2, };
-    var { tag, level } = data ? { ...options, ...data } : options
+    var { tag, level, sup } = data ? { ...options, ...data } : options
     var tagModify = !tag ? `h${level}` : tag;
 
   #{tagModify}.heading(class=`heading--${level}`)&attributes(attributes)
     block
+
+    if sup
+      sup= sup
