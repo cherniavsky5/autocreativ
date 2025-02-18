@@ -125,13 +125,16 @@
   &__content {
     @include breakpoint(xl) {
       position: absolute;
-      bottom: rem(-3px);
+      bottom: rem(-3px, xl);
       right: 0;
       z-index: 2;
       width: 35.85%;
-      padding: $gutter 0 rem(5px) $gutter;
-      background: $bg-color;
+      padding: $gutter 0 rem(5px, xl) $gutter;
       border-radius: var(--border-radius) 0 0 0;
+    }
+
+    @include breakpoint(xxl, max) {
+      background: $bg-color;
     }
   }
 
@@ -144,6 +147,10 @@
     @include breakpoint(md) {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: none;
+    }
+
+    @include breakpoint(xl) {
+      margin-top: 0;
     }
 
     .text {

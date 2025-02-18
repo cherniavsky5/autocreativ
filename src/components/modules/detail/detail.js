@@ -1,18 +1,26 @@
 import Splide from '@splidejs/splide';
-import { Grid } from '@splidejs/splide-extension-grid';
 
 document.addEventListener('DOMContentLoaded', () => {
   const slider = document.querySelector('.js-slider-detail');
 
   if (slider) {
     const thumbs = document.querySelector('.js-detail-thumbnails');
-    const thumbsElements = thumbs.querySelectorAll('.detail__photo');
+    const thumbsElements = thumbs.querySelectorAll('.detail__photo:not(.js-thumbnail-more)');
 
     const sliderInst = new Splide(slider, {
-      gap: 20,
+      gap: 10,
       perPage: 1,
       arrows: true,
       pagination: false,
+      mediaQuery: 'min',
+      padding: {
+        right: 20,
+      },
+      breakpoints: {
+        1200: {
+          padding: false,
+        },
+      },
     }).mount();
 
     sliderInst.on('move', (index) => {

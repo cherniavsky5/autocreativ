@@ -21,6 +21,10 @@
       @include breakpoint(md) {
         margin-right: rem(-50px, md);
       }
+
+      @include breakpoint(lg) {
+        margin-right: 0;
+      }
     }
 
     .section {

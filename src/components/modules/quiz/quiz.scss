@@ -30,6 +30,10 @@
     background-size: 180% auto;
 
     @include breakpoint(xl) {
+      background-size: 90% auto;
+    }
+
+    @include breakpoint(xxl) {
       background-size: 100% auto;
     }
   }
@@ -69,7 +73,13 @@
   }
 
   &__content {
-    max-width: 725px;
+    @include breakpoint(xl) {
+      max-width: 50%;
+    }
+
+    @include breakpoint(xxl) {
+      max-width: 43%;
+    }
   }
 
   &__sale {
@@ -96,12 +106,18 @@
     }
 
     @include breakpoint(xl) {
-      right: 14%;
-      top: 24%;
+      //right: 14%;
+      //top: 24%;
+      right: 17%;
+      top: rem(300px, xl);
       padding-bottom: rem(70px, xl);
       width: rem(320px, xl);
       height: rem(320px, xl);
       font-size: rem(26px, xl);
+    }
+
+    @include breakpoint(xxl) {
+      top: rem(230px, xl);
     }
 
     &-content {
@@ -122,10 +138,14 @@
 
       @include breakpoint(lg) {
         padding-bottom: 50%;
+        padding-left: rem(40px, lg);
+        padding-right: rem(40px, lg);
       }
 
       @include breakpoint(xl) {
         padding-bottom: 22%;
+        padding-left: rem(15px, xl);
+        padding-right: rem(15px, xl);
       }
     }
 

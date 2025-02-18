@@ -5,6 +5,7 @@ import pug from '@vituum/vite-plugin-pug';
 import pugBem from 'pug-bem';
 import sassGlobImports from 'vite-plugin-sass-glob-import';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+import beautify from 'vite-plugin-beautify';
 import IconSpritePlugin from './plugins/vite-plugin-icon-sprite';
 
 export default defineConfig({
@@ -14,6 +15,26 @@ export default defineConfig({
     sassGlobImports(),
     IconSpritePlugin(),
     ViteImageOptimizer(),
+    beautify({
+      inDir: 'dist',
+      html: {
+        enabled: true,
+        options: {
+          indent_size: 2,
+          indent_char: ' ',
+          indent_inner_html: true,
+          indent_body_inner_html: true,
+          indent_head_inner_html: true,
+          inline: ['b', 'i', 'strong', 'em', 'span'],
+        },
+      },
+      js: {
+        enabled: false,
+      },
+      css: {
+        enabled: false,
+      },
+    }),
   ],
 
   resolve: {

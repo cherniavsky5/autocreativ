@@ -5,14 +5,15 @@ include ../../widgets/card/card-car-order/card-car-order
 
 mixin slider(data, attributes)
   - var options = { slides: [] };
-  - var { jsClass, card, slides } = data ? { ...options, ...data } : options;
+  - var { jsClass, card, slides, gallery } = data ? { ...options, ...data } : options;
 
   .splide.slider(class=jsClass)&attributes(attributes)
     ._track
       ._list
         if (card === 'card-review')
           ._slide
-            +card-review
+            .card-review.-widget
+              iframe(src='https://yandex.ru/maps-reviews-widget/182453445035?comments' frameborder=0)
 
         each item in slides
           ._slide
@@ -20,7 +21,7 @@ mixin slider(data, attributes)
               +card-car(item)
 
             if (card === 'card-car-order')
-              +card-car-order(item)
+              +card-car-order({...item, gallery})
 
             if (card === 'card-review')
               +card-review(item)

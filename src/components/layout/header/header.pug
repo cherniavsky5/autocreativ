@@ -24,7 +24,8 @@ mixin header(_, attributes)
           img(src='/src/assets/img/logo.svg' alt='')
 
         ._menu-button.js-menu-button
-          +icon('menu')
+          +icon('menu')._menu-open
+          +icon('close')._menu-close
           | Меню
 
         +menu-primary([

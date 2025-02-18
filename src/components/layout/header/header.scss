@@ -70,6 +70,12 @@
     }
   }
 
+  &__menu {
+    &-close {
+      display: none;
+    }
+  }
+
   &__menu-primary {
     @include breakpoint(xl, max) {
       position: absolute;
@@ -152,5 +158,14 @@
     @include breakpoint(xl) {
       margin-left: $gutter;
     }
+  }
+}
+
+.page--menu-primary-opened {
+  .header__menu-open {
+    display: none;
+  }
+  .header__menu-close {
+    display: inline;
   }
 }

@@ -140,8 +140,16 @@
 
   &__heading {
     margin-bottom: rem(30px);
-    max-width: rem(800px, xl);
-    font-size: clamp(30px, 4.427vw, 85px);
+    max-width: rem(700px, xl);
+    font-size: rem(30px);
+
+    @include breakpoint(md) {
+      font-size: rem(50px, md);
+    }
+
+    @include breakpoint(xl) {
+      font-size: clamp(38px, 4.427vw, 85px);
+    }
   }
 }
 
@@ -382,10 +390,13 @@
   }
 
   &__aside {
+    display: flex;
+    flex-direction: column-reverse;
     margin-top: rem(20px);
 
     @include breakpoint(xl) {
       @include grid-item(5);
+      flex-direction: column;
       margin-top: 0;
     }
   }
@@ -397,9 +408,14 @@
   }
 
   &__photo {
-    margin-bottom: rem(20px, xl);
+    margin-top: rem(20px);
     overflow: hidden;
     border-radius: var(--border-radius);
+
+    @include breakpoint(xl) {
+      margin-top: 0;
+      margin-bottom: rem(20px, xl);
+    }
   }
 
   &__img {
@@ -408,17 +424,45 @@
   }
   
   &__help-box {
-    display: flex;
-    align-items: center;
+    padding: rem(20px);
+
+    @include breakpoint(md) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: rem(30px, md);
+      border-radius: var(--border-radius-sm);
+    }
 
     .help-box {
       &__heading {
-        margin-bottom: 0;
+        margin-bottom: rem(20px);
+        font-size: rem(20px);
+        line-height: 1.2;
+
+        @include breakpoint(md) {
+          flex: 1 1 55%;
+          max-width: 55%;
+          margin-bottom: 0;
+          font-size: rem(26px, md);
+        }
+
+        @include breakpoint(xl) {
+          flex: 1 1 100%;
+          max-width: 100%;
+          font-size: rem(32px, xl);
+        }
       }
 
       &__button {
-        flex-shrink: 0;
-        margin-left: $gutter-xl;
+        width: 100%;
+        font-size: var(--font-size-base);
+
+        @include breakpoint(md) {
+          flex-shrink: 0;
+          margin-left: $gutter-xl;
+          width: auto;
+        }
       }
     }
   }

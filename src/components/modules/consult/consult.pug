@@ -11,10 +11,13 @@ mixin consult(data, attributes)
       +heading({
         tag: 'div',
         level: 3
-      })._heading
-        | #{title}
+      })._heading!= title
         +text({ tag: 'span', theme: 'gradient' })= caption
 
       +button()&attributes({ 'data-modal-trigger': 'modal-feedback' })._button Получить консультацию
 
-    img._img(src=img alt='')
+    picture._picture
+      source(srcset=img.mobile media='(max-width: 767px)')
+      source(srcset=img.tablet media='(max-width: 1200px)')
+
+      img._img(src=img.desktop alt='')

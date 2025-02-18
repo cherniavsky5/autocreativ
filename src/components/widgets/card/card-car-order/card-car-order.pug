@@ -7,7 +7,7 @@ include ../../../ui/form/button/button
 
 mixin card-car-order(data, attributes)
   -
-    var { type, href, title, caption, img, badge, availability, properties, price, video, button } = data || {};
+    var { type, href, media, title, caption, img, badge, availability, properties, price, video, button, gallery } = data || {};
 
   .card-car.-order(class=(type && `card-car--${type}`))&attributes(attributes)
     ._info
@@ -16,7 +16,7 @@ mixin card-car-order(data, attributes)
 
     +properties({ list: properties })._properties
 
-    a._media(href=href title='')
+    a._media(href=media title='' data-fancybox=gallery)
       if img
         img._img(src=img alt='')
 

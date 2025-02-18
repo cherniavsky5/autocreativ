@@ -33,9 +33,13 @@ block main
 
           // start consult
           +consult({
-            title: 'Остались вопросы?',
+            title: 'Остались вопросы?<br>',
             caption: 'Мы вам поможем!',
-            img: '/src/assets/img/tmp/consult-2.jpg'
+            img: {
+              desktop: '/src/assets/img/tmp/consult/consult-2.jpg',
+              tablet: '/src/assets/img/tmp/consult/consult-2-md.jpg',
+              mobile: '/src/assets/img/tmp/consult/consult-2-sm.jpg'
+            }
           })._consult
           // end consult
 

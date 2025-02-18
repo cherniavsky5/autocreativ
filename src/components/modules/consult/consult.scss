@@ -8,18 +8,31 @@
   overflow: hidden;
   border-radius: var(--border-radius-xl);
 
+  @include breakpoint(md) {
+    padding: rem(480px, md) rem(40px, md) rem(40px, md);
+  }
+
   @include breakpoint(lg) {
     padding: rem(457px, lg) rem(50px, lg) rem(50px, lg);
   }
 
   &__card {
     padding: rem(20px);
+    display: inline-block;
+    width: 100%;
     background-color: $white-color;
+    vertical-align: top;
     border-radius: var(--border-radius-lg);
 
-    @include breakpoint(lg) {
-      padding: rem(50px, lg);
-      max-width: rem(815px, lg);
+    @include breakpoint(md) {
+      padding: rem(40px, md) rem(55px, md) rem(40px, md) rem(40px, md);
+      width: auto;
+      //max-width: rem(500px, md);
+    }
+
+    @include breakpoint(xl) {
+      padding: rem(50px, xl) rem(75px, xl) rem(50px, xl) rem(50px, xl);
+      //max-width: rem(815px, xl);
     }
   }
 
@@ -31,7 +44,7 @@
     }
 
     .text {
-      @include breakpoint(lg) {
+      @include breakpoint(md) {
         display: block;
       }
     }
@@ -40,16 +53,21 @@
   &__button {
     width: 100%;
 
-    @include breakpoint(lg) {
+    @include breakpoint(md) {
       width: auto;
     }
   }
 
-  &__img {
+  &__picture {
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__img {
     width: 100%;
     height: 100%;
     object-fit: cover;

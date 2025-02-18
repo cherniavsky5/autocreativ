@@ -7,7 +7,7 @@ mixin card-blog(data, attributes)
   -
     var { href, title, date, rating, img } = data || {};
 
-  a.card-blog(href=href title)&attributes(attributes)
+  a.card-blog(href=href title='' data-fancybox='blog')&attributes(attributes)
     if !data
       img._img(src='/src/assets/img/tmp/reviews.jpg' alt='')
 

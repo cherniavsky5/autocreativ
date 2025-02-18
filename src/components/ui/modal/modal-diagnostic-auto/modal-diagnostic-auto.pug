@@ -1,0 +1,13 @@
+include ../modal
+
+include ../../typography/heading/heading
+include ../../properties/properties
+
+mixin modal-diagnostic-auto(data, attributes)
+  +modal({ name: 'diagnostic-auto' })
+    .modal-insurance-history&attributes(attributes)
+      +heading({tag: 'div', level: 3})._heading Страховая история авто
+
+      ._group
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias debitis earum eveniet fugit, id impedit inventore iste iusto modi molestiae natus nulla placeat, quasi reiciendis sequi unde voluptas! Est, vero.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias debitis earum eveniet fugit, id impedit inventore iste iusto modi molestiae natus nulla placeat, quasi reiciendis sequi unde voluptas! Est, vero.

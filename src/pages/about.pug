@@ -168,13 +168,17 @@ block main
 
             ._aside
               ._map
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1996.060289002821!2d30.376310476855757!3d59.98091005869572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469633c898f4d33b%3A0xbd866b19a9c28200!2sBiznes%20Tsentr!5e0!3m2!1suk!2sua!4v1739173924348!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://yandex.com/map-widget/v1/?ll=30.378813%2C59.981073&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxNTc4MDIxNDAzEmLQoNC-0YHRgdC40Y8sINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCDQv9GA0L7RgdC_0LXQutGCINCc0LDRgNGI0LDQu9CwINCR0LvRjtGF0LXRgNCwLCAxMtC6NyIKDdAH80EVnuxvQg%2C%2C&z=17.11" width="560" height="400" frameborder="0" allowfullscreen="true"></iframe>
           // end contacts
 
           // start consult
           +consult({
-            title: 'Не нашли подходящее авто?',
+            title: 'Не нашли подходящее авто? ',
             caption: 'Мы вам поможем!',
-            img: '/src/assets/img/tmp/consult-4.jpg'
+            img: {
+              desktop: '/src/assets/img/tmp/consult/consult-4.jpg',
+              tablet: '/src/assets/img/tmp/consult/consult-4-md.jpg',
+              mobile: '/src/assets/img/tmp/consult/consult-4-sm.jpg'
+            }
           }).content__consult
           // end consult

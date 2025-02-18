@@ -4,10 +4,9 @@ include ../../../ui/typography/text/text
 
 mixin card-feature(data, attributes)
   -
-    var { href, title, caption, icon, img } = data || {};
-    var tag = href ? 'a' : 'div';
+    var { modal, title, caption, icon, img } = data || {};
 
-  #{tag}.card-feature(href=href)&attributes(attributes)
+  .card-feature(class=(modal && 'card-feature--accent') data-modal-trigger=modal)&attributes(attributes)
     +b-icon(icon)._icon
 
     +heading({level: 4})._heading!= title
@@ -18,6 +17,6 @@ mixin card-feature(data, attributes)
     if img
       img.card-feature__img(src=img alt='')
 
-    if href
+    if modal
       .icon-blank.card-feature__blank
         +icon('arrow-top-right')

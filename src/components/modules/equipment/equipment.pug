@@ -1,4 +1,5 @@
 include ../../ui/modal/modal-insurance-history/modal-insurance-history
+include ../../ui/modal/modal-diagnostic-auto/modal-diagnostic-auto
 include ../../widgets/card/card-feature/card-feature
 
 mixin equipment(data, attributes)
@@ -36,19 +37,21 @@ mixin equipment(data, attributes)
 
     ._aside
       +card-feature({
-        href: '#',
+        modal: true,
         title: 'Диагностика автомобиля',
         icon: {
           icon: 'car-monitor'
         }
-      })
+      })&attributes({ 'data-modal-trigger': 'modal-diagnostic-auto' })
 
       +card-feature({
-        href: '#',
+        modal: true,
         title: 'Страховая история автомобиля',
         icon: {
           icon: 'protection'
         }
       })&attributes({ 'data-modal-trigger': 'modal-insurance-history' })
+
+      +modal-diagnostic-auto()
 
       +modal-insurance-history()

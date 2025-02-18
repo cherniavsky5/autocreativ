@@ -49,7 +49,7 @@ block main
             title: 'Официальный договор',
             caption: 'Заключается договор между клиентом и нашей компанией, в котором мы несём ответственность согласно законодательству'
           }, {
-            href: '#',
+            modal: 'modal-feedback',
             icon: {
               icon: 'medal'
             },
@@ -86,7 +86,7 @@ block main
         // start auction-cars
         +section({
           theme: 'secondary',
-          heading: 'Автомобили с закрытых аукционов <span class="text-primary">Европы</span>',
+          heading: 'Автомобили с закрытых аукционов <span class="text text--gradient">Европы</span>',
           caption: 'AutoCreativ — ведущая компания, которая имеет привилегию владения бизнес-лицензиями на самых престижных аукционах в Европе. <br>Мы успешно сотрудничаем с Copart, Manheim и другими.',
           button: {
             title: 'Заказать авто из Европы',
@@ -99,14 +99,15 @@ block main
           +slider({
               jsClass: 'js-slider-secondary',
               card: 'card-car-order',
-              slides: carsOrder
+              slides: carsOrder,
+              gallery: 'gallery-car-order-1'
           })
         // end auction-cars
 
         // start auction-cars
         +section({
           theme: 'secondary',
-          heading: 'Автомобили с закрытых аукционов <span class="text-primary">США</span>',
+          heading: 'Автомобили с закрытых аукционов <span class="text text--gradient">США</span>',
           caption: 'AutoCreativ — ведущая компания, которая имеет привилегию владения бизнес-лицензиями на самых престижных аукционах в США. <br>Мы успешно сотрудничаем с Copart, Manheim и другими.',
           button: {
             title: 'Заказать авто из США',
@@ -119,7 +120,8 @@ block main
           +slider({
               jsClass: 'js-slider-secondary',
               card: 'card-car-order',
-              slides: carsOrder
+              slides: carsOrder,
+              gallery: 'gallery-car-order-2'
           })
         // end auction-cars
 

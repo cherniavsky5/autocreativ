@@ -69,8 +69,12 @@ block main
 
           // start consult
           +consult({
-            title: 'Не нашли подходящее авто?',
+            title: 'Не нашли подходящее авто? ',
             caption: 'Мы вам поможем!',
-            img: '/src/assets/img/tmp/consult-1.jpg'
+            img: {
+              desktop: '/src/assets/img/tmp/consult/consult-1.jpg',
+              tablet: '/src/assets/img/tmp/consult/consult-1-md.jpg',
+              mobile: '/src/assets/img/tmp/consult/consult-1-sm.jpg'
+            }
           })._consult
           // end consult

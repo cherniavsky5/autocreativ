@@ -6,6 +6,10 @@
   background-color: $white-color;
   border-radius: var(--border-radius-xl);
 
+  @include breakpoint(md) {
+    padding: rem(40px, md);
+  }
+
   @include breakpoint(xl) {
     padding: rem(60px, xl);
   }
@@ -21,7 +25,6 @@
   }
 
   &__column {
-
     @include breakpoint(md) {
       @include grid-item(5, 10);
     }

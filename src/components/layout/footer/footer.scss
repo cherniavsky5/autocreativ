@@ -115,10 +115,20 @@
             margin-bottom: 0;
           }
         }
+
+        &:nth-child(5),
+        &:nth-child(6),
+        &:nth-child(7),
+        &:nth-child(8) {
+          @include breakpoint(md, max) {
+            text-align: right;
+          }
+        }
       }
 
       &__link {
-        height: rem(38px);
+        display: inline-flex;
+        height: rem(40px);
       }
     }
   }

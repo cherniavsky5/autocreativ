@@ -26,6 +26,10 @@ mixin detail(data, attributes)
             img.detail__img(src=`/src/assets/img/tmp/detail/${j}.jpg` alt='')
           - j++;
 
+        a.detail__photo.-more.js-thumbnail-more(href='/src/assets/img/tmp/detail/7.jpg' data-fancybox='gallery')
+          img.detail__img(src='/src/assets/img/tmp/detail/7.jpg' alt='')
+          span.detail__photo-text Ещё 5 фото
+
     ._content
       +heading({ tag: 'h1', level: 3 })._heading BMW 5 серия 2.0 AT
 
