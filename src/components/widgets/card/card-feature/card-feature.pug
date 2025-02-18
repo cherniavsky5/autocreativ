@@ -4,19 +4,19 @@ include ../../../ui/typography/text/text
 
 mixin card-feature(data, attributes)
   -
-    var { modal, title, caption, icon, img } = data || {};
+    var { href, modal, title, caption, icon, img } = data || {};
 
-  .card-feature(class=(modal && 'card-feature--accent') data-modal-trigger=modal)&attributes(attributes)
-    +b-icon(icon)._icon
+  #{href ? 'a' : 'div'}.card-feature(href=href class=((modal || href) && 'card-feature--accent') data-modal-trigger=modal)&attributes(attributes)
+    +b-icon(icon).card-feature__icon
 
-    +heading({level: 4})._heading!= title
+    +heading({level: 4}).card-feature__heading!= title
 
     if caption
-      +text({size: 'md'})._text= caption
+      +text({size: 'md'}).card-feature__text= caption
 
     if img
       img.card-feature__img(src=img alt='')
 
-    if modal
+    if (modal || href)
       .icon-blank.card-feature__blank
         +icon('arrow-top-right')
